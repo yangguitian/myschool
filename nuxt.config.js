@@ -17,7 +17,15 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/styles/custom-bootstrap.scss'
   ],
+
+  // 使用 nuxt 框架提供的 服务器中间件功能，实现 KOA 的后端服务
+  // serverMiddleware: [
+  //   // /api 的地址请求，只有数据，没有页面
+  //   // 所有的 /api 的请求都会转发到 api/app.js 脚本文件中
+  //   { path: "/api", handler: "./api/app.js" }
+  // ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -35,6 +43,13 @@ export default {
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
   ],
+
+  // 针对Bootstrap 的配置
+  bootstrapVue: {
+    icon: true,
+    bootstrapCSS:false,
+    bootstrapVueCSS: false
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

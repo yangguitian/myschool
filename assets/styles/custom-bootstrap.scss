@@ -1,0 +1,14 @@
+//修改栅格系统 从12列 修改为 24列
+// $grid-columns: 24;
+
+
+// Then include the following
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue/src/index.scss';
+
+$buy: rgb(223, 68, 68);
+$buy-hover: color-yiq($buy);
+
+.btn-buy {
+    @include button-variant($buy, $buy, $buy-hover);
+  }
