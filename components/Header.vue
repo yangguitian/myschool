@@ -12,16 +12,16 @@
           <b-nav-item>切换学校</b-nav-item>
           <b-nav-item>校园动态</b-nav-item>
           <b-nav-item-dropdown text="发布" left>
-            <b-dropdown-item href="#" class="fabu">
-                <a href="#">
-                    <img src="../assets/images/发布商品.png" />
-                    <span>发布商品</span>
+            <b-dropdown-item href="/release_good" class="fabu">
+                <a href="/release_good">
+                    <a href="/release_good"><img src="../assets/images/发布商品.png" /></a>
+                    <a href="/release_good"><span>发布商品</span></a>
                 </a>
             </b-dropdown-item>
-            <b-dropdown-item href="#" class="fabu">
-                <a href="#">
-                    <img src="../assets/images/发布求购.png" />
-                    <span>发布求购</span>
+            <b-dropdown-item href="/release_buy" class="fabu">
+                <a href="/release_buy">
+                    <a href="/release_buy"><img src="../assets/images/发布求购.png" /></a>
+                    <a href="/release_buy"><span>发布求购</span></a>
                 </a>
             </b-dropdown-item>
 
@@ -34,9 +34,9 @@
         </b-navbar-nav>
       </div>
       <div class="nav-right fr">
-        <span class="img-sapn"
-          ><img src="../assets/images/touxiang1.png" alt=""
-        /></span>
+        <span class="img-sapn">
+          <a href="/user_info"><img src="../assets/images/touxiang1.png" alt=""/></a>
+        </span>
         <span class="number">123456</span>
         <span class="tuichu"><a href="#">退出</a></span>
       </div>
@@ -46,6 +46,7 @@
 
 <style lang="less" scoped>
 .navbar {
+  min-width: 1200px;
   height: 64px;
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
 }
@@ -89,7 +90,7 @@
   vertical-align: middle;
   right: 100px;
   position: absolute;
-  background-color: rgb(228, 178, 178);
+  // background-color: rgb(228, 178, 178);
   width: 200px;
   height: 64px;
   padding: 10.5px 0;
@@ -118,8 +119,8 @@
   color: #4d555d;
   line-height: 43px;
 }
-.fabu {
-}
+// .fabu {
+// }
 .fabu img {
     width: 45px;
     height: 45px;

@@ -1,14 +1,45 @@
 //修改栅格系统 从12列 修改为 24列
 // $grid-columns: 24;
 
-
 // Then include the following
-@import 'bootstrap/scss/bootstrap.scss';
-@import 'bootstrap-vue/src/index.scss';
+@import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap-vue/src/index.scss";
 
 $buy: rgb(223, 68, 68);
-$buy-hover: color-yiq($buy);
+$buy1: rgb(68, 193, 202);
+$buy-hover: rgb(32, 202, 26);
+
+$navbar-dark-color: #4d555d;
+$navbar-dark-hover-color: #4d555d;
+$navbar-dark-active-color: #4d555d;
+
+$dropdown-link-hover-bg:  #f3f3f3;
 
 .btn-buy {
-    @include button-variant($buy, $buy, $buy-hover);
+  @include button-variant($buy, $buy1, $buy-hover);
+}
+
+.dropdown-item {
+  @include hover-focus() {
+    color: $dropdown-link-hover-color;
+    text-decoration: none;
+    @include gradient-bg($dropdown-link-hover-bg);
   }
+}
+.navbar-dark {
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      @include hover-focus() {
+        color: $navbar-dark-hover-color;
+      }
+    }
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+}
