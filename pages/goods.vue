@@ -21,16 +21,16 @@
                 @sliding-end="onSlideEnd"
               >
                 <b-carousel-slide
-                  img-src="../assets/images/广告位1.jpg"
+                  img-src="/images/广告位1.jpg"
                 ></b-carousel-slide>
 
                 <b-carousel-slide
-                  img-src="../assets/images/广告位2.jpg"
+                  img-src="/images/广告位2.jpg"
                 >
                 </b-carousel-slide>
 
                 <b-carousel-slide
-                  img-src="../assets/images/广告位3.jpg"
+                  img-src="/images/广告位3.jpg"
                 ></b-carousel-slide>
 
               </b-carousel>

@@ -4,7 +4,7 @@
     <div class="buy-box">
       <b-card>
         <b-card-text>
-          <b-avatar src="../assets/images/touxiang1.png"></b-avatar>
+          <b-avatar src="/images/touxiang1.png"></b-avatar>
           <span>123456</span>
           <span>广西民族大学相思湖学院</span>
           <span>更新于2020-01-05</span>
@@ -17,7 +17,7 @@
       </b-card>
       <b-card>
         <b-card-text>
-          <b-avatar src="../assets/images/touxiang1.png"></b-avatar>
+          <b-avatar src="/images/touxiang1.png"></b-avatar>
           <span>123456</span>
           <span>广西民族大学相思湖学院</span>
           <span>更新于2020-01-05</span>

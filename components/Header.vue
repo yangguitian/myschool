@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="white">
       <div class="img">
-        <a href="#"><img src="../assets/images/logo1.png" alt="" /></a>
+        <a href="#"><img src="/images/logo1.png" alt="" /></a>
       </div>
       <div class="fl">
         <b-navbar-nav>
@@ -14,17 +14,16 @@
           <b-nav-item-dropdown text="发布" left>
             <b-dropdown-item href="/release_good" class="fabu">
                 <a href="/release_good">
-                    <a href="/release_good"><img src="../assets/images/发布商品.png" /></a>
+                    <a href="/release_good"><img src="/images/发布商品.png" /></a>
                     <a href="/release_good"><span>发布商品</span></a>
                 </a>
             </b-dropdown-item>
             <b-dropdown-item href="/release_buy" class="fabu">
                 <a href="/release_buy">
-                    <a href="/release_buy"><img src="../assets/images/发布求购.png" /></a>
+                    <a href="/release_buy"><img src="/images/发布求购.png" /></a>
                     <a href="/release_buy"><span>发布求购</span></a>
                 </a>
             </b-dropdown-item>
-
           </b-nav-item-dropdown>
           <b-nav-item-dropdown text="更多" left>
             <b-dropdown-item href="#">兼职</b-dropdown-item>
@@ -35,7 +34,7 @@
       </div>
       <div class="nav-right fr">
         <span class="img-sapn">
-          <a href="/user_info"><img src="../assets/images/touxiang1.png" alt=""/></a>
+          <a href="/user_info"><img src="/images/touxiang1.png" alt=""/></a>
         </span>
         <span class="number">123456</span>
         <span class="tuichu"><a href="#">退出</a></span>

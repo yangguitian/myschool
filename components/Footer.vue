@@ -10,7 +10,7 @@
             <p class="botton">地址 : 广西北海甲骨文学院</p>
           </div>
           <div class="footer-middle">
-            <img src="../assets/images/二维码.png" alt="" />
+            <img src="/images/二维码.png" alt="" />
             <p>关注微信公众平台</p>
           </div>
           <div class="footer-right">
@@ -121,16 +121,16 @@
 }
 .footer-right .wb {
     float: left;
-    background: url(../assets/images/雪碧图.png) no-repeat 0 0;
+    background: url(/images/雪碧图.png) no-repeat 0 0;
 }
 .footer-right .qq {
     float: left;
-    background: url(../assets/images/雪碧图.png) no-repeat -58px 0;
+    background: url(/images/雪碧图.png) no-repeat -58px 0;
     margin-left: 20px;
 }
 .footer-right .wx {
     float: left;
-    background: url(../assets/images/雪碧图.png) no-repeat -115px 0;
+    background: url(/images/雪碧图.png) no-repeat -115px 0;
     margin-left: 20px;
 }
 .footer-button {

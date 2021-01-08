@@ -1,6 +1,6 @@
 <template>
      <div class="top">
-      <img src="../assets/images/校园二手.png" alt="" />
+      <img src="/images/校园二手.png" alt="" />
     </div>
 </template>
 

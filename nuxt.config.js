@@ -46,7 +46,7 @@ export default {
 
   // 针对Bootstrap 的配置
   bootstrapVue: {
-    icon: true,
+    icons: true,
     bootstrapCSS:false,
     bootstrapVueCSS: false
   },

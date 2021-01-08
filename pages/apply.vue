@@ -2,7 +2,7 @@
   <div>
     <Header />
     <div class="img">
-      <img src="../assets/images/学校.png" alt="" />
+      <img src="/images/学校.png" alt="" />
     </div>
     <div class="content-box"></div>
   </div>
