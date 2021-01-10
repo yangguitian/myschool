@@ -9,7 +9,7 @@
           <b-nav-item>首页</b-nav-item>
           <b-nav-item>二手</b-nav-item>
           <b-nav-item>求购</b-nav-item>
-          <b-nav-item>切换学校</b-nav-item>
+          <b-nav-item href="/school">切换学校</b-nav-item>
           <b-nav-item>校园动态</b-nav-item>
           <b-nav-item-dropdown text="发布" left>
             <b-dropdown-item href="/release_good" class="fabu">

@@ -4,7 +4,9 @@
     <div class="img">
       <img src="/images/学校.png" alt="" />
     </div>
-    <div class="content-box"></div>
+    <div class="content-box">
+      <ApplyFrom />
+    </div>
   </div>
 </template>
 
@@ -23,8 +25,6 @@ body {
 }
 .content-box {
   width: 400px;
-  height: 400px;
   margin: 50px auto;
-  background-color: rgb(221, 120, 120);
 }
 </style>

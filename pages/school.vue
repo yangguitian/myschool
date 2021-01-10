@@ -19,25 +19,6 @@
             <p>全国高校，一览无遗</p>
           </div>
         </div>
-        <div class="item-box">
-          <div class="logo">
-            <img src="/images/学校1.png" />
-          </div>
-          <div class="text-box">
-            <h5>所有学校</h5>
-            <p>全国高校，一览无遗</p>
-          </div>
-        </div>
-
-        <div class="item-box">
-          <div class="logo">
-            <img src="/images/学校1.png" />
-          </div>
-          <div class="text-box">
-            <h5>所有学校</h5>
-            <p>全国高校，一览无遗</p>
-          </div>
-        </div>
       </div>
       <!-- 分割线一个字母end -->
     </div>
