@@ -6,8 +6,8 @@
       </div>
       <div class="fl">
         <b-navbar-nav>
-          <b-nav-item>首页</b-nav-item>
-          <b-nav-item>二手</b-nav-item>
+          <b-nav-item href="/">首页</b-nav-item>
+          <b-nav-item href="/goods">二手</b-nav-item>
           <b-nav-item>求购</b-nav-item>
           <b-nav-item href="/school">切换学校</b-nav-item>
           <b-nav-item>校园动态</b-nav-item>

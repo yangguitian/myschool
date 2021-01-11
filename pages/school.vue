@@ -4,19 +4,35 @@
     <Xiaoyuanershou />
     <div class="content-box">
       <!-- 分割线一个字母start -->
-      <div class="one-box">
+      <div class="one-box" v-for="item in items" :key="item.id">
         <div class="title-box">
-          <p class="text" :key="title" v-for="title in titles">
-            {{ title.name }}
-          </p>
+          <p class="text">{{item.title}}</p>
         </div>
         <div class="item-box">
           <div class="logo">
-            <img src="/images/学校1.png" />
+            <img :src="item.img" />
           </div>
           <div class="text-box">
-            <h5>所有学校</h5>
-            <p>全国高校，一览无遗</p>
+            <h5>{{item.text1}}</h5>
+            <p>{{item.text2}}</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="logo">
+            <img :src="item.img" />
+          </div>
+          <div class="text-box">
+            <h5>{{item.text1}}</h5>
+            <p>{{item.text2}}</p>
+          </div>
+        </div>
+        <div class="item-box">
+          <div class="logo">
+            <img :src="item.img" />
+          </div>
+          <div class="text-box">
+            <h5>{{item.text1}}</h5>
+            <p>{{item.text2}}</p>
           </div>
         </div>
       </div>
@@ -29,7 +45,10 @@
 export default {
   data() {
     return {
-      titles: [{ name: "精选" }],
+      items: [
+        { title: "精选",img:"/images/学校1.png", text1:"所有学校", text2:"全国高校，一览无遗"},
+        
+        ],
     }
   },
 };
