@@ -7,7 +7,6 @@
       </b-card-text>
       <b-card-text class="jiage">￥2500<span class="sch">广西民大</span></b-card-text>
     </b-card>
-    
   </b-card-group>
   </div>
 </template>

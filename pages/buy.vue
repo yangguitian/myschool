@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="buy-box">
       <b-card>
         <b-card-text>
@@ -31,6 +30,12 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  layout:"hf",
+}
+</script>
 
 <style lang="less" scoped>
 .buy-box {

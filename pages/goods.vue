@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="heart">
       <div class="heart-top">
         <div class="menu">
@@ -437,6 +436,7 @@
 
 <script>
 export default {
+    layout:"hf",
   data() {
     return {
       slide: 0,

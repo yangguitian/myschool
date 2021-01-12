@@ -1,12 +1,18 @@
 <template>
   <div>
-    <Header />
     <div class="heart">
       <div class="heart-left"></div>
       <div class="heart-right"></div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  layout:"hf",
+}
+</script>
+
 <style lang="less" scoped>
 body {
   background-color: #f8f8f9;

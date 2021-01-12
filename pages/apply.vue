@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="img">
       <img src="/images/学校.png" alt="" />
     </div>
@@ -10,7 +9,11 @@
   </div>
 </template>
 
-
+<script>
+export default {
+  layout:"hf",
+}
+</script>
 <style lang="less" scoped>
 body {
   background-color: #f8f8f9;

@@ -1,10 +1,11 @@
 <template>
-    <div>
-    </div>
+<div>
+    认证
+</div>
 </template>
 
 <script>
 export default {
-  layout:"hf",
-}
+  layout: "center",
+};
 </script>

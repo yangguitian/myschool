@@ -1,6 +1,5 @@
 <template>
   <div class="big">
-    <Header />
     <div class="content">
       <b-row>
         <b-col cols="4">
@@ -124,12 +123,12 @@
         <div class="right-box"><p>okokokokokokokokko</p></div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 export default {
+  layout:"hf",
   data() {
     return {
       slide: 0,

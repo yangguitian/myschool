@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <Xiaoyuanershou />
     <div class="inner">
       <div class="box">
@@ -196,6 +195,7 @@ import {
   sameAsPassword,
 } from "vuelidate/lib/validators";
 export default {
+  layout:"hf",
   mixins: [validationMixin],
   data() {
     return {

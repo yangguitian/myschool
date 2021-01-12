@@ -2,9 +2,18 @@
   <b-form @submit.stop.prevent="OnSubmit">
     <b-row cols="12">
       <b-col>
-        <b-form-group label="学校" label-align-sm="middle" label-cols-xl="2">
+        <b-form-group label="头像" label-align-sm="middle" label-cols-xl="2">
+          <div class="touxiang">
+            <img src="/images/头像/头像1.png" alt="" />
+          </div>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row cols="12">
+      <b-col>
+        <b-form-group label="用户名" label-align-sm="middle" label-cols-xl="2">
           <b-form-input
-            placeholder="填写完整学校名称"
+            placeholder=""
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_name')"
             v-model="$v.UpdataForm.schools_name.$model"
@@ -19,9 +28,13 @@
     </b-row>
     <b-row cols="12">
       <b-col>
-        <b-form-group label="姓名" label-align-sm="middle" label-cols-xl="2">
+        <b-form-group
+          label="真实姓名"
+          label-align-sm="middle"
+          label-cols-xl="2"
+        >
           <b-form-input
-            placeholder="填写完整您的名称"
+            placeholder=""
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_xingming')"
             v-model="$v.UpdataForm.schools_xingming.$model"
@@ -36,13 +49,9 @@
     </b-row>
     <b-row cols="12">
       <b-col>
-        <b-form-group
-          label="联系方式"
-          label-align-sm="middle"
-          label-cols-xl="3"
-        >
+        <b-form-group label="学校" label-align-sm="middle" label-cols-xl="2">
           <b-form-input
-            placeholder="微信号，手机号，QQ选填一项"
+            placeholder=""
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_xianxi')"
             v-model="$v.UpdataForm.schools_xianxi.$model"
@@ -56,6 +65,49 @@
       </b-col>
     </b-row>
     <b-row cols="12">
+      <b-col>
+        <b-form-group label="性别" label-align-sm="middle" label-cols-xl="2">
+          <b-form-radio-group
+            v-model="state"
+            aria-controls="ex-disabled-readonly"
+          >
+            <b-form-radio value="nan">男</b-form-radio>
+            <b-form-radio value="nv">女</b-form-radio>
+            <b-form-radio value="bm">保密</b-form-radio>
+          </b-form-radio-group>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row cols="12">
+      <b-col>
+        <b-form-group label="毕业年份" label-align-sm="middle" label-cols-xl="2">
+         <b-form-datepicker id="example-datepicker" v-model="value" class="mb-2"></b-form-datepicker>
+          <b-form-invalid-feedback id="input-signin-region-feedback">
+            不能为空！
+          </b-form-invalid-feedback>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row cols="12">
+      <b-col>
+        <b-form-group
+          label="个性签名"
+          label-align-sm="middle"
+          label-cols-xl="2"
+        >
+          <b-form-textarea
+            id="textarea-small"
+            size="sm"
+            placeholder=""
+          ></b-form-textarea>
+          <b-form-invalid-feedback id="input-signin-region-feedback">
+            不能为空！
+          </b-form-invalid-feedback>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-row cols="12">
+        <b-col cols="2"></b-col>
       <b-col cols="6">
         <b-button type="submit" block variant="primary">提交</b-button>
       </b-col>
@@ -81,6 +133,7 @@ import {
   sameAsPassword,
 } from "vuelidate/lib/validators";
 export default {
+  layout: "center",
   mixins: [validationMixin],
   data() {
     return {
@@ -90,6 +143,8 @@ export default {
         schools_xianxi: null,
         // goods_wx,tel,QQ不用
       },
+      state: 'bm',
+      value: '',
     };
   },
   validations: {
@@ -153,7 +208,21 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.btn {
-  width: 100%;
+.touxiang {
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.touxiang img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.form-control {
+  width: 40%;
+}
+.col-6 {
+    max-width: 17%;
 }
 </style>
