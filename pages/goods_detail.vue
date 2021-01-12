@@ -31,7 +31,7 @@
           </div>
         </b-col>
         <b-col cols="4">
-          <div class="info-box">
+          <!-- <div class="info-box">
             <div class="top-info">
               <span class="img"
                 ><img src="/images/头像/头像1.png" alt=""
@@ -72,14 +72,15 @@
               ></span>
               <span class="red black">微信: 123456 QQ: 123456</span>
             </div>
-          </div>
-        </b-col>
-        <b-col cols="4">
+             <b-col cols="12">
             <b-button-group>
                 <b-button variant="outline-warning" size="lg">立即购买</b-button>
                 <b-button variant="danger" size="lg">加入购物车</b-button>
             </b-button-group>
         </b-col>
+          </div> -->
+        </b-col>
+       
       </b-row>
     </div>
     <div class="pinlun">
@@ -147,25 +148,30 @@ export default {
 </script>
 <style lang="less" scoped>
 .big {
-  background-color: #f8f8f9;
+  // background-color: #f8f8f9;
+  background-color: #7d7dda;
 }
 .content {
-  width: 1000px;
-  height: 480px;
+  width: 1200px;
+  height: auto;
   margin: 30px auto;
-  background-color: #fff;
+  // background-color: #fff;
+  background-color: rgb(218, 125, 117);
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
 }
 .pic {
-  background-color: #fff;
-  height: 350px;
+  // background-color: #fff;
+  background-color: rgb(154, 202, 122);
+  height: auto;
 }
 .info-box {
-  height: 420px;
+  background-color: rgb(82, 76, 134);
+  height: auto;
   font-size: 14px;
 }
 .top-info {
+  background-color: rgb(93, 160, 104);
   width: 100%;
   height: 35px;
   margin-bottom: 10px;
@@ -219,16 +225,18 @@ body {
 .black {
   color: #616776;
 }
+// 按钮
 .btn-group {
-    margin-top: 314px;
+  background-color: rgb(116, 67, 81);
+    // margin-top: 314px;
 }
 .pinlun {
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
   background-color: #fff;
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 1000px;
-  height: 400px;
+  width: 1200px;
+  height: auto;
 }
 .pinlun .top {
   width: 100%;
