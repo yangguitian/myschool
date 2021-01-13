@@ -42,8 +42,11 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/dotenv',
   ],
-
+  server: {
+    port: 80, 
+  },
   // 针对Bootstrap 的配置
   bootstrapVue: {
     icons: true,
@@ -53,5 +56,10 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+  serverMiddleware: [
+    // /api 的地址请求，只有数据，没有页面
+    // 所有的 /api 的请求都会转发到 api/app.js 脚本文件中
+    { path: "/api", handler: "~/api/app.js" }
+  ]
 }

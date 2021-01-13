@@ -1,0 +1,106 @@
+/* Banner 的样式 */
+.banner,
+.banner .container,
+.banner .container img {
+    width: 1500px;
+    height: 700px;
+}
+.banner .container {
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    transition: left 0.5s linear;
+    
+}
+
+.banner .container img {
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.banner .control {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 465px;
+    cursor: pointer;
+    transition: opacity 0.2 linear;
+}
+
+.banner .control img {
+    position: absolute;
+    left: calc(60px - 30px);
+    top: calc(50% - 40px);
+    opacity: 0.5;
+}
+
+.banner .control:hover img {
+    opacity: 1;
+}
+
+/* 左右图标 */
+.banner .pre {
+    background-position: center right;
+    left: 0px;
+}
+.banner .pre::before{
+    line-height: 700px;
+    font-size: 100px;
+    color: rgb(136, 131, 131, .5);
+}
+
+.banner .next {
+    background-position: center left;
+    right: 0px;
+}
+.banner .next::before{
+    font-family: 'icomoon';
+    content: '';
+    line-height: 700px;
+    font-size: 100px;
+    color: rgb(136, 131, 131, .5);
+}
+
+.banner .radio-container {
+    width: 1600px;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+
+.banner .radio-container .radio {
+    text-align: center;
+
+}
+
+.banner .radio-container .radio input {
+    display: none;
+}
+
+.banner .radio-container .radio label img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.banner .radio-container .radio label {
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s linear;
+    width: 100px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+/* 选择的效果 */
+.banner .radio-container .radio input:checked+label {
+    /* 小点效果 */
+    /* width: 30px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: blue; */
+    /* 图片效果 */
+    border: 2px solid white;
+}

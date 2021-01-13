@@ -17,16 +17,16 @@
   margin: 0 auto;
   background-color: rgb(95, 68, 68);
 }
-.card-columns {
-  column-count: 4;
+.a .card-columns {
+  column-count: 5;
 }
-.card-body {
+.a .card-body {
   padding: 10px;
 }
-.jiage {
+.a .jiage {
   color: red;
 }
-.sch {
+.a .sch {
   font-size: 14px;
   color: #2d8cf0;
   float: right;

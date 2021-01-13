@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="white">
       <div class="img">
-        <a href="#"><img src="/images/logo1.png" alt="" /></a>
+        <a href="/"><img src="/images/logo1.png" alt="" /></a>
       </div>
       <div class="fl">
         <b-navbar-nav>

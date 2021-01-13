@@ -427,8 +427,91 @@
               </b-carousel>
             </div>
           </div>
-          <div class="carousel-button"></div>
+          <div class="carousel-button">
+            <!-- <div class="">
+              <b-input></b-input>
+              <b-button></b-button>
+            </div> -->
+            <div class="text-center">
+              <b-button variant="outline-primary">发布时间</b-button>
+              <b-button variant="outline-primary">价格</b-button>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="a">
+        <b-card-group columns>
+          <b-card
+            title="正点原子STM32MINI开发版"
+            img-src="/images/商品/电动车1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>
+              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
+            </b-card-text>
+            <b-card-text class="jiage"
+              >￥<span class="shuzi">2500</span
+              ><span class="sch">广西民大</span></b-card-text
+            >
+          </b-card>
+          <b-card
+            title="正点原子STM32MINI开发版"
+            img-src="/images/商品/电动车1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>
+              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
+            </b-card-text>
+            <b-card-text class="jiage"
+              >￥<span class="shuzi">2500</span
+              ><span class="sch">广西民大</span></b-card-text
+            >
+          </b-card>
+          <b-card
+            title="正点原子STM32MINI开发版"
+            img-src="/images/商品/电动车1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>
+              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
+            </b-card-text>
+            <b-card-text class="jiage"
+              >￥<span class="shuzi">2500</span
+              ><span class="sch">广西民大</span></b-card-text
+            >
+          </b-card>
+          <b-card
+            title="正点原子STM32MINI开发版"
+            img-src="/images/商品/电动车1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>
+              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
+            </b-card-text>
+            <b-card-text class="jiage"
+              >￥<span class="shuzi">2500</span
+              ><span class="sch">广西民大</span></b-card-text
+            >
+          </b-card>
+          <b-card
+            title="正点原子STM32MINI开发版"
+            img-src="/images/商品/电动车1.png"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>
+              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
+            </b-card-text>
+            <b-card-text class="jiage"
+              >￥<span class="shuzi">2500</span
+              ><span class="sch">广西民大</span></b-card-text
+            >
+          </b-card>
+        </b-card-group>
       </div>
     </div>
   </div>
@@ -436,7 +519,7 @@
 
 <script>
 export default {
-    layout:"hf",
+  layout: "hf",
   data() {
     return {
       slide: 0,
@@ -461,9 +544,7 @@ body {
 .heart {
   margin: 0 auto;
   width: 1200px;
-  height: 2000px;
-
-  background-color: rgb(233, 236, 187);
+  height: auto;
 }
 .heart-top {
   margin: 30px auto;
@@ -561,6 +642,50 @@ body {
 .heart-top .right-box .carousel-button {
   width: 1020px;
   height: 80px;
-  background-color: rgb(216, 41, 120);
+  // background-color: rgb(216, 41, 120);
+  padding: 15px;
+}
+.form-control {
+  line-height: 80px;
+  width: 30%;
+}
+.text-center {
+  width: 200px;
+  height: 50px;
+  margin-left: 50px;
+}
+.text-center span {
+  line-height: 50px;
+  margin: 0 20px;
+}
+.a {
+  width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  // background-color: rgb(95, 68, 68);
+}
+.a .card-columns {
+  column-count: 5;
+}
+.card-title {
+  font-size: 17px;
+}
+.card-text {
+  font-size: 14px;
+}
+.a .card-body {
+  padding: 10px;
+}
+.a .jiage {
+  color: red;
+}
+.shuzi {
+  font-size: 20px;
+}
+.a .sch {
+  line-height: 30px;
+  font-size: 14px;
+  color: #2d8cf0;
+  float: right;
 }
 </style>

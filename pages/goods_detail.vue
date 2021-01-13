@@ -30,23 +30,24 @@
             </b-carousel>
           </div>
         </b-col>
-        <b-col cols="4">
-          <!-- <div class="info-box">
+        <b-col cols="6">
+          <div class="info-box">
+            <div class="title"><span> 校园购 </span> 苹果手机</div>
+            <div class="title1">打算大苏打</div>
             <div class="top-info">
               <span class="img"
                 ><img src="/images/头像/头像1.png" alt=""
               /></span>
               <span class="usn">13278943672</span>
             </div>
-            <div class="title">苹果手机</div>
-            <div class="title1">打算大苏打</div>
             <div class="icon-box">
-              <span class="icon"
-                ><b-icon-backspace-reverse
-                  class="h2 mb-2"
-                ></b-icon-backspace-reverse
-              ></span>
-              <span class="red red1">2200元</span>
+              <span class="icon">
+                <b-icon-backspace-reverse class="h2 mb-2">
+                </b-icon-backspace-reverse>
+              </span>
+
+              <span class="red red1">￥2200元</span>
+              <span class="red fff">原价￥3200元</span>
             </div>
             <div class="icon-box">
               <span class="icon"
@@ -72,15 +73,21 @@
               ></span>
               <span class="red black">微信: 123456 QQ: 123456</span>
             </div>
-             <b-col cols="12">
-            <b-button-group>
-                <b-button variant="outline-warning" size="lg">立即购买</b-button>
-                <b-button variant="danger" size="lg">加入购物车</b-button>
-            </b-button-group>
+            <b-col cols="12">
+              <b-button-group>
+                <b-button variant="outline-warning" size="lg"
+                  >立即购买</b-button
+                >
+                <b-button v-b-modal.modal-1 variant="danger" size="lg"
+                  >添加收藏</b-button
+                >
+              </b-button-group>
+              <b-modal id="modal-1" title="提示">
+                <p class="my-4">收藏成功</p>
+              </b-modal>
+            </b-col>
+          </div>
         </b-col>
-          </div> -->
-        </b-col>
-       
       </b-row>
     </div>
     <div class="pinlun">
@@ -129,7 +136,7 @@
 
 <script>
 export default {
-  layout:"hf",
+  layout: "hf",
   data() {
     return {
       slide: 0,
@@ -149,7 +156,7 @@ export default {
 <style lang="less" scoped>
 .big {
   // background-color: #f8f8f9;
-  background-color: #7d7dda;
+  background-color: #9797c9;
 }
 .content {
   width: 1200px;
@@ -199,10 +206,25 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
 }
+.title span {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20%;
+  color: #fff;
+  background-color: rgb(206, 57, 57);
+}
 .title1 {
   font-size: 20px;
   color: #616776;
   margin-bottom: 10px;
+}
+.my-4 {
+  font-size: 20px;
 }
 .icon-box {
   margin-bottom: 10px;
@@ -212,14 +234,19 @@ body {
   display: inline-block;
 }
 .red1 {
-    font-size: 20px;
+  font-size: 20px;
+  color: red;
+}
+.fff {
+  margin-top: 2px;
+  color: #969696;
 }
 .red {
   display: inline-block;
   height: 35px;
   line-height: 35px;
   margin-left: 15px;
-  color: red;
+
   vertical-align: top;
 }
 .black {
@@ -228,7 +255,7 @@ body {
 // 按钮
 .btn-group {
   background-color: rgb(116, 67, 81);
-    // margin-top: 314px;
+  // margin-top: 314px;
 }
 .pinlun {
   box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);

@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.6.2",
+    "@nuxtjs/dotenv": "^1.4.1",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
+    "dotenv": "^8.2.0",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
     "koa-orm": "^3.2.1",
