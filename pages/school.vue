@@ -2,7 +2,8 @@
   <div>
     
     <Xiaoyuanershou />
-    <div class="content-box">
+   <a href="/goods">
+      <div class="content-box">
       <!-- 分割线一个字母start -->
       <div class="one-box">
         <div class="title-box">
@@ -415,6 +416,7 @@
      
       <!-- 分割线一个字母end -->
     </div>
+   </a>
     <div class="center">
       <p>如果找不到您的学校，可申请开通。</p>
       <div class="button"><b-button href="/apply">申请开通</b-button></div>
@@ -434,6 +436,9 @@ export default {
 .content-box {
   margin: 30px auto;
   width: 1000px;
+}
+a {
+  text-decoration: none;
 }
 .one-box {
   width: 100%;

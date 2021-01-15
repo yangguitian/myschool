@@ -8,9 +8,9 @@
         <b-navbar-nav>
           <b-nav-item href="/">首页</b-nav-item>
           <b-nav-item href="/goods">二手</b-nav-item>
-          <b-nav-item>求购</b-nav-item>
+          <b-nav-item href="/buy">求购</b-nav-item>
           <b-nav-item href="/school">切换学校</b-nav-item>
-          <b-nav-item>校园动态</b-nav-item>
+          <b-nav-item href="/news">校园动态</b-nav-item>
           <b-nav-item-dropdown text="发布" left>
             <b-dropdown-item href="/release_good" class="fabu">
               <a href="/release_good">
@@ -33,20 +33,23 @@
         </b-navbar-nav>
       </div>
       <div class="nav-right fr">
-        <b-nav-item-dropdown right v-if="user" class="px-3 col-auto">
+        <b-nav-item right v-if="user" class="px-3 col-auto">
           <!-- Using 'button-content' slot -->
           <!-- 预留给登陆用的用户名显示插槽 -->
           <span class="img-sapn">
-            <a href="/user_info"><img src="/images/touxiang1.png" alt="" /></a>
+            <a href="/center">
+            <img src="/images/touxiang1.png" alt="个人中心" />
+            </a>
+            <span>{{user.nickName}}</span>
           </span>
-          <template v-slot:button-content>{{ user.nickName }}</template>
-          <b-dropdown-item
+
+          <!-- <b-dropdown-item
             v-for="item in userMenu"
             :key="item.id"
             :to="item.url"
-            >{{ item.name }}</b-dropdown-item
-          >
-        </b-nav-item-dropdown>
+            >{{ item.name }}
+          </b-dropdown-item> -->
+        </b-nav-item>
         <b-navbar-nav right v-else class="px-3 col-auto">
           <b-nav-item to="/account/login">登录</b-nav-item>
           <b-nav-item to="/account/signin">注册</b-nav-item>
@@ -60,23 +63,23 @@
 export default {
   computed: {
     user() {
-      // return this.$store.state.auth.user;
+      return this.$store.state.auth.user;
     },
     menu() {
-      // return this.$store.state.global.menu;
+      return this.$store.state.global.menu;
     },
-    userMenu() {
-      if (this.user && this.user.userMenu) {
-        let path = this.$route.path;
-        console.log(`path: ${path}`);
-        let currentMenu = this.user.userMenu[path];
-        if (!currentMenu) {
-          currentMenu = this.user.userMenu["default"];
-          console.log("currentMenu: %O", currentMenu);
-        }
-        return currentMenu;
-      }
-    },
+    // userMenu() {
+    //   if (this.user && this.user.userMenu) {
+    //     let path = this.$route.path;
+    //     console.log(`path: ${path}`);
+    //     let currentMenu = this.user.userMenu[path];
+    //     if (!currentMenu) {
+    //       currentMenu = this.user.userMenu["default"];
+    //       console.log("currentMenu: %O", currentMenu);
+    //     }
+    //     return currentMenu;
+    //   }
+    // },
   },
 };
 </script>
@@ -136,13 +139,20 @@ export default {
   vertical-align: bottom;
   float: left;
   display: inline-block;
-  width: 43px;
+  width: 100%;
   height: 43px;
 }
 .img-sapn img {
   border-radius: 50%;
   float: left;
-  height: 100%;
+  width: 43px;
+  height: 43px;
+}
+.img-sap span {
+  vertical-align: bottom;
+  width: 100%;
+  height: 43px;
+  line-height: 43px;
 }
 .number {
   line-height: 43px;

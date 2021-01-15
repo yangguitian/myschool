@@ -134,12 +134,12 @@
             <b-row cols="12">
               <b-col>
                 <b-form-group
-                  label="联系方式"
+                  label="手机号"
                   label-align-sm="middle"
-                  label-cols-xl="2"
+                  label-cols-xl="1"
                 >
                   <b-form-input
-                    placeholder="联系方式:微信号，手机号，QQ选填一项"
+                    placeholder="填写有效的手机号"
                     aria-describedby="input-signin-region-feedback"
                     :state="validateSigninState('goods_lianxi')"
                     class="b-form-input-1"
@@ -167,7 +167,7 @@
             </b-row>
             <b-row cols="12">
               <b-col cols="6">
-                <b-button type="submit" block  variant="primary">提交</b-button>
+                <b-button type="submit" block  variant="primary">发布</b-button>
               </b-col>
               <b-col cols="6">
                 <b-button block  type="reset">取消</b-button>
@@ -210,10 +210,25 @@ export default {
       },
       options: [
         { value: null, text: "合适的分类买家能更好地找到您的商品" },
-        { value: "a", text: "This is First option" },
-        { value: "b", text: "Selected Option" },
-        { value: { C: "3PO" }, text: "This is an option with object value" },
-        { value: "d", text: "This one is disabled", disabled: true },
+         {
+            label: '数码产品',
+            options: [
+              { value: { C: '3PO' }, text: '手机' },
+              { value: { R: '2D2' }, text: '平板' },
+              { value: { R: '2D2' }, text: '笔记本' },
+              { value: { R: '2D2' }, text: '平板' },
+              { value: { R: '2D2' }, text: '平板' },
+              { value: { R: '2D2' }, text: '平板' },
+              { value: { R: '2D2' }, text: '平板' },
+            ]
+          },
+         {
+            label: 'Grouped options',
+            options: [
+              { value: { C: '3PO' }, text: 'Option with object value' },
+              { value: { R: '2D2' }, text: 'Another option with object value' }
+            ]
+          },
       ],
     };
   },

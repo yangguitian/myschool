@@ -37,9 +37,9 @@
     <b-row cols="12">
       <b-col>
         <b-form-group
-          label="联系方式"
+          label="手机号"
           label-align-sm="middle"
-          label-cols-xl="3"
+          label-cols-xl="2"
         >
           <b-form-input
             placeholder="微信号，手机号，QQ选填一项"
@@ -56,10 +56,11 @@
       </b-col>
     </b-row>
     <b-row cols="12">
-      <b-col cols="6">
-        <b-button type="submit" block variant="primary">提交</b-button>
+      <b-col cols="2"></b-col>
+      <b-col cols="5">
+        <b-button type="submit" block variant="primary">申请</b-button>
       </b-col>
-      <b-col cols="6">
+      <b-col cols="5">
         <b-button block type="reset">取消</b-button>
       </b-col>
     </b-row>

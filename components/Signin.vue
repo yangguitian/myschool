@@ -1,17 +1,11 @@
 <template>
   <b-form @submit.stop.prevent="onSigninSubmit">
     <b-form-input v-model="signinForm.token" type="text" hidden></b-form-input>
-
     <b-form-group
       class="mt-5"
       id="input-group-signin-username"
       label-for="input-signin-username"
     >
-      <div class="title">
-        <img src="/images/logo.png" alt="" />
-        统一消息中心
-      </div>
-      <hr />
       <b-form-input
         id="input-signin-username"
         v-model="$v.signinForm.username.$model"
@@ -67,13 +61,12 @@
       >
        
         <b-form-checkbox
-          id="checkbox-signin-agreement"
+          id="checkbox-signin-agreement" class="tongyi"
           v-model="$v.signinForm.agreement.$model"
           :state="validateSigninState('agreement')"
           >同意用户协议</b-form-checkbox
         >
       </b-form-group>
-     
       <div>
         <b-link to="/account/agreement">查看用户协议</b-link>
       </div>
@@ -86,7 +79,7 @@
       @dismissed="result.dismissCountDown = 0"
       @dismiss-count-down="countDownChanged"
     >
-      (Code : {{ result.code }}){{ result.title }} : {{ result.message }}
+    {{ result.message }}:{{ result.title }}  
     </b-alert>
     <b-form-group id="input-group-signin-submit" class="mt-3 mb-5">
       <b-button type="submit" variant="primary" block>注册</b-button>
@@ -120,7 +113,7 @@ export default {
         username: null,
         password: null,
         confirmPassword: null,
-        agreement: false,
+        agreement: null,
       },
       timeKey: -1,
     };
@@ -152,10 +145,10 @@ export default {
       agreement: {
         // 必须同意才能继续
         // chackbox 打勾就是 value = true
-        isUnique(value) {
-          // 只要 true 才算通过
-          return value;
-        },
+        // isUnique(value) {
+        //   // 只要 true 才算通过
+        //   return value;
+        // },
       },
     },
   },
@@ -258,3 +251,47 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+ #input-signin-username{
+    background:#faeec6;
+  }
+  #input-signin-password{
+    background: #faeec6;
+  }
+  #input-signin-confirmPassword{
+    background: #faeec6;
+  }
+  .btn-primary {
+    background-color: #39c890;
+    border: 1px solid #39c890;
+    border-radius: 30px;
+    height: 50px;
+    font-size: 21px;
+  }
+  .btn-primary:hover {
+    background-color:#85d99b;
+    border: 1px solid #39c890;
+  }
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #39c890;
+  }
+  .form-control {
+    height: 50px;
+    color: #f9a05e;
+    border-radius: 30px;
+  }
+  .wanji {
+    text-align: right;
+  }
+  a {
+    color:#39c890;
+    text-align: left;
+  }
+  a:hover {
+    color: #20ab70;
+  }
+  .tongyi {
+    color:  #20ab70;
+  }
+</style>

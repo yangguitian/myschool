@@ -439,64 +439,92 @@
           </div>
         </div>
       </div>
+
+      <div class="btn1">
+        <b-card no-body>
+          <b-tabs v-model="tabIndex" card>
+            <b-tab title="数码产品" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>手机</b-button>
+                <b-button>平板</b-button>
+                <b-button>笔记本</b-button>
+                <b-button>台式机</b-button>
+                <b-button>手表手环</b-button>
+                <b-button>单反相机</b-button>
+                <b-button>充电宝</b-button>
+                <b-button>耳机</b-button>
+                <b-button>充电宝</b-button>
+                <b-button>手机配件</b-button>
+                <b-button>路由器</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="书籍教材" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>教科书</b-button>
+                <b-button>文学</b-button>
+                <b-button>小说</b-button>
+                <b-button>教育考试</b-button>
+                <b-button>动漫</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="衣鞋帽伞" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>裙子</b-button>
+                <b-button>裤子</b-button>
+                <b-button>衣服</b-button>
+                <b-button>帽子</b-button>
+                <b-button>鞋子</b-button>
+                <b-button>箱子</b-button>
+                <b-button>包包</b-button>
+                <b-button>雨伞</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="代步工具" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>自行车</b-button>
+                <b-button>旱冰鞋</b-button>
+                <b-button>平衡车</b-button>
+                <b-button>滑板</b-button>
+                <b-button>摩托车</b-button>
+                <b-button>电动车</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="体育健身" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>球类</b-button>
+                <b-button>球拍</b-button>
+                <b-button>运动鞋</b-button>
+                <b-button>运动装备</b-button>
+                <b-button>健身器材</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="家用电器" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>电磁炉</b-button>
+                <b-button>洗衣机</b-button>
+                <b-button>冰箱</b-button>
+                <b-button>风扇</b-button>
+                <b-button>电饭煲</b-button>
+                <b-button>豆浆机</b-button>
+                <b-button>吹风机</b-button>
+                <b-button>音响</b-button>
+              </b-button-group>
+            </b-tab>
+            <b-tab title="更多商品" :title-link-class="linkClass(0)">
+              <b-button-group class="button">
+                <b-button>化妆护肤</b-button>
+                <b-button>小工具</b-button>
+                <b-button>学习用品</b-button>
+                <b-button>游戏周边</b-button>
+                <b-button>充值卡</b-button>
+                <b-button>各类账号</b-button>
+              </b-button-group>
+            </b-tab>
+          </b-tabs>
+        </b-card>
+      </div>
       <div class="a">
         <b-card-group columns>
-          <b-card
-            title="正点原子STM32MINI开发版"
-            img-src="/images/商品/电动车1.png"
-            img-alt="Image"
-            img-top
-          >
-            <b-card-text>
-              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
-            </b-card-text>
-            <b-card-text class="jiage"
-              >￥<span class="shuzi">2500</span
-              ><span class="sch">广西民大</span></b-card-text
-            >
-          </b-card>
-          <b-card
-            title="正点原子STM32MINI开发版"
-            img-src="/images/商品/电动车1.png"
-            img-alt="Image"
-            img-top
-          >
-            <b-card-text>
-              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
-            </b-card-text>
-            <b-card-text class="jiage"
-              >￥<span class="shuzi">2500</span
-              ><span class="sch">广西民大</span></b-card-text
-            >
-          </b-card>
-          <b-card
-            title="正点原子STM32MINI开发版"
-            img-src="/images/商品/电动车1.png"
-            img-alt="Image"
-            img-top
-          >
-            <b-card-text>
-              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
-            </b-card-text>
-            <b-card-text class="jiage"
-              >￥<span class="shuzi">2500</span
-              ><span class="sch">广西民大</span></b-card-text
-            >
-          </b-card>
-          <b-card
-            title="正点原子STM32MINI开发版"
-            img-src="/images/商品/电动车1.png"
-            img-alt="Image"
-            img-top
-          >
-            <b-card-text>
-              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
-            </b-card-text>
-            <b-card-text class="jiage"
-              >￥<span class="shuzi">2500</span
-              ><span class="sch">广西民大</span></b-card-text
-            >
-          </b-card>
           <b-card
             title="正点原子STM32MINI开发版"
             img-src="/images/商品/电动车1.png"
@@ -519,10 +547,11 @@
 
 <script>
 export default {
-  layout: "hf",
+    layout: "hf",
   data() {
     return {
       slide: 0,
+      tabIndex: 0,
       sliding: null,
     };
   },
@@ -532,6 +561,21 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false;
+    },
+    linkClass(idx) {
+      if (this.tabIndex === idx) {
+        return ["bg-primary", "text-light"];
+      } else {
+        return ["bg-light", "text-info"];
+      }
+    },
+  },
+  computed: {
+    ehbtlist: {
+      get() {
+        // console.log(this.$store.state.exhibits.exhibits);
+        // return this.$store.state.exhibits.exhibits;
+      },
     },
   },
 };
@@ -651,12 +695,24 @@ body {
 }
 .text-center {
   width: 200px;
-  height: 50px;
   margin-left: 50px;
 }
 .text-center span {
   line-height: 50px;
   margin: 0 20px;
+}
+.heart .btn1 {
+  margin-left: 180px;
+  width: 85%;
+  background-color: #2568aa;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.btn1 .top {
+  margin-left: 180px;
+}
+.card-body {
+  padding: 10px;
 }
 .a {
   width: 1200px;

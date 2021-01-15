@@ -145,6 +145,7 @@
 }
 
 .content h2 {
+  margin: 0 auto;
   font-size: 24px;
   display: block;
   font-weight: 400px;
@@ -217,7 +218,7 @@
 }
 .content h2:hover {
   color: #39bc54;
-  transition: 0.7s;
+  transition: 0.1s;
 }
 .container-bao .box .content h2,
 .container-bao .box .content p {

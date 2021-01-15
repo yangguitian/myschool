@@ -5,7 +5,7 @@
         {{ message }}
       </b-card-text>
 
-      <b-button v-on:click="gobackNow" to="/" variant="primary"
+      <b-button v-on:click="gobackNow" to="/goods" variant="primary"
         >立刻返回首页</b-button
       >
     </b-card>
@@ -14,7 +14,6 @@
 <script>
 import { defaultMenu } from "~/store/global.js";
 export default {
-  layout: "account",
   data() {
     return {
       result: null,
@@ -40,7 +39,7 @@ export default {
     // 恢复菜单为未登录状态
     this.$store.commit("global/init");
 
-    let times = 5;
+    let times = 2;
     this.message = `${result.message} ${times} 秒后返回上一页`;
     this.timeKey = setInterval(() => {
       times--;

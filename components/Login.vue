@@ -1,9 +1,5 @@
 <template>
   <b-form @submit.stop.prevent="onLoginSubmit" variant="info">
-    <div class="title">
-      <img src="/images/logo.png" alt="" />
-      统一消息中心
-    </div>
     <hr />
     <b-form-input
       id="input-login-username"
@@ -37,35 +33,10 @@
       </b-form-invalid-feedback>
     </b-form-group>
 
-    <div class="d-flex justify-content-between mt-3">
-      <b-form-group
-        id="input-group-login-remember"
-        label-for="checkbox-login-remember"
-      >
-        <div>
-          <b-row align-h="between">
-            <b-col cols="6">
-              <b-row align-h="start">
-                <b-col cols="12">
-                  <input
-                   id="Code"
-                    icon=""
-                    type="text"
-                    class="form-control"
-                    placeholder="请输入验证码"
-                  />
-                </b-col>
-              </b-row>
-            </b-col>
-            <b-col cols="6.5" class=""><AuthCode /></b-col>
-          </b-row>
-        </div>
-      </b-form-group>
-    </div>
+   
     <div class="d-flex justify-content-between">
-      <div>
-        <b-link to="/account/signin">未有账号，注册一个</b-link>
-      </div>
+        <a class="zhuce" href="/account/signin">去注册</a>
+         <a class="wanji" href="/account/signin">忘记密码</a>
     </div>
     <b-alert
       :show="result.dismissCountDown"
@@ -75,7 +46,7 @@
       @dismissed="result.dismissCountDown = 0"
       @dismiss-count-down="countDownChanged"
     >
-      (Code : {{ result.code }}){{ result.title }} : {{ result.message }}
+      {{ result.message }} : {{ result.title }}
     </b-alert>
 
     <b-form-group id="input-group-login-submit" class="mt-3 mb-5">
@@ -185,7 +156,7 @@ export default {
             if (this.$route.query && this.$route.query.ref) {
               this.$router.push({ path: this.$route.query.ref });
             } else {
-              this.$router.push({ path: "/" });
+              this.$router.push({ path: "/goods" });
             }
             clearInterval(this.timeKey);
             this.timeKey = -1;
@@ -211,15 +182,38 @@ export default {
 
 <style lang="less" scoped>
   #input-login-username{
-    background: url(https://mimg.127.net/p/freemail/index/lib/img/urs/ico-user.png) no-repeat;
-
+    background:#faeec6;
   }
   #input-login-password{
-    background: url(https://mimg.127.net/p/freemail/index/lib/img/urs/ico-password.png) no-repeat;
-
+    background: #faeec6;
   }
-  #Code{
-    background: url("/images/icon验证码.png") no-repeat;
-
+  .btn-primary {
+    background-color: #39c890;
+    border: 1px solid #39c890;
+    border-radius: 30px;
+    height: 50px;
+    font-size: 21px;
+  }
+  .btn-primary:hover {
+    background-color:#85d99b;
+    border: 1px solid #39c890;
+  }
+  .btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #39c890;
+  }
+  .form-control {
+    height: 50px;
+    color: #f9a05e;
+    border-radius: 30px;
+  }
+  .wanji {
+    text-align: right;
+  }
+  a {
+    color:#39c890;
+    text-align: left;
+  }
+  a:hover {
+    color: #20ab70;
   }
 </style>

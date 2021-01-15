@@ -56,10 +56,10 @@ const router = new Router();    // 创建 koa 路由处理中间件的实例
 router.use("/", rootRouter.routes(), rootRouter.allowedMethods());
 // 所有 /api/account 的请求会到 storeRouter
 router.use("/account", accountRouter.routes(), accountRouter.allowedMethods());
+
+
 // 将 总路由中间件实例注册到 koa 中
 app.use(router.routes(), router.allowedMethods());
-
-
 // 将 koa 作为插件，注册给 nuxt 使用
 // 将 koa 作为一个回调方法提供给 nuxt 作为 serverMiddleware 使用
 // 这将直接使用 nuxt 服务器启动的地址和端口作为入口。

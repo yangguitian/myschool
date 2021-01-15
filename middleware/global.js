@@ -8,5 +8,6 @@ import { defaultMenu } from "~/store/global.js"
  */
 function globalInit(context) {
     let isClient = process.client;
+    
 }
 export default globalInit;
