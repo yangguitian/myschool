@@ -8,7 +8,7 @@ export default function (sequelize, type) {
         {
             classify_id:{
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             // 对应Goods表的id
             goods_id: {
@@ -25,37 +25,37 @@ export default function (sequelize, type) {
             // 商品名称
             goods_name: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
+                allowNull: true,
             },
             // 商品描述
             goods_desc: {
                 type: DataTypes.STRING(255),
-                allowNull: false,
+                allowNull: true,
             },
             // 商品图片
             goods_image:{
-                type: DataTypes.JSON,
-                allowNull: false,
+                type: DataTypes.STRING(255),
+                allowNull: true,
             },
             // 商品价格
             goods_price:{
-                type: DataTypes.JSON,
-                allowNull: false,
+                type: DataTypes.STRING(255),
+                allowNull: true,
             },
              // 商品原价
             goods_oldprice:{
-                type: DataTypes.JSON,
-                allowNull: false,
+                type: DataTypes.STRING(255),
+                allowNull: true,
             },
              // 商品价格
             goods_postage:{
-                type: DataTypes.JSON,
-                allowNull: false,
+                type: DataTypes.STRING(255),
+                allowNull: true,
             },
             // 联系电话
             goods_tel:{
-                type: DataTypes.JSON,
-                allowNull: false,
+                type: DataTypes.STRING(255),
+                allowNull: true,
             },
         },
         {

@@ -7,7 +7,7 @@
         <b-container fluid>
           <b-form @submit.stop.prevent="OnSubmit">
             <b-row cols="12">
-              <b-col >
+              <b-col>
                 <b-form-group
                   label="标题"
                   label-align-sm="middle"
@@ -16,8 +16,8 @@
                   <b-form-input
                     placeholder="很重要，显示在列表页"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_title')"
-                    v-model="$v.UpdataForm.goods_title.$model"
+                    :state="validateSigninState('goods_name')"
+                    v-model="$v.UpgoodsForm.goods_name.$model"
                     class="b-form-input-1"
                   >
                   </b-form-input>
@@ -37,9 +37,9 @@
                   <b-form-input
                     placeholder="很重要，显示在商品详情页"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_text')"
+                    :state="validateSigninState('goods_desc')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_text.$model"
+                    v-model="$v.UpgoodsForm.goods_desc.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -60,7 +60,7 @@
                     aria-describedby="input-signin-region-feedback"
                     :state="validateSigninState('goods_price')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_price.$model"
+                    v-model="$v.UpgoodsForm.goods_price.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -79,9 +79,9 @@
                   <b-form-input
                     placeholder="数字，购买时的价格"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_old_price')"
+                    :state="validateSigninState('goods_oldprice')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_old_price.$model"
+                    v-model="$v.UpgoodsForm.goods_oldprice.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -97,13 +97,14 @@
                   label-align-sm="middle"
                   label-cols-xl="1"
                 >
-                  <b-form-select
+                   <b-form-input
+                    placeholder="填写分类"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_fenlei')"
+                    :state="validateSigninState('classify_id')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_fenlei.$model"
-                    :options="options"
-                  ></b-form-select>
+                    v-model="$v.UpgoodsForm.classify_id.$model"
+                  >
+                  </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
                     不能为空！
                   </b-form-invalid-feedback>
@@ -120,9 +121,9 @@
                   <b-form-input
                     placeholder="填写数字"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_youfei')"
+                    :state="validateSigninState('goods_postage')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_youfei.$model"
+                    v-model="$v.UpgoodsForm.goods_postage.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -141,9 +142,9 @@
                   <b-form-input
                     placeholder="填写有效的手机号"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_lianxi')"
+                    :state="validateSigninState('goods_tel')"
                     class="b-form-input-1"
-                    v-model="$v.UpdataForm.goods_lianxi.$model"
+                    v-model="$v.UpgoodsForm.goods_tel.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -162,15 +163,23 @@
                   <span style="vertical-align: middle">
                     请在上传前进行裁剪，才会不变形，更美观。</span
                   >
+                  <b-form-input
+                    placeholder="图片地址"
+                    aria-describedby="input-signin-region-feedback"
+                    :state="validateSigninState('goods_image')"
+                    class="b-form-input-1"
+                    v-model="$v.UpgoodsForm.goods_image.$model"
+                  >
+                  </b-form-input>
                 </b-form-group>
               </b-col>
             </b-row>
             <b-row cols="12">
               <b-col cols="6">
-                <b-button type="submit" block  variant="primary">发布</b-button>
+                <b-button type="submit" block variant="primary">发布</b-button>
               </b-col>
               <b-col cols="6">
-                <b-button block  type="reset">取消</b-button>
+                <b-button block type="reset">取消</b-button>
               </b-col>
             </b-row>
           </b-form>
@@ -195,57 +204,31 @@ import {
   sameAsPassword,
 } from "vuelidate/lib/validators";
 export default {
-  layout:"hf",
+  layout: "hf",
   mixins: [validationMixin],
   data() {
     return {
-      UpdataForm: {
-        goods_title: null,
-        goods_text: null,
+      UpgoodsForm: {
+        goods_name: null,
+        goods_desc: null,
         goods_price: null,
-        goods_old_price: null,
-        goods_fenlei: null,
-        goods_lianxi: null,
+        goods_oldprice: null,
+        classify_id: null,
+        goods_postage: null,
+        goods_tel: null,
+        goods_image: null,
         // goods_wx,tel,QQ不用
       },
-      options: [
-        { value: null, text: "合适的分类买家能更好地找到您的商品" },
-         {
-            label: '数码产品',
-            options: [
-              { value: { C: '3PO' }, text: '手机' },
-              { value: { R: '2D2' }, text: '平板' },
-              { value: { R: '2D2' }, text: '笔记本' },
-              { value: { R: '2D2' }, text: '平板' },
-              { value: { R: '2D2' }, text: '平板' },
-              { value: { R: '2D2' }, text: '平板' },
-              { value: { R: '2D2' }, text: '平板' },
-            ]
-          },
-         {
-            label: 'Grouped options',
-            options: [
-              { value: { C: '3PO' }, text: 'Option with object value' },
-              { value: { R: '2D2' }, text: 'Another option with object value' }
-            ]
-          },
-      ],
     };
   },
   validations: {
-    UpdataForm: {
-      goods_title: {
+    UpgoodsForm: {
+      goods_name: {
         required,
         minLength: minLength(2),
         maxLength: maxLength(16),
-        // // 特殊判断
-        // isUnique(value) {
-        //   // 检查用户名是否有 非法字符
-        //   let reg = new RegExp("[^a-zA-Z0-9]", "i");
-        //   return !reg.test(value);
-        // }
       },
-      goods_text: {
+      goods_desc: {
         required,
         minLength: minLength(2),
         maxLength: maxLength(32),
@@ -253,42 +236,55 @@ export default {
       // 标价
       goods_price: {
         required,
+        minLength: minLength(2),
+        maxLength: maxLength(16),
       },
-      goods_old_price: {
+      goods_oldprice: {
         required,
+        minLength: minLength(2),
+        maxLength: maxLength(16),
       },
-      goods_fenlei: {
+      classify_id: {
         required,
+        minLength: minLength(1),
+        maxLength: maxLength(16),
       },
-      goods_youfei: {
+      goods_postage: {
         required,
+        minLength: minLength(2),
+        maxLength: maxLength(16),
       },
-      goods_lianxi: {
+      goods_tel: {
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(16),
+      },
+      goods_image: {
         required,
       },
     },
   },
   methods: {
     validateSigninState(name) {
-      const { $dirty, $error } = this.$v.UpdataForm[name];
+      const { $dirty, $error } = this.$v.UpgoodsForm[name];
       return $dirty ? !$error : null;
     },
     async OnSubmit() {
-      this.$v.UpdataForm.$touch();
-      if (this.$v.UpdataForm.$anyError) {
+      this.$v.UpgoodsForm.$touch();
+      if (this.$v.UpgoodsForm.$anyError) {
         return;
       }
-      console.log("this.UpdataForm: %O", this.UpdataForm);
-      let postBody = Object.keys(this.UpdataForm)
+      console.log("this.UpgoodsForm: %O", this.UpgoodsForm);
+      let postBody = Object.keys(this.UpgoodsForm)
         .map((key) => {
           return (
             encodeURIComponent(key) +
             "=" +
-            encodeURIComponent(this.UpdataForm[key])
+            encodeURIComponent(this.UpgoodsForm[key])
           );
         })
         .join("&");
-      let result = await fetch("/api/Updatauser", {
+      let result = await fetch("/api/Upgoods", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -296,9 +292,9 @@ export default {
         },
         body: postBody,
       }).then((res) => res.json());
-      if (!this.$v.UpdataForm.$anyError) {
+      if (!this.$v.UpgoodsForm.$anyError) {
         alert("用户添加成功！请耐心等待处理");
-        window.location.href = "/admin/dashboard";
+        window.location.href = "/goods";
       }
     },
   },

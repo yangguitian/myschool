@@ -8,15 +8,17 @@ import ORM from "koa-orm";
 // 必须使用当前文件的相对路径 import 自定义 js
 import rootRouter from "./router/index.js";
 import accountRouter from "./router/account.js";
-
+ 
+import goodsRouter from "./router/goods.js";
+import UpgoodsRouter from "./router/Upgoods.js";
 const app = new KOA(); // 实例化 koa 框架
 app.keys = ['koa-key']; // 设置 koa cookie key
 
 const ormConfig = {
-    name: 'user',
+    name: 'yz',
     modelPath: path.join(path.resolve("./"), 'api/service/models'),
     // 使用的数据库的名称
-    database: 'youzi',
+    database: 'yz',
       // 链接数据库用户名
     username: 'root',
       // 链接数据库密码
@@ -56,6 +58,9 @@ const router = new Router();    // 创建 koa 路由处理中间件的实例
 router.use("/", rootRouter.routes(), rootRouter.allowedMethods());
 // 所有 /api/account 的请求会到 storeRouter
 router.use("/account", accountRouter.routes(), accountRouter.allowedMethods());
+
+router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods());
+router.use("/Upgoods", UpgoodsRouter.routes(),UpgoodsRouter.allowedMethods());
 
 
 // 将 总路由中间件实例注册到 koa 中

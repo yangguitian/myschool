@@ -11,8 +11,7 @@
               controls
               indicators
               background="#ababab"
-              img-width="293px"
-              img-height="420px"
+              img-height="508px"
               style="text-shadow: 1px 1px 2px #333"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd"
@@ -20,20 +19,45 @@
               <b-carousel-slide
                 img-src="/images/商品/ipad1.png"
               ></b-carousel-slide>
-
               <b-carousel-slide img-src="/images/商品/ipad2.png">
               </b-carousel-slide>
-
               <b-carousel-slide
                 img-src="/images/商品/ipad3.png"
               ></b-carousel-slide>
             </b-carousel>
           </div>
         </b-col>
-        <b-col cols="6">
+        <b-col cols="4">
           <div class="info-box">
-            <div class="title"><span> 校园购 </span> 苹果手机</div>
-            <div class="title1">打算大苏打</div>
+            <div class="title">
+              <span class="a"> 校园购 </span>
+              苹果手机
+              <span class="right">
+                <b-dropdown
+                  id="dropdown-1"
+                  text="举报"
+                  class="m-md-2"
+                  size="sm"
+                  variant="outline-primary"
+                >
+                  <b-dropdown-item v-b-modal.modal-2 variant="danger"
+                    >商品信息违规
+                  </b-dropdown-item>
+                  <b-dropdown-item v-b-modal.modal-2>联系方式错误</b-dropdown-item>
+                  <b-dropdown-item v-b-modal.modal-2>商品已售出</b-dropdown-item>
+                  <b-dropdown-divider></b-dropdown-divider>
+                  <b-dropdown-item active>其他</b-dropdown-item>
+                  <b-dropdown-item disabled>自定义举报内容</b-dropdown-item>
+                </b-dropdown>
+              </span>
+              <b-modal id="modal-2" title="提示">
+                <p class="my-4">举报成功.我们会及时处理</p>
+              </b-modal>
+            </div>
+
+            <div class="title1">
+              打算大苏ssssssssssssssssssss打打算大苏ssssssssssssssssssss打打算大苏ssssssssssssssssssss打
+            </div>
             <div class="top-info">
               <span class="img"
                 ><img src="/images/头像/头像1.png" alt=""
@@ -88,11 +112,49 @@
             </b-col>
           </div>
         </b-col>
+        <b-col cols="4">
+          <div class="right1">
+            <div class="rer">
+              <div class="top">
+                <div class="titlebox">
+                  <span><img src="/images/头像/icon1.png" alt="" /></span>
+                  <span class="name">物流运输</span>
+                </div>
+                <div class="qfy">
+                  国内主要分支口岸区域物流服务中心全球600家分支机构及海外国际代理服务网络
+                </div>
+              </div>
+              <div class="top">
+                <div class="titlebox">
+                  <span><img src="/images/头像/icon2.png" alt="" /></span>
+                  <span class="name">支付方式</span>
+                </div>
+                <div class="qfy">
+                  以现汇逐笔结清债权债务的支付方式。按信用划分，有属于银行信用的信用证、购买证、银行保证书等结算方式，统称“有证支付方式”。
+                </div>
+              </div>
+              <div class="top">
+                <div class="titlebox">
+                  <span><img src="/images/头像/icon3.png" alt="" /></span>
+                  <span class="name">退还政策</span>
+                </div>
+                <div class="qfy">
+                  在订单开始3D打印之前,Treatstock允许客户取消订单并全款退还。一旦订单开始3D打印,客户将不能取消订单。
+                </div>
+              </div>
+            </div>
+          </div>
+        </b-col>
       </b-row>
     </div>
     <div class="pinlun">
       <div class="top">
         <span class="title">商品评价</span>
+        <span class="right"
+          ><b-button v-b-modal.modal-1 variant="primary" size="sm"
+            >发表评论</b-button
+          ></span
+        >
       </div>
       <div class="comment-item">
         <div class="left-box">
@@ -156,29 +218,40 @@ export default {
 <style lang="less" scoped>
 .big {
   // background-color: #f8f8f9;
-  background-color: #9797c9;
+  // background-color: #9797c9;
+  background-color: #f8f8f9;
 }
 .content {
   width: 1200px;
   height: auto;
   margin: 30px auto;
-  // background-color: #fff;
-  background-color: rgb(218, 125, 117);
+  background-color: #fff;
+  // background-color: rgb(218, 125, 117);
   padding: 30px;
-  box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(128, 128, 128, 0.753);
 }
 .pic {
+  width: 410px;
+  overflow: hidden;
+  height: 508px;
   // background-color: #fff;
-  background-color: rgb(154, 202, 122);
+  background-color: #fff;
   height: auto;
 }
+.img-fluid,
+.slide {
+  width: 410px;
+  height: 508px;
+}
 .info-box {
-  background-color: rgb(82, 76, 134);
-  height: auto;
+  margin-left: 40px;
+  width: 400px;
+  // background-color: rgb(82, 76, 134);
+  height: 508px;
   font-size: 14px;
 }
 .top-info {
-  background-color: rgb(93, 160, 104);
+  // background-color: rgb(93, 160, 104);
   width: 100%;
   height: 35px;
   margin-bottom: 10px;
@@ -206,7 +279,7 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
 }
-.title span {
+.title .a {
   display: inline-block;
   width: 50px;
   text-align: center;
@@ -217,6 +290,12 @@ body {
   border-radius: 20%;
   color: #fff;
   background-color: rgb(206, 57, 57);
+}
+.title .right {
+  background-color: #fff;
+}
+.btn-group {
+  background-color: #fff !important;
 }
 .title1 {
   font-size: 20px;
@@ -265,7 +344,12 @@ body {
   width: 1200px;
   height: auto;
 }
+.pinlun .right {
+  position: absolute;
+  right: 20px;
+}
 .pinlun .top {
+  position: relative;
   width: 100%;
   height: 45px;
   border: 1px solid #eee;
@@ -320,5 +404,40 @@ body {
   float: left;
   width: 400px;
   height: 53px;
+}
+.right1 {
+  margin-left: 70px;
+  width: 283px;
+  height: 508px;
+  // background-color: rgb(153, 60, 60);
+  border: 1px solid #e8e8e8;
+}
+.rer {
+  width: 243px;
+  height: 468px;
+  margin: 40px auto;
+  // background-color: rgb(61, 155, 111);
+}
+.rer .top {
+  width: 100%;
+  height: 150px;
+  // background-color: rgb(104, 59, 105);
+}
+.rer .top .titlebox {
+  width: 100%;
+  height: 24px;
+  // background-color: rgb(96, 153, 110);
+}
+.rer .top .name {
+  margin-left: 15px;
+  font-size: 16px;
+}
+.rer .top .qfy {
+  width: 243px;
+  height: 105px;
+  // background-color: #fff;
+  padding: 5px 0 32px 43px;
+  font-size: 13px;
+  border-bottom: 1px solid #e8e8e8;
 }
 </style>

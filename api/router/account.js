@@ -108,7 +108,7 @@ router.post("/login", async (ctx, next) => {
     // 登陆之后用户数据记录到页面会话数据中
     // TODO 实现用户详情再从用户详情中获取对应 昵称
     // 这个nickname是假的
-    user.nickName = "youzi";
+    user.nickName = "yz";
     // 需要服务器给客户端提供用户功能菜单选项
     user.userMenu = {}
     user.userMenu["default"] = [

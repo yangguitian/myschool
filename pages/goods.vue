@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="gfd">
     <div class="heart">
       <div class="heart-top">
         <div class="menu">
@@ -439,7 +439,6 @@
           </div>
         </div>
       </div>
-
       <div class="btn1">
         <b-card no-body>
           <b-tabs v-model="tabIndex" card>
@@ -524,22 +523,32 @@
         </b-card>
       </div>
       <div class="a">
-        <b-card-group columns>
-          <b-card
-            title="正点原子STM32MINI开发版"
-            img-src="/images/商品/电动车1.png"
-            img-alt="Image"
-            img-top
-          >
-            <b-card-text>
-              正点原子STM32F103RCT6开发板+触摸屏mini 单片机超STM32F103C8T6
-            </b-card-text>
-            <b-card-text class="jiage"
-              >￥<span class="shuzi">2500</span
-              ><span class="sch">广西民大</span></b-card-text
-            >
-          </b-card>
-        </b-card-group>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card-columns">
+                <Goodsint
+                  v-for="goods in goodsList"
+                  :key="goods.goods_id"
+                  :goods="goods"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="box">
+          <img src="/images/商品/电动车1.png" alt="" />
+          <div class="button">
+            <span class="title">正点原子STM32MINI开发版 </span>
+            <span class="text">赖模块，可将环境变量从.env文件加载到中process.e程序”方法的。</span>
+            <div class="shuzi-box">
+              <span class="jiage">
+                ￥<span class="shuzi">2500</span>
+                <span class="sch">广西民大</span>
+              </span>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -547,13 +556,17 @@
 
 <script>
 export default {
-    layout: "hf",
+  layout: "hf",
   data() {
     return {
       slide: 0,
       tabIndex: 0,
       sliding: null,
+      goodsList: [],
     };
+  },
+  async fetch() {
+    await this.getList();
   },
   methods: {
     onSlideStart(slide) {
@@ -578,11 +591,19 @@ export default {
       },
     },
   },
+  async fetch() {
+    this.goodsList = await fetch("/api/goods") // 承诺实现，并传值给fetchGoodsList
+      .then((res) => res.json()); // 知道是一个 json 格式的数据，就将json 字符串解析为对象
+
+    console.log("this.goodsList: %O", this.goodsList);
+  },
 };
 </script>
 
 <style lang="less" scoped>
-body {
+.gfd {
+  width: 100%;
+  height: 100%;
   background-color: #f8f8f9;
 }
 .heart {
@@ -693,6 +714,9 @@ body {
   line-height: 80px;
   width: 30%;
 }
+.card-columns{
+  column-count:5;
+}
 .text-center {
   width: 200px;
   margin-left: 50px;
@@ -716,27 +740,49 @@ body {
 }
 .a {
   width: 1200px;
+  height: auto;
   margin: 0 auto;
   border-radius: 8px;
-  // background-color: rgb(95, 68, 68);
+  background-color: #fff;
+  // background-color: #57576e;
 }
-.a .card-columns {
-  column-count: 5;
+.a .box {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 19.6%;
+  margin-bottom: 10px;
+  background-color: #ffffff;
 }
-.card-title {
-  font-size: 17px;
+.a .box img {
+  width: 100%;
 }
-.card-text {
-  font-size: 14px;
+.container {
+  max-width: 1200px;
 }
-.a .card-body {
-  padding: 10px;
+.a .box .button {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  padding: 5px 10px;
+}
+.a .box .button .title {
+  font-size: 18px;
+}
+.a .box .button .text {
+  font-size: 13px;
+}
+.shuzi-box {
+  position: absolute;
+  bottom: 15px;
+  width: 90%;
+  height: 30px;
 }
 .a .jiage {
   color: red;
 }
 .shuzi {
-  font-size: 20px;
+  font-size: 23px;
 }
 .a .sch {
   line-height: 30px;
