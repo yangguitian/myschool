@@ -73,7 +73,7 @@ router.post("/login", async (ctx, next) => {
         return;
     }
 
-    const { User } = ctx.orm('user');
+    const { User } = ctx.orm('yz');
     let user = await User.findAll({
         where: {
             username,
@@ -244,7 +244,7 @@ router.post("/signin", async (ctx, next) => {
         return;
     }
 
-    const { User } = ctx.orm('user');
+    const { User } = ctx.orm('yz');
     let user = await User.findAll({
         where: {
             username

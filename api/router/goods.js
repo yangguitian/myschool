@@ -2,6 +2,7 @@
 import Router from "koa-router";
 
 const router = new Router();
+
 // 这里定义的 url 路由地址会自动在前面添加 /api
 // 所有 /api/channel 的请求会被分流到这里
 router.get("/", async (ctx, next) => {

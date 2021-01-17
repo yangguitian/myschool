@@ -42,7 +42,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    '@nuxtjs/dotenv',
+    // '@nuxtjs/dotenv',
   ],
   server: {
     port: 80, 

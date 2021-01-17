@@ -10,7 +10,17 @@ import rootRouter from "./router/index.js";
 import accountRouter from "./router/account.js";
  
 import goodsRouter from "./router/goods.js";
+
+import AduserRouter from "./router/Aduser.js";
+import AdgoodsRouter from "./router/Adgoods.js";
+
 import UpgoodsRouter from "./router/Upgoods.js";
+import UpuserRouter from "./router/Upuser.js";
+
+import EdituserRouter from "./router/edituser.js";
+import EditgoodsRouter from "./router/editgoods.js";
+
+
 const app = new KOA(); // 实例化 koa 框架
 app.keys = ['koa-key']; // 设置 koa cookie key
 
@@ -60,8 +70,15 @@ router.use("/", rootRouter.routes(), rootRouter.allowedMethods());
 router.use("/account", accountRouter.routes(), accountRouter.allowedMethods());
 
 router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods());
+
+router.use("/Aduser", AduserRouter.routes(),AduserRouter.allowedMethods());
+router.use("/Adgoods", AdgoodsRouter.routes(),AdgoodsRouter.allowedMethods());
+
+router.use("/Upuser", UpuserRouter.routes(),UpuserRouter.allowedMethods());
 router.use("/Upgoods", UpgoodsRouter.routes(),UpgoodsRouter.allowedMethods());
 
+router.use("/edituser", EdituserRouter.routes(),EdituserRouter.allowedMethods());
+router.use("/editgoods", EditgoodsRouter.routes(),EditgoodsRouter.allowedMethods());
 
 // 将 总路由中间件实例注册到 koa 中
 app.use(router.routes(), router.allowedMethods());

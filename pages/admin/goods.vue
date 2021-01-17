@@ -3,9 +3,9 @@
     <div
       class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
     >
-      <h1 class="h2">用户管理</h1>
+      <h1 class="h2">商品管理</h1>
        <div>
-         <a href="/admin/updauser">
+         <a href="/admin/updagoods">
         <b-button
           v-b-modal.modal-1
           type="button"
@@ -14,17 +14,17 @@
         </a>
       </div>
     </div>
-    <Adduser :userList="userList" />
+    <Addgoods :goodsList="goodsList" />
   </main>
 </template>
 <script>
 export default {
     methods: {
-    doEditUser() {
+    doEditGoods() {
         // 发送编辑后的用户数据到服务器
-        this.$store.dispatch("auth/UpdataUser", this);
+        this.$store.dispatch("auth/UpdataGoods", this);
       },
-       finishUpdateUser() {
+       finishUpdateGoods() {
       // 完成用户编辑的后续处理
     }
   },
@@ -35,11 +35,11 @@ export default {
   data() {
     
     return {
-     userList: []
+     goodsList: []
     };
   },
   async fetch() {
-    this.userList = await fetch("/api/Aduser").then((res) => res.json());
+    this.goodsList = await fetch("/api/Adgoods").then((res) => res.json());
   }
 };
 </script>

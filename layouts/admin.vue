@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <Header1/>
     <div class="container-fluid">
       <div class="row">
         <nav
@@ -10,11 +10,11 @@
           <div class="sidebar-sticky">
             <b-nav vertical class="pt-4">
               <b-nav-item to="/admin/user">用户管理</b-nav-item>
-              <b-nav-item to="/admin/addatasbank">商品管理</b-nav-item>
-              <b-nav-item to="/admin/adsupplier">评论管理</b-nav-item>
-              <b-nav-item to="/admin/adnewpro">学校申请</b-nav-item>
-              <b-nav-item to="/admin/adanli">案例修改</b-nav-item>
-              <b-nav-item to="/admin/adrankings">巡检修改</b-nav-item>
+              <b-nav-item to="/admin/goods">商品管理</b-nav-item>
+              <b-nav-item to="/admin/buy">求购管理</b-nav-item>
+              <b-nav-item to="/admin/pinlun">评论管理</b-nav-item>
+              <b-nav-item to="/admin/school">学校申请</b-nav-item>
+              <b-nav-item to="/admin/news">新闻管理</b-nav-item>
             </b-nav>
           </div>
         </nav>
@@ -26,7 +26,6 @@
 
 <script>
 export default {
-  // layout: "admin",
 };
 </script>
 
@@ -37,20 +36,36 @@ export default {
 }
 .row {
   height: 900px;
-  background-color: rgb(90, 69, 149);
+  background-color: #f8f9fa;
+}
+// .col-xl-2 {
+//   max
+// }
+.sidebar .sidebar-sticky .nav-link.nuxt-link-exact-active {
+  background-color: #ec9a9a;
+  font-weight: 600;
 }
 .nav-link {
   text-align: center;
-  background-color: rgb(74, 173, 79);
+  color: #fff;
+  font-size: 18px;
+  height: 60px;
+  line-height: 44px;
+  border-bottom: 1px solid #666;
+  background-color: #e4b7b7;
 }
 .nav-link:hover {
-  background-color: rgb(139, 44, 44);
+  background-color: #ec9a9a;
   color: #fff;
 }
 .sidebar-sticky {
-  background-color: rgb(60, 34, 134);
+  background-color: rgb(107, 134, 34);
 }
 .bg-light {
+  background-color: #e4b7b7 !important;
   padding: 0;
+}
+.pt-4{
+  background-color: #e4b7b7;
 }
 </style>
