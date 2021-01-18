@@ -7,28 +7,20 @@ router.post("/", async (ctx, next) => {
     console.log("body: %O", ctx.request.body);
 
     let {
-        goods_name,
-        goods_desc,
-        goods_price,
-        goods_oldprice,
-        classify_id,
-        goods_state,
-        goods_postage,
-        goods_tel,
-        goods_image
+        buy_name,
+        buy_desc,
+        buy_price,
+        buy_tel,
+        buy_image
     } = ctx.request.body;
 
-    const { Goods } = ctx.orm('yz');
-    let user = await Goods.create({
-        goods_name,
-        goods_desc,
-        goods_price,
-        goods_oldprice,
-        classify_id,
-        goods_state,
-        goods_postage,
-        goods_tel,
-        goods_image
+    const { Buy } = ctx.orm('yz');
+    let user = await Buy.create({
+        buy_name,
+        buy_desc,
+        buy_price,
+        buy_tel,
+        buy_image
     });
     if (!user) {
         ctx.status = 500;

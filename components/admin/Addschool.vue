@@ -1,10 +1,10 @@
 <template>
   <div>
-    <b-table :items="goodsList" :fields="goodsFields" hover>
+    <b-table :items="schoolList" :fields="schoolFields" hover>
       <template #cell(actions)="row">
         <b-button
           size="sm"
-          @click="editGoods(row.item, row.index, $event.target)"
+          @click="editSchool(row.item, row.index, $event.target)"
           class="mr-1"
         >
           编辑
@@ -12,28 +12,28 @@
         <b-button
           class="btn-secondary2"
           size="sm"
-          @click="deleteGoods(row.item, row.index, $event.target)"
+          @click="deleteSchool(row.item, row.index, $event.target)"
         >
           删除
         </b-button>
       </template>
     </b-table>
     <b-modal
-      id="model-goods-edit"
+      id="model-school-edit"
       title="编辑用户"
-      @hide="resetEditGoodsModal"
-      @ok="doEditGoods"
+      @hide="resetEditSchoolModal"
+      @ok="doEditSchool"
       cancel-title="关闭"
       ok-title="确定"
     >
-      <pre>{ <Editgoods/> }</pre>
-      <!-- { goodsData } -->
+      <pre>{ <Editschool/> }</pre>
+      <!-- { schoolData } -->
     </b-modal>
     <b-modal
-      id="model-goods-delete"
+      id="model-school-delete"
       title="删除用户"
-      @hide="resetDeleteGoodsModal"
-      @ok="doDeleteGoods"
+      @hide="resetDeleteSchoolModal"
+      @ok="doDeleteSchool"
       cancel-title="关闭"
       ok-title="确定"
     >
@@ -46,13 +46,13 @@
 export default {
  
   props: {
-    goodsList: {
+    schoolList: {
       type: Array,
       default: function() {
         return [];
       }
     },
-    goods: {
+    school: {
       type: Object,
       default: function() {
         return {};
@@ -61,76 +61,69 @@ export default {
   },
   data() {
     return {
-      goodsFields: [
-        { key: "goods_id", label: "ID" },
-        { key: "classify_id", label: "分类ID" },
-        { key: "goods_name", label: "名称" },
-        { key: "goods_desc", label: "描述" },
-        { key: "goods_image", label: "图片" },
-        { key: "goods_price", label: "价格" },
-        { key: "goods_oldprice", label: "原价" },
-        { key: "goods_postage", label: "邮费" },
-        { key: "goods_tel", label: "电话" },
+      schoolFields: [
+        { key: "school_id", label: "ID" },
+        { key: "school_name", label: "学校名称" },
+        { key: "school_xm", label: "申请学生" },
+        { key: "school_tel", label: "联系电话" },
         { key: "actions", label: "操作" }
       ],
-      goodsData: null,
+      schoolData: null,
     };
-    return this.goods;
+    return this.school;
   },
 
    methods: {
-    editGoods(item, index, button) {
-      console.log(this.goodsData);
-      this.goodsData = item;
-      this.$store.commit("editgoods/setDatasbank",item);
+    editSchool(item, index, button) {
+      console.log(this.schoolData);
+      this.schoolData = item;
+      this.$store.commit("editschool/setDatasbank",item);
       // 假设item_id 是 传进来的item 的id ，要编辑的数据id 
       //  /Admin/editdatasbank/${id}
-      this.$router.push({path:`/Admin/editgoods/${item.goods_id}`})
+      this.$router.push({path:`/Admin/editschool/${item.school_id}`})
     },
 
-    deleteGoods(item, index, button) {
-      this.goods_name = null;
-      this.$root.$emit("bv::show::modal", "model-goods-delete", button);
+    deleteSchool(item, index, button) {
+      this.school_name = null;
+      this.$root.$emit("bv::show::modal", "model-school-delete", button);
       this.$store.commit("delect/setuserData", item);
     },
 
-    resetEditGoodsModal() {
-      this.goodsData = null;
+    resetEditSchoolModal() {
+      this.schoolData = null;
     },
-    resetDeleteGoodsModal() {
-      this.goodsData = null;
+    resetDeleteSchoolModal() {
+      this.schoolData = null;
     },
 
-    doEditGoods() {
+    doEditSchool() {
       // 发送编辑后的用户数据到服务器
-      this.$store.dispatch("auth/editGoods", this);
+      this.$store.dispatch("auth/editSchool", this);
      
     },
-    doDeleteGoods(){
-      this.$store.dispatch("delect/deleteGoods", this);
+    doDeleteSchool(){
+      this.$store.dispatch("delect/deleteSchool", this);
     },
 
-    finishEditGoods() {
+    finishEditSchool() {
       // 完成用户编辑的后续处理
     },
     finishDelect(result) {
       if (result.result) {
         alert("删除成功!");
-        window.location.href="/Admin/goods"
+        window.location.href="/Admin/school"
       } else {
         alert("删除失败");
       }
       this.getTabList();
     },
     async getTabList() {
-      this.applicationList = await fetch("/api/Adgoods").then((res) =>
+      this.applicationList = await fetch("/api/Adschool").then((res) =>
         res.json()
       );
       },
   },
 };
-
-
 </script>
 
 <style lang="less" scoped>

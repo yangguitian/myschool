@@ -7,8 +7,8 @@ const router = new Router();
 // 所有 /api/store/ 的请求会被分流到这里
 router.get("/", async (ctx, next) => {
 
-    const { Goods } = ctx.orm("yz");
-    let list = await Goods.findAll();
+    const { News } = ctx.orm("yz");
+    let list = await News.findAll();
     if (list.length <= 0) {
         // 获取数据失败
         ctx.status = 500;
@@ -35,14 +35,14 @@ router.post("/Delect", async (ctx, next) => {
     let { id } = ctx.request.body;
     console.log("id: %O", id);
     // ctx.type = "text/json";
-    const { Goods } = ctx.orm("yz");
+    const { News } = ctx.orm("yz");
 
-    let deletegoods = await Goods.findAll({
+    let deletenews = await News.findAll({
          where: { 
-            Goods_id: id
+            News_id: id
             } 
         });
-    if (deletegoods.length === 0) {
+    if (deletenews.length === 0) {
         ctx.status = 500;
         ctx.type = "text/json";
         ctx.body = JSON.stringify({
@@ -51,9 +51,9 @@ router.post("/Delect", async (ctx, next) => {
         });
         return;
     }
-    console.log("deletegoods: %O", );
-    for (let index = 0; index < deletegoods.length; index++) {
-        const element = deletegoods[index];
+    console.log("deletenews: %O", );
+    for (let index = 0; index < deletenews.length; index++) {
+        const element = deletenews[index];
         // 删除管理员数据
         await element.destroy();
     }
@@ -62,7 +62,7 @@ router.post("/Delect", async (ctx, next) => {
     ctx.body = JSON.stringify({
         result: true,
         message: "删除成功",
-        deletegoods: deletegoods,
+        deletenews: deletenews,
     })
     
 });

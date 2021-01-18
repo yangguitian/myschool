@@ -12,7 +12,7 @@
               label-cols-xl="4"
             >
               <b-form-input
-                v-model="Goodsobj.goods_id"
+                v-model="Buyobj.buy_id"
                 aria-describedby="input-signin-region-feedback"
                 class="b-form-input-1"
               >
@@ -22,10 +22,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="name" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="标题" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_name.$model"
-                :state="validateSigninState('goods_name')"
+                v-model="$v.Buyobj.buy_name.$model"
+                :state="validateSigninState('buy_name')"
                 aria-describedby="input-name-feedback"
                 class="b-form-input-1"
               >
@@ -38,10 +38,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="描述" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_desc.$model"
-                :state="validateSigninState('goods_desc')"
+                v-model="$v.Buyobj.buy_desc.$model"
+                :state="validateSigninState('buy_desc')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -54,58 +54,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="可接受价格" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_price.$model"
-                :state="validateSigninState('goods_price')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.goods_oldprice.$model"
-                :state="validateSigninState('goods_oldprice')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.classify_id.$model"
-                :state="validateSigninState('classify_id')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.goods_postage.$model"
-                :state="validateSigninState('goods_postage')"
+                v-model="$v.Buyobj.buy_price.$model"
+                :state="validateSigninState('buy_price')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -118,10 +70,10 @@
         </b-row>
           <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="电话" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_tel.$model"
-                :state="validateSigninState('goods_tel')"
+                v-model="$v.Buyobj.buy_tel.$model"
+                :state="validateSigninState('buy_tel')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -132,12 +84,12 @@
             </b-form-group>
           </b-col>
         </b-row>
-          <b-row class="my-1">
+        <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="上传图片" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_image.$model"
-                :state="validateSigninState('goods_image')"
+                v-model="$v.Buyobj.buy_image.$model"
+                :state="validateSigninState('buy_image')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -168,29 +120,20 @@ import {
 export default {
   mixins: [validationMixin],
   validations: {
-    Goodsobj: {
-      goods_name: {
+    Buyobj: {
+       buy_name: {
         required,
       },
-      goods_desc: {
+      buy_desc: {
         required,
       },
-      goods_price: {
+      buy_price: {
         required,
       },
-      goods_oldprice: {
+      buy_tel: {
         required,
       },
-      classify_id: {
-        required,
-      },
-      goods_postage: {
-        required,
-      },
-      goods_tel: {
-        required,
-      },
-      goods_image: {
+      buy_image: {
         required,
       },
     },
@@ -201,33 +144,34 @@ export default {
     // 发送这个id 获取要编辑的数据
   },
   computed: {
-    Goodsobj: {
+    Buyobj: {
       get() {
-        return this.$store.state.editgoods.Goodsobj;
+        return this.$store.state.editbuy.Buyobj;
       },
     },
   },
   methods: {
     validateSigninState(name) {
-      const { $dirty, $error } = this.$v.Goodsobj[name];
+      // debugger
+      const { $dirty, $error } = this.$v.Buyobj[name];
       return $dirty ? !$error : null;
     },
     // 编辑完提交
     async OnSubmit() {
-      this.$v.Goodsobj.$touch();
-      if (this.$v.Goodsobj.$anyError) {
+      this.$v.Buyobj.$touch();
+      if (this.$v.Buyobj.$anyError) {
         return;
       }
-      let postBody = Object.keys(this.Goodsobj)
+      let postBody = Object.keys(this.Buyobj)
         .map((key) => {
           return (
             encodeURIComponent(key) +
             "=" +
-            encodeURIComponent(this.Goodsobj[key])
+            encodeURIComponent(this.Buyobj[key])
           );
         })
         .join("&");
-      let result = await fetch("/api/editgoods/edit", {
+      let result = await fetch("/api/editbuy/edit", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -235,9 +179,9 @@ export default {
         },
         body: postBody,
       }).then((res) => res.json());
-      if (!this.$v.Goodsobj.$anyError) {
+      if (!this.$v.Buyobj.$anyError) {
         alert("修改成功！");
-        window.location.href = "/Admin/goods";
+        window.location.href = "/Admin/buy";
       }
     },
   },

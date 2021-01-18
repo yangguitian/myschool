@@ -20,7 +20,12 @@
         <div class="title">
           <h4>校园动态</h4>
         </div>
-        <div class="box">
+        <Newsint
+          v-for="news in newsList"
+          :key="news.news_id"
+          :news="news"
+        />
+        <!-- <div class="box">
           <div class="media-left">
             <img src="/images/图1.jpg" alt="" />
           </div>
@@ -33,35 +38,7 @@
             </div>
             <div class="time">2021-01-02</div>
           </div>
-        </div>
-        <div class="box">
-          <div class="media-left">
-            <img src="/images/图1.jpg" alt="" />
-          </div>
-          <div class="right">
-            <div class="media-heading">
-              原来钱是这么赚的！！不得不承认有些同学就是那么厉害
-            </div>
-            <div class="desc">
-              那如何才能更快更有技术含量的赚钱呢？很快，我就发现有同学在大学校园里，卖二手车，真是个不错的生意
-            </div>
-            <div class="time">2021-01-02</div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="media-left">
-            <img src="/images/图1.jpg" alt="" />
-          </div>
-          <div class="right">
-            <div class="media-heading">
-              原来钱是这么赚的！！不得不承认有些同学就是那么厉害
-            </div>
-            <div class="desc">
-              那如何才能更快更有技术含量的赚钱呢？很快，我就发现有同学在大学校园里，卖二手车，真是个不错的生意
-            </div>
-            <div class="time">2021-01-02</div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="r-content">
@@ -78,6 +55,33 @@
 <script>
 export default {
   layout: "hf",
+  data() {
+    return {
+      slide: 0,
+      tabIndex: 0,
+      sliding: null,
+      newsList: [],
+    };
+  },
+  async fetch() {
+    await this.getList();
+  },
+  methods: {
+  },
+  computed: {
+    ehbtlist: {
+      get() {
+        // console.log(this.$store.state.exhibits.exhibits);
+        // return this.$store.state.exhibits.exhibits;
+      },
+    },
+  },
+  async fetch() {
+    this.newsList = await fetch("/api/news") // 承诺实现，并传值给fetchNewsList
+      .then((res) => res.json()); // 知道是一个 json 格式的数据，就将json 字符串解析为对象
+
+    console.log("this.newsList: %O", this.newsList);
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -85,18 +89,18 @@ export default {
   width: 1200px;
   height: auto;
   margin: 0 auto;
-//   background-color: rgb(163, 133, 133);
+  //   background-color: rgb(163, 133, 133);
 }
 .l-content {
   float: left;
   width: 850px;
   height: auto;
   margin-top: 20px;
-//   background-color: rgba(207, 211, 192, 0.486);
+  //   background-color: rgba(207, 211, 192, 0.486);
 }
-.clearfix::after{
-    clear: both;
-    content: "";
+.clearfix::after {
+  clear: both;
+  content: "";
 }
 .top {
   width: 850px;
@@ -243,6 +247,6 @@ export default {
   font-weight: 400;
 }
 .box .time {
-    color: #a4abb1;
+  color: #a4abb1;
 }
 </style>

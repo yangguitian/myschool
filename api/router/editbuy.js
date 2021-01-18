@@ -2,10 +2,10 @@ import Router from "koa-router";
 const router = new Router();
 
 router.get("/", async (ctx, next) => {
-    const { Goods } = ctx.orm("yz");
-    let users = await Goods.findAll({
+    const { Buy } = ctx.orm("yz");
+    let users = await Buy.findAll({
         where: {
-            goods_id
+            buy_id
         }
     });
     console.log(users);
@@ -26,14 +26,14 @@ router.get("/", async (ctx, next) => {
 })
 
 router.post("/edit", async(ctx,next)=>{
-    let{goods_id, goods_name, goods_desc, goods_price, goods_oldprice, classify_id, goods_state, goods_postage, goods_tel, goods_image} = ctx.request.body;
+    let{buy_id, buy_name, buy_desc, buy_price, buy_tel, buy_image} = ctx.request.body;
         console.log( ctx.request.body);
-        const { Goods } = ctx.orm("yz");
-        let list = await Goods.update({
-            goods_id, goods_name, goods_desc, goods_price, goods_oldprice, classify_id, goods_state, goods_postage, goods_tel, goods_image
+        const { Buy } = ctx.orm("yz");
+        let list = await Buy.update({
+            buy_id, buy_name, buy_desc, buy_price, buy_tel, buy_image
         },{
             where:{
-                goods_id,
+                buy_id,
         }
         });
         if (!list) {

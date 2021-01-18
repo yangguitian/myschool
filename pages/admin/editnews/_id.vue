@@ -12,7 +12,7 @@
               label-cols-xl="4"
             >
               <b-form-input
-                v-model="Goodsobj.goods_id"
+                v-model="Newsobj.news_id"
                 aria-describedby="input-signin-region-feedback"
                 class="b-form-input-1"
               >
@@ -22,10 +22,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="name" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="标题" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_name.$model"
-                :state="validateSigninState('goods_name')"
+                v-model="$v.Newsobj.news_name.$model"
+                :state="validateSigninState('news_name')"
                 aria-describedby="input-name-feedback"
                 class="b-form-input-1"
               >
@@ -38,10 +38,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="内容" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_desc.$model"
-                :state="validateSigninState('goods_desc')"
+                v-model="$v.Newsobj.news_desc.$model"
+                :state="validateSigninState('news_desc')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -54,10 +54,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="时间" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_price.$model"
-                :state="validateSigninState('goods_price')"
+                v-model="$v.Newsobj.news_date.$model"
+                :state="validateSigninState('news_date')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -70,74 +70,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="插图" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Goodsobj.goods_oldprice.$model"
-                :state="validateSigninState('goods_oldprice')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.classify_id.$model"
-                :state="validateSigninState('classify_id')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.goods_postage.$model"
-                :state="validateSigninState('goods_postage')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-          <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.goods_tel.$model"
-                :state="validateSigninState('goods_tel')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-          <b-row class="my-1">
-          <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Goodsobj.goods_image.$model"
-                :state="validateSigninState('goods_image')"
+                v-model="$v.Newsobj.news_image.$model"
+                :state="validateSigninState('news_image')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -168,29 +104,17 @@ import {
 export default {
   mixins: [validationMixin],
   validations: {
-    Goodsobj: {
-      goods_name: {
+    Newsobj: {
+      news_name: {
         required,
       },
-      goods_desc: {
+      news_desc: {
         required,
       },
-      goods_price: {
+      news_date: {
         required,
       },
-      goods_oldprice: {
-        required,
-      },
-      classify_id: {
-        required,
-      },
-      goods_postage: {
-        required,
-      },
-      goods_tel: {
-        required,
-      },
-      goods_image: {
+      news_image: {
         required,
       },
     },
@@ -201,33 +125,33 @@ export default {
     // 发送这个id 获取要编辑的数据
   },
   computed: {
-    Goodsobj: {
+    Newsobj: {
       get() {
-        return this.$store.state.editgoods.Goodsobj;
+        return this.$store.state.editnews.newsobj;
       },
     },
   },
   methods: {
     validateSigninState(name) {
-      const { $dirty, $error } = this.$v.Goodsobj[name];
+      const { $dirty, $error } = this.$v.Newsobj[name];
       return $dirty ? !$error : null;
     },
     // 编辑完提交
     async OnSubmit() {
-      this.$v.Goodsobj.$touch();
-      if (this.$v.Goodsobj.$anyError) {
+      this.$v.Newsobj.$touch();
+      if (this.$v.Newsobj.$anyError) {
         return;
       }
-      let postBody = Object.keys(this.Goodsobj)
+      let postBody = Object.keys(this.Newsobj)
         .map((key) => {
           return (
             encodeURIComponent(key) +
             "=" +
-            encodeURIComponent(this.Goodsobj[key])
+            encodeURIComponent(this.Newsobj[key])
           );
         })
         .join("&");
-      let result = await fetch("/api/editgoods/edit", {
+      let result = await fetch("/api/editnews/edit", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -235,9 +159,9 @@ export default {
         },
         body: postBody,
       }).then((res) => res.json());
-      if (!this.$v.Goodsobj.$anyError) {
+      if (!this.$v.Newsobj.$anyError) {
         alert("修改成功！");
-        window.location.href = "/Admin/goods";
+        window.location.href = "/Admin/news";
       }
     },
   },

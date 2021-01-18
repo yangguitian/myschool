@@ -7,8 +7,8 @@ const router = new Router();
 // 所有 /api/store/ 的请求会被分流到这里
 router.get("/", async (ctx, next) => {
 
-    const { Goods } = ctx.orm("yz");
-    let list = await Goods.findAll();
+    const { Buy } = ctx.orm("yz");
+    let list = await Buy.findAll();
     if (list.length <= 0) {
         // 获取数据失败
         ctx.status = 500;
@@ -29,20 +29,20 @@ router.get("/", async (ctx, next) => {
 /**
  * /api/oaec/team
  * method: delete
- * goods用户删除 
+ * buy求购删除 
  */
 router.post("/Delect", async (ctx, next) => {
     let { id } = ctx.request.body;
     console.log("id: %O", id);
     // ctx.type = "text/json";
-    const { Goods } = ctx.orm("yz");
+    const { Buy } = ctx.orm("yz");
 
-    let deletegoods = await Goods.findAll({
+    let deletebuy = await Buy.findAll({
          where: { 
-            Goods_id: id
+            buy_id: id
             } 
         });
-    if (deletegoods.length === 0) {
+    if (deletebuy.length === 0) {
         ctx.status = 500;
         ctx.type = "text/json";
         ctx.body = JSON.stringify({
@@ -51,9 +51,9 @@ router.post("/Delect", async (ctx, next) => {
         });
         return;
     }
-    console.log("deletegoods: %O", );
-    for (let index = 0; index < deletegoods.length; index++) {
-        const element = deletegoods[index];
+    console.log("deletebuy: %O", );
+    for (let index = 0; index < deletebuy.length; index++) {
+        const element = deletebuy[index];
         // 删除管理员数据
         await element.destroy();
     }
@@ -62,7 +62,7 @@ router.post("/Delect", async (ctx, next) => {
     ctx.body = JSON.stringify({
         result: true,
         message: "删除成功",
-        deletegoods: deletegoods,
+        deletebuy: deletebuy,
     })
     
 });

@@ -6,8 +6,8 @@
           <b-form-input
             placeholder="填写完整学校名称"
             aria-describedby="input-signin-region-feedback"
-            :state="validateSigninState('schools_name')"
-            v-model="$v.UpdataForm.schools_name.$model"
+            :state="validateSigninState('school_name')"
+            v-model="$v.UpdataForm.school_name.$model"
             class="b-form-input-1"
           >
           </b-form-input>
@@ -23,8 +23,8 @@
           <b-form-input
             placeholder="填写完整您的名称"
             aria-describedby="input-signin-region-feedback"
-            :state="validateSigninState('schools_xingming')"
-            v-model="$v.UpdataForm.schools_xingming.$model"
+            :state="validateSigninState('school_xm')"
+            v-model="$v.UpdataForm.school_xm.$model"
             class="b-form-input-1"
           >
           </b-form-input>
@@ -42,10 +42,10 @@
           label-cols-xl="2"
         >
           <b-form-input
-            placeholder="微信号，手机号，QQ选填一项"
+            placeholder="填写正在使用的手机号"
             aria-describedby="input-signin-region-feedback"
-            :state="validateSigninState('schools_xianxi')"
-            v-model="$v.UpdataForm.schools_xianxi.$model"
+            :state="validateSigninState('school_tel')"
+            v-model="$v.UpdataForm.school_tel.$model"
             class="b-form-input-1"
           >
           </b-form-input>
@@ -86,16 +86,15 @@ export default {
   data() {
     return {
       UpdataForm: {
-        schools_name: null,
-        schools_xingming: null,
-        schools_xianxi: null,
-        // goods_wx,tel,QQ不用
+        school_name: null,
+        school_xm: null,
+        school_tel: null,
       },
     };
   },
   validations: {
     UpdataForm: {
-      schools_name: {
+      school_name: {
         required,
         minLength: minLength(2),
         maxLength: maxLength(16),
@@ -106,12 +105,12 @@ export default {
         //   return !reg.test(value);
         // }
       },
-      schools_xingming: {
+      school_xm: {
         required,
-        minLength: minLength(2),
+        minLength: minLength(1),
         maxLength: maxLength(32),
       },
-      schools_xianxi: {
+      school_tel: {
         required,
       },
     },
@@ -136,7 +135,7 @@ export default {
           );
         })
         .join("&");
-      let result = await fetch("/api/Updatauser", {
+      let result = await fetch("/api/Upschool", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -145,8 +144,8 @@ export default {
         body: postBody,
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
-        window.location.href = "/admin/dashboard";
+        alert("学校申请成功！请耐心等待处理");
+        window.location.href = "/school";
       }
     },
   },

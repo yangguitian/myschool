@@ -7,8 +7,8 @@ const router = new Router();
 // 所有 /api/channel 的请求会被分流到这里
 router.get("/", async (ctx, next) => {
 
-    const { Goods } = ctx.orm("yz");
-    let list = await Goods.findAll();
+    const { News } = ctx.orm("yz");
+    let list = await News.findAll();
     if (list.length <= 0) {
         // 获取数据失败
         ctx.status = 500;

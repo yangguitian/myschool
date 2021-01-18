@@ -1,17 +1,4 @@
 <template>
-  <!-- <div class="box">
-    <img :src="goods_image" alt="" />
-    <div class="button">
-      <span class="title">{{ goods_name }}</span>
-      <span class="text">{{ goods_desc }}</span>
-      <div class="shuzi-box">
-        <span class="jiage">
-          ￥<span class="shuzi">{{ goods_price }}</span>
-          <span class="sch">{{ goods_oldprice }}</span>
-        </span>
-      </div>
-    </div>
-  </div> -->
   <div class="card">
     <img
      :src="goods_image"

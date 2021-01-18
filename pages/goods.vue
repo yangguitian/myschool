@@ -714,8 +714,8 @@ export default {
   line-height: 80px;
   width: 30%;
 }
-.card-columns{
-  column-count:5;
+.card-columns {
+  column-count: 5;
 }
 .text-center {
   width: 200px;

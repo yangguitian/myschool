@@ -55,7 +55,7 @@ const actions = {
     // 获得操作数据，给页面反馈
     page.finishDelect(result);
   },
-
+  // 商品删除
   async deleteGoods(context, page) {
     console.log("看这里：", context);
     console.log("在看这里：", page);
@@ -77,13 +77,13 @@ const actions = {
     // 获得操作数据，给页面反馈
     page.finishDelect(result);
   },
-  // 供应商删除
-  async deleteSupplier(context, page) {
+  // 求购删除
+  async deletebuy(context, page) {
     console.log("看这里：", context);
     console.log("在看这里：", page);
-    console.log("在看这里：", context.state.userData.supplier_id);
-    let body = postBody({ id: context.state.userData.supplier_id });
-    let result = await fetch("/api/Supplier/SupplierDelect", {
+    console.log("在看这里：", context.state.userData.buy_id);
+    let body = postBody({ id: context.state.userData.buy_id });
+    let result = await fetch("/api/Adbuy/Delect", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -99,13 +99,13 @@ const actions = {
     // 获得操作数据，给页面反馈
     page.finishDelect(result);
   },
-  // 案例删除
-  async deleteAnli(context, page) {
+  // 新闻删除
+  async deleteNews(context, page) {
     console.log("看这里：", context);
     console.log("在看这里：", page);
-    console.log("在看这里：", context.state.userData.anli_id);
-    let body = postBody({ id: context.state.userData.anli_id });
-    let result = await fetch("/api/Adanli/Delect", {
+    console.log("在看这里：", context.state.userData.news_id);
+    let body = postBody({ id: context.state.userData.news_id });
+    let result = await fetch("/api/Adnews/Delect", {
       method: "POST",
       credentials: "include",
       headers: {
