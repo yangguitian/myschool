@@ -84,13 +84,11 @@
   line-height: 34px;
 }
 .nav-item:hover {
-  background-color: #dadada;
   font-weight: bolder;
   border-right: 2px solid #2d8cf0;
 }
 .nav-link.nuxt-link-exact-active {
   font-weight: bolder;
-  background-color: #dadada;
   border-right: 2px solid #2d8cf0;
   color: #2d8cf0;
 }
