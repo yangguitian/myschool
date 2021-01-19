@@ -19,6 +19,7 @@
           </div>
         </nav>
         <Nuxt />
+        <Top />
       </div>
     </div>
   </div>
@@ -31,41 +32,41 @@ export default {
 
 <style lang="less" scoped>
 .container-fluid {
-  height: 900px;
+  height: 688px;
   background-color: rgb(114, 40, 40);
 }
 .row {
-  height: 900px;
+  height: 100%;
   background-color: #f8f9fa;
 }
 // .col-xl-2 {
 //   max
 // }
 .sidebar .sidebar-sticky .nav-link.nuxt-link-exact-active {
-  background-color: #ec9a9a;
+  background-color: #19202a;
   font-weight: 600;
 }
 .nav-link {
   text-align: center;
-  color: #fff;
+  color: #b9bab5;
   font-size: 18px;
   height: 60px;
   line-height: 44px;
   border-bottom: 1px solid #666;
-  background-color: #e4b7b7;
+  background-color: #29333f;
 }
 .nav-link:hover {
-  background-color: #ec9a9a;
-  color: #fff;
+  background-color: #29333f;
+  color: #b9bab5;
 }
 .sidebar-sticky {
   background-color: rgb(107, 134, 34);
 }
 .bg-light {
-  background-color: #e4b7b7 !important;
+  background-color: #29333f !important;
   padding: 0;
 }
 .pt-4{
-  background-color: #e4b7b7;
+  background-color: #29333f;
 }
 </style>

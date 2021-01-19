@@ -29,6 +29,7 @@ import EdituserRouter from "./router/edituser.js";
 import EditgoodsRouter from "./router/editgoods.js";
 import EditbuyRouter from "./router/editbuy.js";
 import EditnewsRouter from "./router/editnews.js";
+import EditschoolRouter from "./router/editschool.js";
 
 
 const app = new KOA(); // 实例化 koa 框架
@@ -87,7 +88,7 @@ router.use("/account", accountRouter.routes(), accountRouter.allowedMethods());
 router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods());
 router.use("/news", newsRouter.routes(), newsRouter.allowedMethods());
 router.use("/buy", buyRouter.routes(), buyRouter.allowedMethods());
-router.use("/school", schoolRouter.routes(), schoolRouter.allowedMethods());
+// router.use("/school", schoolRouter.routes(), schoolRouter.allowedMethods());
 
 router.use("/Aduser", AduserRouter.routes(), AduserRouter.allowedMethods());
 router.use("/Adgoods", AdgoodsRouter.routes(), AdgoodsRouter.allowedMethods());
@@ -105,6 +106,7 @@ router.use("/edituser", EdituserRouter.routes(), EdituserRouter.allowedMethods()
 router.use("/editgoods", EditgoodsRouter.routes(), EditgoodsRouter.allowedMethods());
 router.use("/editbuy", EditbuyRouter.routes(), EditbuyRouter.allowedMethods());
 router.use("/editnews", EditnewsRouter.routes(), EditnewsRouter.allowedMethods());
+router.use("/editschool", EditschoolRouter.routes(), EditschoolRouter.allowedMethods());
 
 // 将 总路由中间件实例注册到 koa 中
 app.use(router.routes(), router.allowedMethods());

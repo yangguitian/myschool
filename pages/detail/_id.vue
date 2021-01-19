@@ -10,20 +10,16 @@
               :interval="40000"
               controls
               indicators
-              background="#ababab"
+              background="#ffffff"
               img-height="508px"
               style="text-shadow: 1px 1px 2px #333"
               @sliding-start="onSlideStart"
               @sliding-end="onSlideEnd"
             >
-              <b-carousel-slide
-                img-src="/images/商品/ipad1.png"
-              ></b-carousel-slide>
-              <b-carousel-slide img-src="/images/商品/ipad2.png">
+              <b-carousel-slide :img-src="goods.goods_image"></b-carousel-slide>
+              <b-carousel-slide :img-src="goods.goods_image">
               </b-carousel-slide>
-              <b-carousel-slide
-                img-src="/images/商品/ipad3.png"
-              ></b-carousel-slide>
+              <b-carousel-slide :img-src="goods.goods_image"></b-carousel-slide>
             </b-carousel>
           </div>
         </b-col>
@@ -31,7 +27,7 @@
           <div class="info-box">
             <div class="title">
               <span class="a"> 校园购 </span>
-              苹果手机
+              {{ goods.goods_name }}
               <span class="right">
                 <b-dropdown
                   id="dropdown-1"
@@ -43,8 +39,12 @@
                   <b-dropdown-item v-b-modal.modal-2 variant="danger"
                     >商品信息违规
                   </b-dropdown-item>
-                  <b-dropdown-item v-b-modal.modal-2>联系方式错误</b-dropdown-item>
-                  <b-dropdown-item v-b-modal.modal-2>商品已售出</b-dropdown-item>
+                  <b-dropdown-item v-b-modal.modal-2
+                    >联系方式错误</b-dropdown-item
+                  >
+                  <b-dropdown-item v-b-modal.modal-2
+                    >商品已售出</b-dropdown-item
+                  >
                   <b-dropdown-divider></b-dropdown-divider>
                   <b-dropdown-item active>其他</b-dropdown-item>
                   <b-dropdown-item disabled>自定义举报内容</b-dropdown-item>
@@ -56,13 +56,13 @@
             </div>
 
             <div class="title1">
-              打算大苏ssssssssssssssssssss打打算大苏ssssssssssssssssssss打打算大苏ssssssssssssssssssss打
+              {{ goods.goods_desc }}
             </div>
             <div class="top-info">
               <span class="img"
                 ><img src="/images/头像/头像1.png" alt=""
               /></span>
-              <span class="usn">13278943672</span>
+              <span class="usn">{{ goods.goods_tel }}</span>
             </div>
             <div class="icon-box">
               <span class="icon">
@@ -70,8 +70,8 @@
                 </b-icon-backspace-reverse>
               </span>
 
-              <span class="red red1">￥2200元</span>
-              <span class="red fff">原价￥3200元</span>
+              <span class="red red1">￥{{ goods.goods_price }}元</span>
+              <span class="red fff">原价￥{{ goods.goods_oldprice }}元</span>
             </div>
             <div class="icon-box">
               <span class="icon"
@@ -95,7 +95,7 @@
               <span class="icon"
                 ><b-icon-chat class="h2 mb-2"></b-icon-chat
               ></span>
-              <span class="red black">微信: 123456 QQ: 123456</span>
+              <span class="red black">联系电话：{{ goods.goods_tel }}</span>
             </div>
             <b-col cols="12">
               <b-button-group>
@@ -151,43 +151,46 @@
       <div class="top">
         <span class="title">商品评价</span>
         <span class="right"
-          ><b-button v-b-modal.modal-1 variant="primary" size="sm"
+          ><b-button v-b-modal.modal-2 variant="primary" size="sm"
             >发表评论</b-button
-          ></span
-        >
+          >
+          <b-modal id="modal-2" title="提示">
+            <p class="my-4">尚未开通，敬请期待！！！！！！！</p>
+          </b-modal>
+        </span>
       </div>
       <div class="comment-item">
         <div class="left-box">
           <div class="pic">
-            <img src="/images/头像/头像1.png" alt="" />
+            <img src="/images/头像/头像6.png" alt="" />
           </div>
           <div class="name">
-            <div class="usn">111222</div>
+            <div class="usn">1509335600</div>
             <div class="time">2020-01-15</div>
           </div>
         </div>
-        <div class="right-box"><p>okokokokokokokokko</p></div>
+        <div class="right-box"><p>厉害了真的强！</p></div>
       </div>
       <div class="comment-item">
         <div class="left-box">
           <div class="pic">
-            <img src="/images/头像/头像1.png" alt="" />
+            <img src="/images/头像/头像5.png" alt="" />
           </div>
           <div class="name">
-            <div class="usn">111222</div>
-            <div class="time">2020-01-15</div>
+            <div class="usn">198495298</div>
+            <div class="time">2020-01-16</div>
           </div>
         </div>
-        <div class="right-box"><p>okokokokokokokokko</p></div>
+        <div class="right-box"><p>多少钱，在哪里</p></div>
       </div>
       <div class="comment-item">
         <div class="left-box">
           <div class="pic">
-            <img src="/images/头像/头像1.png" alt="" />
+            <img src="/images/头像/头像4.png" alt="" />
           </div>
           <div class="name">
-            <div class="usn">111222</div>
-            <div class="time">2020-01-15</div>
+            <div class="usn">1557733562</div>
+            <div class="time">2020-01-16</div>
           </div>
         </div>
         <div class="right-box"><p>okokokokokokokokko</p></div>
@@ -198,11 +201,22 @@
 
 <script>
 export default {
+  async beforeMount() {
+    let id = this.$route.params.id;
+    console.log("id: %O", id);
+    let result = await fetch(`/api/goods/${id}`).then((res) => res.json());
+    console.log("result: %O", result);
+
+    if (result.result) {
+      this.goods = result.goods;
+    }
+  },
   layout: "hf",
   data() {
     return {
       slide: 0,
       sliding: null,
+      goods: {},
     };
   },
   methods: {
@@ -213,6 +227,7 @@ export default {
       this.sliding = false;
     },
   },
+  async fetch() {},
 };
 </script>
 <style lang="less" scoped>

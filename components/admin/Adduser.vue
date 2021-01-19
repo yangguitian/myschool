@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table :items="userList" :fields="userFields" hover>
+    <b-table class="table" :items="userList" :fields="userFields" hover>
       <template #cell(actions)="row">
         <b-button
           size="sm"
@@ -20,6 +20,7 @@
     </b-table>
     <b-modal
       id="model-user-edit"
+      class="bianji"
       title="编辑用户"
       @hide="resetEditUserModal"
       @ok="doEditUser"
@@ -144,5 +145,8 @@ export default {
   color: #fff;
   background-color: #b12934;
   border-color: #b12934;
+}
+.table {
+  background-color: #ffffff;
 }
 </style>

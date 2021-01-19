@@ -601,6 +601,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.row {
+  background: #f8f8f9;
+}
 .gfd {
   width: 100%;
   height: 100%;
@@ -716,6 +719,7 @@ export default {
 }
 .card-columns {
   column-count: 5;
+  background-color: #f8f8f9;
 }
 .text-center {
   width: 200px;

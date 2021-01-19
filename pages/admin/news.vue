@@ -1,7 +1,7 @@
 <template>
-  <main role="main" class="col-md-9 col-lg-9 col-xl-10 ml-sm-auto px-md-4">
+  <main role="main" class="col-md-9 body col-lg-9 col-xl-10 ml-sm-auto px-md-4">
     <div
-      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      class="d-flex top justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
     >
       <h1 class="h2">新闻管理</h1>
        <div>
@@ -50,5 +50,11 @@ export default {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+}
+.body {
+  background-color: #e3e4e6;
+}
+.h2 {
+  font-size: 24px;
 }
 </style>

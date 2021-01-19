@@ -121,13 +121,13 @@ export default {
   },
   beforeMount() {
     console.log(this.$route.params.id);
-    // debugger
+    
     // 发送这个id 获取要编辑的数据
   },
   computed: {
     Newsobj: {
       get() {
-        return this.$store.state.editnews.newsobj;
+        return this.$store.state.editnews.Newsobj;
       },
     },
   },
@@ -172,16 +172,16 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 50px auto 0 450px;
+  margin: 20px auto 0 100px;
   padding-top: 30px;
   // background-color: blueviolet;
 }
 .my-1 {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
 }
 .btn {
   margin: 50px auto auto 220px;
-  width: 80px;
+  width: 100px;
   height: 40px;
   color: #fff;
   background-color: #007bff;

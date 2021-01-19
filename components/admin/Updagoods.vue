@@ -251,16 +251,15 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 50px auto 0 150px;
-  padding-top: 30px;
+  margin: 0px auto 0 50px;
   // background-color: blueviolet;
 }
 .my-1 {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
 }
 .btn {
-  margin: 50px auto auto 220px;
-  width: 80px;
+  margin: 20px auto auto 220px;
+  width: 112px;
   height: 40px;
   color: #fff;
   background-color: #007bff;

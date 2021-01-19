@@ -12,7 +12,7 @@
               label-cols-xl="4"
             >
               <b-form-input
-                v-model="Buyobj.buy_id"
+                v-model="Schoolobj.school_id"
                 aria-describedby="input-signin-region-feedback"
                 class="b-form-input-1"
               >
@@ -22,10 +22,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="标题" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="学校名称" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Buyobj.buy_name.$model"
-                :state="validateSigninState('buy_name')"
+                v-model="$v.Schoolobj.school_name.$model"
+                :state="validateSigninState('school_name')"
                 aria-describedby="input-name-feedback"
                 class="b-form-input-1"
               >
@@ -38,10 +38,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="描述" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="申请人姓名" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Buyobj.buy_desc.$model"
-                :state="validateSigninState('buy_desc')"
+                v-model="$v.Schoolobj.school_xm.$model"
+                :state="validateSigninState('school_xm')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -54,10 +54,10 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="可接受价格" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="联系电话" label-align-sm="right" label-cols-xl="4">
               <b-form-input
-                v-model="$v.Buyobj.buy_price.$model"
-                :state="validateSigninState('buy_price')"
+                v-model="$v.Schoolobj.school_tel.$model"
+                :state="validateSigninState('school_tel')"
                 aria-describedby="input-range-feedback"
                 class="b-form-input-1"
               >
@@ -68,39 +68,6 @@
             </b-form-group>
           </b-col>
         </b-row>
-          <b-row class="my-1">
-          <b-col>
-            <b-form-group label="电话" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Buyobj.buy_tel.$model"
-                :state="validateSigninState('buy_tel')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
-            <b-form-group label="上传图片" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Buyobj.buy_image.$model"
-                :state="validateSigninState('buy_image')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-
         <b-button type="submit">提交</b-button>
         <b-button type="reset">取消</b-button>
       </b-form>
@@ -120,20 +87,14 @@ import {
 export default {
   mixins: [validationMixin],
   validations: {
-    Buyobj: {
-       buy_name: {
+    Schoolobj: {
+      school_name: {
         required,
       },
-      buy_desc: {
+      school_xm: {
         required,
       },
-      buy_price: {
-        required,
-      },
-      buy_tel: {
-        required,
-      },
-      buy_image: {
+      school_tel: {
         required,
       },
     },
@@ -144,34 +105,34 @@ export default {
     // 发送这个id 获取要编辑的数据
   },
   computed: {
-    Buyobj: {
+    Schoolobj: {
       get() {
-        return this.$store.state.editbuy.Buyobj;
+        return this.$store.state.editschool.Schoolobj;
       },
     },
   },
   methods: {
     validateSigninState(name) {
       // debugger
-      const { $dirty, $error } = this.$v.Buyobj[name];
+      const { $dirty, $error } = this.$v.Schoolobj[name];
       return $dirty ? !$error : null;
     },
     // 编辑完提交
     async OnSubmit() {
-      this.$v.Buyobj.$touch();
-      if (this.$v.Buyobj.$anyError) {
+      this.$v.Schoolobj.$touch();
+      if (this.$v.Schoolobj.$anyError) {
         return;
       }
-      let postBody = Object.keys(this.Buyobj)
+      let postBody = Object.keys(this.Schoolobj)
         .map((key) => {
           return (
             encodeURIComponent(key) +
             "=" +
-            encodeURIComponent(this.Buyobj[key])
+            encodeURIComponent(this.Schoolobj[key])
           );
         })
         .join("&");
-      let result = await fetch("/api/editbuy/edit", {
+      let result = await fetch("/api/editschool/edit", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -179,9 +140,9 @@ export default {
         },
         body: postBody,
       }).then((res) => res.json());
-      if (!this.$v.Buyobj.$anyError) {
+      if (!this.$v.Schoolobj.$anyError) {
         alert("修改成功！");
-        window.location.href = "/Admin/buy";
+        window.location.href = "/Admin/school";
       }
     },
   },
@@ -192,7 +153,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 0px auto 0 80px;
+  margin: 20px auto 0 100px;
   padding-top: 30px;
   // background-color: blueviolet;
 }
@@ -200,8 +161,8 @@ export default {
   margin-top: 10px !important;
 }
 .btn {
-  margin: 20px auto auto 230px;
-  width: 102px;
+  margin: 50px auto auto 220px;
+  width: 100px;
   height: 40px;
   color: #fff;
   background-color: #007bff;

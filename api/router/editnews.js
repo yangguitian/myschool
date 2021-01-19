@@ -33,7 +33,7 @@ router.post("/edit", async (ctx, next) => {
         news_id, news_name, news_desc, news_date, news_image
     }, {
         where: {
-            News_id,
+            news_id,
         }
     });
     if (!list) {

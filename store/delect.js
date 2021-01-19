@@ -121,13 +121,13 @@ const actions = {
     // 获得操作数据，给页面反馈
     page.finishDelect(result);
   },
-// 巡检删除
-  async deleteRank(context, page) {
+// 学校删除
+  async deleteSchool(context, page) {
     console.log("看这里：", context);
     console.log("在看这里：", page);
-    console.log("在看这里：", context.state.userData.rank_id);
-    let body = postBody({ id: context.state.userData.rank_id});
-    let result = await fetch("/api/Adrankings/Delect", {
+    console.log("在看这里：", context.state.userData.school_id);
+    let body = postBody({ id: context.state.userData.school_id});
+    let result = await fetch("/api/Adschool/Delect", {
       method: "POST",
       credentials: "include",
       headers: {

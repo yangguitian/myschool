@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table :items="newsList" :fields="newsFields" hover>
+    <b-table class="table" :items="newsList" :fields="newsFields" hover>
       <template #cell(actions)="row">
         <b-button
           size="sm"
@@ -146,5 +146,8 @@ export default {
   color: #fff;
   background-color: #b12934;
   border-color: #b12934;
+}
+.table {
+  background-color: #ffffff;
 }
 </style>

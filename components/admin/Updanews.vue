@@ -163,7 +163,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 50px auto 0 150px;
+  margin: -50px auto 0 50px;
   padding-top: 30px;
   // background-color: blueviolet;
 }

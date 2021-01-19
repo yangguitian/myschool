@@ -1,10 +1,9 @@
 <template>
   <div class="card">
-    <img
-     :src="goods_image"
-      class="card-img-top"
-    />
-      <div class="button">
+    <nuxt-link :to="`/detail/${goods.goods_id}`">
+      <div class="imgbox"><img :src="goods_image" class="card-img-top" /></div>
+    </nuxt-link>
+    <div class="button">
       <div class="title">{{ goods_name }}</div>
       <div class="text">{{ goods_desc }}</div>
       <div class="time">
@@ -14,7 +13,7 @@
       <div class="shuzi-box">
         <span class="jiage">
           ￥<span class="shuzi">{{ goods_price }}</span>
-          <span class="sch">{{ goods_oldprice }}</span>
+          <!-- <span class="sch">{{ goods_school }}</span> -->
         </span>
       </div>
     </div>
@@ -43,15 +42,23 @@ export default {
   display: inline-block;
   overflow: hidden;
   border-radius: 8px;
-  margin-bottom: 10px;
   background-color: #ffffff;
   margin-right: 15px;
 }
+.imgbox {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
 .a .card img {
   width: 100%;
+
+  transition: all 0.2s;
 }
- .card .button {
-  position: relative;
+.a .card img:hover {
+  transform: scale(1.1);
+}
+.card .button {
   width: 100%;
   max-height: 150px;
   min-height: 150px;
@@ -59,13 +66,17 @@ export default {
 }
 .a .card .button .title {
   font-size: 18px;
+  color: #93999f;
+  overflow: hidden;
+  height: 25px;
 }
 .a .card .button .text {
   font-size: 13px;
+  color: #93999f;
+  overflow: hidden;
+  height: 22px;
 }
 .shuzi-box {
-  position: absolute;
-  bottom: 15px;
   width: 90%;
   height: 30px;
 }
@@ -77,8 +88,7 @@ export default {
 }
 .button .time {
   width: 100%;
-  position: absolute;
-  bottom: 40px;
+  margin-top: 20px;
 }
 .button .time span {
   color: #93999f;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table :items="buyList" :fields="buyFields" hover>
+    <b-table class="table" :items="buyList" :fields="buyFields" hover>
       <template #cell(actions)="row">
         <b-button
           size="sm"
@@ -131,6 +131,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.table {
+  background-color: #ffffff;
+}
 .justify-content-center {
   justify-content: center !important;
   margin: 30px 230px 30px 0;

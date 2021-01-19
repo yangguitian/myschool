@@ -134,7 +134,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 50px auto 0 450px;
+  margin: 0px auto 0 50px;
   padding-top: 30px;
   // background-color: blueviolet;
 }
@@ -142,8 +142,8 @@ export default {
   margin-top: 30px !important;
 }
 .btn {
-  margin: 50px auto auto 220px;
-  width: 80px;
+  margin: 0px auto auto 230px;
+  width: 102px;
   height: 40px;
   color: #fff;
   background-color: #007bff;

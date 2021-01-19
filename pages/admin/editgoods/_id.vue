@@ -22,7 +22,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="name" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="商品名称" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_name.$model"
                 :state="validateSigninState('goods_name')"
@@ -38,7 +38,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="商品描述" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_desc.$model"
                 :state="validateSigninState('goods_desc')"
@@ -54,7 +54,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="商品价格" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_price.$model"
                 :state="validateSigninState('goods_price')"
@@ -70,7 +70,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="商品原价" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_oldprice.$model"
                 :state="validateSigninState('goods_oldprice')"
@@ -86,7 +86,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="商品分类" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.classify_id.$model"
                 :state="validateSigninState('classify_id')"
@@ -102,7 +102,7 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="运费" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_postage.$model"
                 :state="validateSigninState('goods_postage')"
@@ -118,7 +118,7 @@
         </b-row>
           <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="联系电话" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_tel.$model"
                 :state="validateSigninState('goods_tel')"
@@ -134,7 +134,7 @@
         </b-row>
           <b-row class="my-1">
           <b-col>
-            <b-form-group label="date" label-align-sm="right" label-cols-xl="4">
+            <b-form-group label="图片" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Goodsobj.goods_image.$model"
                 :state="validateSigninState('goods_image')"
@@ -248,12 +248,12 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 50px auto 0 450px;
+  margin: 10px auto 0 90px;
   padding-top: 30px;
   // background-color: blueviolet;
 }
 .my-1 {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
 }
 .btn {
   margin: 50px auto auto 220px;
