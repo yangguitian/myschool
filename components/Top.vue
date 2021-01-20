@@ -63,7 +63,7 @@ export default {
 <style lang="less" scoped>
 .goTop {
     position: fixed;
-    right:40px;
+    right:73px;
     bottom: 270px;
     cursor: pointer;
 }

@@ -551,12 +551,13 @@
         </div> -->
       </div>
     </div>
-    <Card />
+    <Car />
   </div>
 </template>
 
 <script>
 export default {
+  middleware:"auth",
   layout: "hf",
   data() {
     return {

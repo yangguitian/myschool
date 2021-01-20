@@ -12,6 +12,7 @@ import accountRouter from "./router/account.js";
 import goodsRouter from "./router/goods.js";
 import buyRouter from "./router/buy.js";
 import newsRouter from "./router/news.js";
+import carRouter from "./router/car.js";
 
 import AduserRouter from "./router/Aduser.js";
 import AdgoodsRouter from "./router/Adgoods.js";
@@ -88,6 +89,7 @@ router.use("/account", accountRouter.routes(), accountRouter.allowedMethods());
 router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods());
 router.use("/news", newsRouter.routes(), newsRouter.allowedMethods());
 router.use("/buy", buyRouter.routes(), buyRouter.allowedMethods());
+router.use("/car", carRouter.routes(), carRouter.allowedMethods());
 // router.use("/school", schoolRouter.routes(), schoolRouter.allowedMethods());
 
 router.use("/Aduser", AduserRouter.routes(), AduserRouter.allowedMethods());

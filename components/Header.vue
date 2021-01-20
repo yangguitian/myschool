@@ -33,23 +33,22 @@
         </b-navbar-nav>
       </div>
       <div class="nav-right fr">
-        <b-nav-item right v-if="user" class="px-3 col-auto">
+        <b-nav-item-dropdown right v-if="user" class="px-3 col-auto">
           <!-- Using 'button-content' slot -->
           <!-- 预留给登陆用的用户名显示插槽 -->
-          <span class="img-sapn">
-            <a href="/center">
+          <template v-slot:button-content class="img-sapn">
             <img src="/images/touxiang1.png" alt="个人中心" />
-            </a>
-            <span>{{user.nickName}}</span>
-          </span>
+            <span class="nickname">{{user.nickName}}</span>
+          </template>
 
-          <!-- <b-dropdown-item
+          <b-dropdown-item
+          class="eeq"
             v-for="item in userMenu"
             :key="item.id"
             :to="item.url"
             >{{ item.name }}
-          </b-dropdown-item> -->
-        </b-nav-item>
+          </b-dropdown-item>
+        </b-nav-item-dropdown>
         <b-navbar-nav right v-else class="px-3 col-auto">
           <b-nav-item to="/account/login">登录</b-nav-item>
           <b-nav-item to="/account/signin">注册</b-nav-item>
@@ -61,6 +60,9 @@
 
 <script>
 export default {
+  beforeMount(){
+    this.$store.dispatch("auth/refreshUser")
+  },
   computed: {
     user() {
       return this.$store.state.auth.user;
@@ -68,18 +70,18 @@ export default {
     menu() {
       return this.$store.state.global.menu;
     },
-    // userMenu() {
-    //   if (this.user && this.user.userMenu) {
-    //     let path = this.$route.path;
-    //     console.log(`path: ${path}`);
-    //     let currentMenu = this.user.userMenu[path];
-    //     if (!currentMenu) {
-    //       currentMenu = this.user.userMenu["default"];
-    //       console.log("currentMenu: %O", currentMenu);
-    //     }
-    //     return currentMenu;
-    //   }
-    // },
+    userMenu() {
+      if (this.user && this.user.userMenu) {
+        let path = this.$route.path;
+        console.log(`path: ${path}`);
+        let currentMenu = this.user.userMenu[path];
+        if (!currentMenu) {
+          currentMenu = this.user.userMenu["default"];
+          console.log("currentMenu: %O", currentMenu);
+        }
+        return currentMenu;
+      }
+    },
   },
 };
 </script>
@@ -133,7 +135,9 @@ export default {
   // background-color: rgb(228, 178, 178);
   width: 200px;
   height: 64px;
-  padding: 10.5px 0;
+}
+li {
+  list-style: none;
 }
 .img-sapn {
   vertical-align: bottom;
@@ -142,17 +146,48 @@ export default {
   width: 100%;
   height: 43px;
 }
-.img-sapn img {
+.img-sapn a{
+  width: 100%;
+  height: 100%;
+}
+.fr {
+  height: 100%;
+  // background-color: rgb(212, 162, 162);
+}
+// .dropdown-item {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// }
+.img-sapn {
+  width: 200px;
+  height: 100%;
+  background-color: rgb(86, 106, 112);
+}
+.eeq {
+  margin-left: 60px;
+  width: 100px;
+  height: 100%;
+  background-color: rgb(72, 136, 155);
+}
+img {
+  margin-right: 10px;
   border-radius: 50%;
-  float: left;
+  height: 43px;
+}
+.img-sapn img {
+  margin-right: 10px;
+  border-radius: 50%;
   width: 43px;
   height: 43px;
 }
 .img-sap span {
-  vertical-align: bottom;
   width: 100%;
   height: 43px;
   line-height: 43px;
+}
+.nickname {vertical-align: top;
+
 }
 .number {
   line-height: 43px;

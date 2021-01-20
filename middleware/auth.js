@@ -20,7 +20,7 @@ function auth(context) {
         console.log(`浏览器端鉴权`);
         // 获取 sessionStorage 里面的 用户数据
         // 不直接使用 Nuxt 已有的用户数据
-        user = window.sessionStorage.getItem("jz_user");
+        user = sessionStorage.getItem("user");
         console.log(user);
         if (user) {
             user = JSON.parse(user);

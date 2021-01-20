@@ -146,7 +146,7 @@ export default {
         return;
       } else {
         this.$store.commit("auth/setUser", this.result.user);
-        sessionStorage.setItem("jz_user", JSON.stringify(this.result.user));
+        sessionStorage.setItem("user", JSON.stringify(this.result.user));
         let times = 1;
         this.result.message = `${result.message} ${times} 秒后返回上一页`;
         this.timeKey = setInterval(() => {

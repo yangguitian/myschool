@@ -34,7 +34,7 @@ export default {
     this.result = result.result;
     this.title = result.title;
     this.message = result.message;
-    sessionStorage.removeItem("jz_user");
+    sessionStorage.removeItem("user");
     this.$store.commit("auth/logout");
     // 恢复菜单为未登录状态
     this.$store.commit("global/init");
