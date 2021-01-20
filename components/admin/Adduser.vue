@@ -110,7 +110,6 @@ export default {
     },
     finishDelect(result) {
       if (result.result) {
-        alert("删除成功!");
         window.location.href="/Admin/user"
       } else {
         alert("删除失败");

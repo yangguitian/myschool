@@ -4,12 +4,12 @@
        <b-form @submit.stop.prevent="OnSubmit">
       <b-row class="my-1">
         <b-col >
-          <b-form-group label="用户名" label-align-sm="right" label-cols-xl="4">
+          <b-form-group label="昵称" label-align-sm="right" label-cols-xl="4">
             <b-form-input
               aria-describedby="input-signin-region-feedback"
-              :state="validateSigninState('username')"
+              :state="validateSigninState('pl_name')"
               class="b-form-input-1"
-              v-model="$v.UpdataForm.username.$model"
+              v-model="$v.UpdataForm.pl_name.$model"
             >
             </b-form-input>
             <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -20,12 +20,28 @@
       </b-row>
       <b-row class="my-1">
         <b-col >
-          <b-form-group label="密码" label-align-sm="right" label-cols-xl="4">
+          <b-form-group label="头像" label-align-sm="right" label-cols-xl="4">
             <b-form-input
               aria-describedby="input-signin-region-feedback"
-              :state="validateSigninState('password')"
+              :state="validateSigninState('pl_image')"
               class="b-form-input-1"
-              v-model="$v.UpdataForm.password.$model"
+              v-model="$v.UpdataForm.pl_image.$model"
+            >
+            </b-form-input>
+            <b-form-invalid-feedback id="input-signin-region-feedback">
+              不能为空！
+            </b-form-invalid-feedback>
+          </b-form-group>
+        </b-col>
+      </b-row>
+        <b-row class="my-1">
+        <b-col >
+          <b-form-group label="评论内容" label-align-sm="right" label-cols-xl="4">
+            <b-form-input
+              aria-describedby="input-signin-region-feedback"
+              :state="validateSigninState('pl_text')"
+              class="b-form-input-1"
+              v-model="$v.UpdataForm.pl_text.$model"
             >
             </b-form-input>
             <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -60,28 +76,28 @@ export default {
   data() {
     return {
       UpdataForm: {
-        username: null,
-        password: null,
+        pl_name: null,
+        pl_image: null,
+        pl_text: null,
       }
     };
   },
   validations: {
     UpdataForm: {
-      username: {
+      pl_name: {
         required,
-        minLength: minLength(4),
-        maxLength: maxLength(16),
-        // // 特殊判断
-        // isUnique(value) {
-        //   // 检查用户名是否有 非法字符
-        //   let reg = new RegExp("[^a-zA-Z0-9]", "i");
-        //   return !reg.test(value);
-        // }
+        minLength: minLength(1),
+        maxLength: maxLength(20),
       },
-      password: {
+      pl_image: {
         required,
-        minLength: minLength(6),
-        maxLength: maxLength(32)
+        minLength: minLength(1),
+        maxLength: maxLength(52)
+      },
+      pl_text: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(50)
       },
     }
   },
@@ -105,7 +121,7 @@ export default {
           );
         })
         .join("&");
-      let result = await fetch("/api/Upuser", {
+      let result = await fetch("/api/Uppl", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -114,8 +130,7 @@ export default {
         body: postBody
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
-        window.location.href = "/admin/user";
+        window.location.href = "/admin/pl";
       }
     }
   }
@@ -126,16 +141,16 @@ export default {
 <style lang="less" scoped>
 .container-fluid {
   width: 700px;
+  height: 500px;
   margin: 0px auto 0 50px;
-  padding-top: 30px;
   // background-color: blueviolet;
 }
 .my-1 {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
 }
 .btn {
-  margin: 50px auto auto 220px;
-  width: 80px;
+  margin: 20px auto auto 220px;
+  width: 112px;
   height: 40px;
   color: #fff;
   background-color: #007bff;

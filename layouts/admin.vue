@@ -12,7 +12,7 @@
               <b-nav-item to="/admin/user">用户管理</b-nav-item>
               <b-nav-item to="/admin/goods">商品管理</b-nav-item>
               <b-nav-item to="/admin/buy">求购管理</b-nav-item>
-              <b-nav-item to="/admin/pinlun">评论管理</b-nav-item>
+              <b-nav-item to="/admin/pl">评论管理</b-nav-item>
               <b-nav-item to="/admin/school">学校申请</b-nav-item>
               <b-nav-item to="/admin/news">新闻管理</b-nav-item>
             </b-nav>

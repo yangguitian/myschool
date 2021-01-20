@@ -37,7 +37,7 @@
           <!-- Using 'button-content' slot -->
           <!-- 预留给登陆用的用户名显示插槽 -->
           <template v-slot:button-content class="img-sapn">
-            <img src="/images/touxiang1.png" alt="个人中心" />
+            <img src="/images/touxiang1.png"/>
             <span class="nickname">{{user.nickName}}</span>
           </template>
 
@@ -165,10 +165,12 @@ li {
   background-color: rgb(86, 106, 112);
 }
 .eeq {
-  margin-left: 60px;
-  width: 100px;
+  // margin-left: 60px;
   height: 100%;
-  background-color: rgb(72, 136, 155);
+  // background-color: rgb(41, 157, 192);
+}
+.eeq:hover {
+  background-color: rgb(163, 76, 76);
 }
 img {
   margin-right: 10px;
@@ -186,8 +188,8 @@ img {
   height: 43px;
   line-height: 43px;
 }
-.nickname {vertical-align: top;
-
+.nickname {
+  vertical-align: middle;
 }
 .number {
   line-height: 43px;

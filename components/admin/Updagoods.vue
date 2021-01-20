@@ -131,7 +131,7 @@
         </b-col>
       </b-row>
       <b-button type="submit">提交</b-button>
-      <b-button type="reset">取消</b-button>
+      <b-button type="reset">重置</b-button>
     </b-form>
     </b-container>
   </div>

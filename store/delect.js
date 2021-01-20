@@ -165,6 +165,52 @@ async deleteNewpro(context, page) {
   // 获得操作数据，给页面反馈
   page.finishDelect(result);
 },
-};
 
+  // 购物车删除
+  async deleteCar(context, page) {
+    console.log("看这里：", context);
+    console.log("在看这里：", page);
+    console.log("在看这里：", context.state.userData.car_id);
+    let body = postBody({ id: context.state.userData.car_id });
+    let result = await fetch("/api/car/Delect", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+      },
+      body
+    }).then((res) => res.json());
+    console.log("result: %O", result);
+
+    // 删除成功需要清除管理员数据
+    context.commit("clearuserData");
+
+    // 获得操作数据，给页面反馈
+    page.finishDelect(result);
+  },
+
+   // 评论删除
+   async deletePl(context, page) {
+    console.log("看这里：", context);
+    console.log("在看这里：", page);
+    console.log("在看这里：", context.state.userData.pl_id);
+    let body = postBody({ id: context.state.userData.pl_id });
+    let result = await fetch("/api/Adpl/Delect", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=utf-8"
+      },
+      body
+    }).then((res) => res.json());
+    console.log("result: %O", result);
+
+    // 删除成功需要清除管理员数据
+    context.commit("clearuserData");
+
+    // 获得操作数据，给页面反馈
+    page.finishDelect(result);
+  },
+  
+};
 export { state, mutations, actions };

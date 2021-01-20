@@ -557,7 +557,7 @@
 
 <script>
 export default {
-  middleware:"auth",
+ 
   layout: "hf",
   data() {
     return {

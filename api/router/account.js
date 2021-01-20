@@ -112,11 +112,11 @@ router.post("/login", async (ctx, next) => {
     // 需要服务器给客户端提供用户功能菜单选项
     user.userMenu = {}
     user.userMenu["default"] = [
-        { id: 0, url: "/setting", name: "个人中心" },
+        { id: 0, url: "/center", name: "个人中心" },
         { id: 1, url: "/account/logout", name: "登出" },
     ];
     user.userMenu["/admin"] = [
-        { id: 0, url: "/setting", name: "个人中心" },
+        { id: 0, url: "/center", name: "个人中心" },
         { id: 1, url: "/account/logout", name: "登出" },
     ];
 

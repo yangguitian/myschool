@@ -103,10 +103,16 @@
                   >立即购买</b-button
                 >
                 <b-button v-b-modal.modal-1 variant="danger" size="lg"
+                  >加入购物车</b-button
+                >
+                <b-button v-b-modal.modal-4 variant="outline-danger" size="lg"
                   >添加收藏</b-button
                 >
               </b-button-group>
               <b-modal id="modal-1" title="提示">
+                <p class="my-4">加入购物车成功</p>
+              </b-modal>
+              <b-modal id="modal-4" title="提示">
                 <p class="my-4">收藏成功</p>
               </b-modal>
             </b-col>
@@ -151,56 +157,22 @@
       <div class="top">
         <span class="title">商品评价</span>
         <span class="right"
-          ><b-button v-b-modal.modal-2 variant="primary" size="sm"
+          ><b-button v-b-modal.modal-3 variant="primary" size="sm"
             >发表评论</b-button
           >
-          <b-modal id="modal-2" title="提示">
+          <b-modal id="modal-3" title="提示">
             <p class="my-4">尚未开通，敬请期待！！！！！！！</p>
           </b-modal>
         </span>
       </div>
-      <div class="comment-item">
-        <div class="left-box">
-          <div class="pic">
-            <img src="/images/头像/头像6.png" alt="" />
-          </div>
-          <div class="name">
-            <div class="usn">1509335600</div>
-            <div class="time">2020-01-15</div>
-          </div>
-        </div>
-        <div class="right-box"><p>厉害了真的强！</p></div>
-      </div>
-      <div class="comment-item">
-        <div class="left-box">
-          <div class="pic">
-            <img src="/images/头像/头像5.png" alt="" />
-          </div>
-          <div class="name">
-            <div class="usn">198495298</div>
-            <div class="time">2020-01-16</div>
-          </div>
-        </div>
-        <div class="right-box"><p>多少钱，在哪里</p></div>
-      </div>
-      <div class="comment-item">
-        <div class="left-box">
-          <div class="pic">
-            <img src="/images/头像/头像4.png" alt="" />
-          </div>
-          <div class="name">
-            <div class="usn">1557733562</div>
-            <div class="time">2020-01-16</div>
-          </div>
-        </div>
-        <div class="right-box"><p>okokokokokokokokko</p></div>
-      </div>
+      <Plint v-for="pl in plList" :key="pl.pl" :pl="pl" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  middleware: "auth",
   async beforeMount() {
     let id = this.$route.params.id;
     console.log("id: %O", id);
@@ -217,6 +189,7 @@ export default {
       slide: 0,
       sliding: null,
       goods: {},
+      plList: [],
     };
   },
   methods: {
@@ -227,7 +200,15 @@ export default {
       this.sliding = false;
     },
   },
-  async fetch() {},
+  async fetch() {
+    await this.getList();
+  },
+    async fetch() {
+    this.plList = await fetch("/api/pl") // 承诺实现，并传值给fetchGoodsList
+      .then((res) => res.json()); // 知道是一个 json 格式的数据，就将json 字符串解析为对象
+
+    console.log("this.plList: %O", plList);
+  },
 };
 </script>
 <style lang="less" scoped>

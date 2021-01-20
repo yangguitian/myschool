@@ -1,10 +1,10 @@
 <template>
   <div>
-    <b-table class="table" :items="schoolList" :fields="schoolFields" hover>
+    <b-table class="table" :items="plList" :fields="plFields" hover>
       <template #cell(actions)="row">
         <b-button
           size="sm"
-          @click="editSchool(row.item, row.index, $event.target)"
+          @click="editPl(row.item, row.index, $event.target)"
           class="mr-1"
         >
           编辑
@@ -12,28 +12,28 @@
         <b-button
           class="btn-secondary2"
           size="sm"
-          @click="deleteSchool(row.item, row.index, $event.target)"
+          @click="deletePl(row.item, row.index, $event.target)"
         >
           删除
         </b-button>
       </template>
     </b-table>
     <b-modal
-      id="model-school-edit"
+      id="model-pl-edit"
       title="编辑用户"
-      @hide="resetEditSchoolModal"
-      @ok="doEditSchool"
+      @hide="resetEditPlModal"
+      @ok="doEditPl"
       cancel-title="关闭"
       ok-title="确定"
     >
-      <pre>{ <Editschool/> }</pre>
-      <!-- { schoolData } -->
+      <pre>{ <Editpl/> }</pre>
+      <!-- { plData } -->
     </b-modal>
     <b-modal
-      id="model-school-delete"
+      id="model-pl-delete"
       title="删除用户"
-      @hide="resetDeleteSchoolModal"
-      @ok="doDeleteSchool"
+      @hide="resetDeletePlModal"
+      @ok="doDeletePl"
       cancel-title="关闭"
       ok-title="确定"
     >
@@ -46,13 +46,13 @@
 export default {
  
   props: {
-    schoolList: {
+    plList: {
       type: Array,
       default: function() {
         return [];
       }
     },
-    school: {
+    pl: {
       type: Object,
       default: function() {
         return {};
@@ -61,68 +61,70 @@ export default {
   },
   data() {
     return {
-      schoolFields: [
-        { key: "school_id", label: "ID" },
-        { key: "school_name", label: "学校名称" },
-        { key: "school_xm", label: "申请学生" },
-        { key: "school_tel", label: "联系电话" },
+      plFields: [
+        { key: "pl_id", label: "ID" },
+        { key: "pl_name", label: "昵称" },
+        { key: "pl_image", label: "头像" },
+        { key: "pl_text", label: "评论内容" },
         { key: "actions", label: "操作" }
       ],
-      schoolData: null,
+      plData: null,
     };
-    return this.school;
+    return this.pl;
   },
 
    methods: {
-    editSchool(item, index, button) {
-      console.log(this.schoolData);
-      this.schoolData = item;
-      this.$store.commit("editschool/setDatasbank",item);
+    editPl(item, index, button) {
+      console.log(this.plData);
+      this.plData = item;
+      this.$store.commit("editpl/setDatasbank",item);
       // 假设item_id 是 传进来的item 的id ，要编辑的数据id 
       //  /Admin/editdatasbank/${id}
-      this.$router.push({path:`/Admin/editschool/${item.school_id}`})
+      this.$router.push({path:`/Admin/editpl/${item.pl_id}`})
     },
 
-    deleteSchool(item, index, button) {
-      this.school_name = null;
-      this.$root.$emit("bv::show::modal", "model-school-delete", button);
+    deletePl(item, index, button) {
+      this.pl_name = null;
+      this.$root.$emit("bv::show::modal", "model-pl-delete", button);
       this.$store.commit("delect/setuserData", item);
     },
 
-    resetEditSchoolModal() {
-      this.schoolData = null;
+    resetEditPlModal() {
+      this.plData = null;
     },
-    resetDeleteSchoolModal() {
-      this.schoolData = null;
+    resetDeletePlModal() {
+      this.plData = null;
     },
 
-    doEditSchool() {
+    doEditPl() {
       // 发送编辑后的用户数据到服务器
-      this.$store.dispatch("auth/editSchool", this);
+      this.$store.dispatch("auth/editPl", this);
      
     },
-    doDeleteSchool(){
-      this.$store.dispatch("delect/deleteSchool", this);
+    doDeletePl(){
+      this.$store.dispatch("delect/deletePl", this);
     },
 
-    finishEditSchool() {
+    finishEditPl() {
       // 完成用户编辑的后续处理
     },
     finishDelect(result) {
       if (result.result) {
-        window.location.href="/Admin/school"
+        window.location.href="/Admin/pl"
       } else {
         alert("删除失败");
       }
       this.getTabList();
     },
     async getTabList() {
-      this.applicationList = await fetch("/api/Adschool").then((res) =>
+      this.applicationList = await fetch("/api/Adpl").then((res) =>
         res.json()
       );
       },
   },
 };
+
+
 </script>
 
 <style lang="less" scoped>

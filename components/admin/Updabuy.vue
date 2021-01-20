@@ -83,7 +83,7 @@
         </b-col>
       </b-row>
       <b-button type="submit">提交</b-button>
-      <b-button type="reset">取消</b-button>
+      <b-button type="reset">重置</b-button>
     </b-form>
     </b-container>
   </div>
@@ -172,7 +172,7 @@ export default {
         body: postBody
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
+        alert("发表求购成功！请耐心等待处理");
         window.location.href = "/admin/buy";
       }
     }

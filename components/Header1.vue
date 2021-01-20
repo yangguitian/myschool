@@ -22,9 +22,9 @@
 }
 .left {
   position: absolute;
-  width: 265px;
+  width: 320px;
   height: 90px;
-  background-color: #aeb1b9;
+  background-color: #e3e4e6;
 }
 .left img {
   width: 100px;

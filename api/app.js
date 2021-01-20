@@ -13,24 +13,28 @@ import goodsRouter from "./router/goods.js";
 import buyRouter from "./router/buy.js";
 import newsRouter from "./router/news.js";
 import carRouter from "./router/car.js";
+import plRouter from "./router/pl.js";
 
 import AduserRouter from "./router/Aduser.js";
 import AdgoodsRouter from "./router/Adgoods.js";
 import AdbuyRouter from "./router/Adbuy.js";
 import AdnewsRouter from "./router/Adnews.js";
 import AdschoolRouter from "./router/Adschool.js";
+import AdplRouter from "./router/Adpl.js";
 
 import UpgoodsRouter from "./router/Upgoods.js";
 import UpuserRouter from "./router/Upuser.js";
 import UpbuyRouter from "./router/Upbuy.js";
 import UpnewsRouter from "./router/Upnews.js";
 import UpschoolRouter from "./router/Upschool.js";
+import UpplRouter from "./router/Uppl.js";
 
 import EdituserRouter from "./router/edituser.js";
 import EditgoodsRouter from "./router/editgoods.js";
 import EditbuyRouter from "./router/editbuy.js";
 import EditnewsRouter from "./router/editnews.js";
 import EditschoolRouter from "./router/editschool.js";
+import EditplRouter from "./router/editpl.js";
 
 
 const app = new KOA(); // 实例化 koa 框架
@@ -90,6 +94,7 @@ router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods());
 router.use("/news", newsRouter.routes(), newsRouter.allowedMethods());
 router.use("/buy", buyRouter.routes(), buyRouter.allowedMethods());
 router.use("/car", carRouter.routes(), carRouter.allowedMethods());
+router.use("/pl", plRouter.routes(), plRouter.allowedMethods());
 // router.use("/school", schoolRouter.routes(), schoolRouter.allowedMethods());
 
 router.use("/Aduser", AduserRouter.routes(), AduserRouter.allowedMethods());
@@ -97,18 +102,21 @@ router.use("/Adgoods", AdgoodsRouter.routes(), AdgoodsRouter.allowedMethods());
 router.use("/Adbuy", AdbuyRouter.routes(), AdbuyRouter.allowedMethods());
 router.use("/Adnews", AdnewsRouter.routes(), AdnewsRouter.allowedMethods());
 router.use("/Adschool", AdschoolRouter.routes(), AdschoolRouter.allowedMethods());
+router.use("/Adpl", AdplRouter.routes(), AdplRouter.allowedMethods());
 
 router.use("/Upuser", UpuserRouter.routes(), UpuserRouter.allowedMethods());
 router.use("/Upgoods", UpgoodsRouter.routes(), UpgoodsRouter.allowedMethods());
 router.use("/Upbuy", UpbuyRouter.routes(), UpbuyRouter.allowedMethods());
 router.use("/Upnews", UpnewsRouter.routes(), UpnewsRouter.allowedMethods());
 router.use("/Upschool", UpschoolRouter.routes(), UpschoolRouter.allowedMethods());
+router.use("/Uppl", UpplRouter.routes(), UpplRouter.allowedMethods());
 
 router.use("/edituser", EdituserRouter.routes(), EdituserRouter.allowedMethods());
 router.use("/editgoods", EditgoodsRouter.routes(), EditgoodsRouter.allowedMethods());
 router.use("/editbuy", EditbuyRouter.routes(), EditbuyRouter.allowedMethods());
 router.use("/editnews", EditnewsRouter.routes(), EditnewsRouter.allowedMethods());
 router.use("/editschool", EditschoolRouter.routes(), EditschoolRouter.allowedMethods());
+router.use("/editpl", EditplRouter.routes(), EditplRouter.allowedMethods());
 
 // 将 总路由中间件实例注册到 koa 中
 app.use(router.routes(), router.allowedMethods());

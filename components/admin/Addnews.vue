@@ -111,7 +111,6 @@ export default {
     },
     finishDelect(result) {
       if (result.result) {
-        alert("删除成功!");
         window.location.href="/Admin/news"
       } else {
         alert("删除失败");
