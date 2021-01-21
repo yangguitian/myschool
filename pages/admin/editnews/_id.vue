@@ -54,22 +54,6 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="时间" label-align-sm="right" label-cols-xl="4">
-              <b-form-input
-                v-model="$v.Newsobj.news_date.$model"
-                :state="validateSigninState('news_date')"
-                aria-describedby="input-range-feedback"
-                class="b-form-input-1"
-              >
-              </b-form-input>
-              <b-form-invalid-feedback id="input-range-feedback">
-                不能为空！
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
-        <b-row class="my-1">
-          <b-col>
             <b-form-group label="插图" label-align-sm="right" label-cols-xl="4">
               <b-form-input
                 v-model="$v.Newsobj.news_image.$model"
@@ -109,9 +93,6 @@ export default {
         required,
       },
       news_desc: {
-        required,
-      },
-      news_date: {
         required,
       },
       news_image: {

@@ -1,33 +1,12 @@
 <template>
-  <div class="g">
-    <div class="img-box"><img src="/images/商品/篮球1.png"/></div>
-    <div class="right-box">
-      <div class="title">标题</div>
-      <div class="tetx">内容</div>
-      <div class="button">
-        <b-row cols="12">
-          <b-col cols="9">
-            <span class="jiage">￥49</span>
-          </b-col>
-          <b-col cols="3">
-            <b-button
-              class="btn-secondary2"
-              variant="danger"
-              size="sm"
-              @click="deleteDatabank(row.item, row.index, $event.target)"
-            >
-              删除
-            </b-button>
-          </b-col>
-        </b-row>
-      </div>
-    </div>
+  <div>
+    <Scint />
   </div>
 </template>
 
 <script>
 export default {
-    layout: "center",
+  layout: "center",
 }
 </script>
 

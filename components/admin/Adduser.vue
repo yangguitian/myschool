@@ -66,6 +66,7 @@ export default {
         { key: "id", label: "ID" },
         { key: "username", label: "用户名" },
         { key: "password", label: "用户密码" },
+        { key: "date", label: "登录日期" },
         { key: "actions", label: "操作" }
       ],
       userData: null,

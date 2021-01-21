@@ -7,7 +7,7 @@
       <div class="title">{{ goods_name }}</div>
       <div class="text">{{ goods_desc }}</div>
       <div class="time">
-        <span>更新于2020-03-24</span>
+        <span>更新于{{date}}</span>
         <span class="peopel">250人浏览</span>
       </div>
       <div class="shuzi-box">

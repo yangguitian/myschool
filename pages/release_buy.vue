@@ -9,15 +9,14 @@
             <b-row cols="12">
               <b-col>
                 <b-form-group
-                  label="标题"
+                  label="求购标题"
                   label-align-sm="middle"
-                  label-cols-xl="1"
+                  label-cols-xl="2"
                 >
                   <b-form-input
-                    placeholder="很重要，显示在列表页"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_name')"
-                    v-model="$v.UpgoodsForm.goods_name.$model"
+                    :state="validateSigninState('buy_name')"
+                    v-model="$v.UpbuyForm.buy_name.$model"
                     class="b-form-input-1"
                   >
                   </b-form-input>
@@ -30,16 +29,15 @@
             <b-row cols="12">
               <b-col>
                 <b-form-group
-                  label="简介"
+                  label="求购描述"
                   label-align-sm="middle"
-                  label-cols-xl="1"
+                  label-cols-xl="2"
                 >
                   <b-form-input
-                    placeholder="很重要，显示在商品详情页"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_desc')"
+                    :state="validateSigninState('buy_desc')"
                     class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_desc.$model"
+                    v-model="$v.UpbuyForm.buy_desc.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -51,79 +49,16 @@
             <b-row cols="12">
               <b-col>
                 <b-form-group
-                  label="标价"
+                  label="价格区间"
                   label-align-sm="middle"
-                  label-cols-xl="1"
+                  label-cols-xl="2"
                 >
                   <b-form-input
-                    placeholder="数字，想卖的价格"
+                    placeholder="数字，价格区间"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_price')"
+                    :state="validateSigninState('buy_price')"
                     class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_price.$model"
-                  >
-                  </b-form-input>
-                  <b-form-invalid-feedback id="input-signin-region-feedback">
-                    不能为空！
-                  </b-form-invalid-feedback>
-                </b-form-group>
-              </b-col>
-            </b-row>
-            <b-row cols="12">
-              <b-col>
-                <b-form-group
-                  label="原价"
-                  label-align-sm="middle"
-                  label-cols-xl="1"
-                >
-                  <b-form-input
-                    placeholder="数字，购买时的价格"
-                    aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_oldprice')"
-                    class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_oldprice.$model"
-                  >
-                  </b-form-input>
-                  <b-form-invalid-feedback id="input-signin-region-feedback">
-                    不能为空！
-                  </b-form-invalid-feedback>
-                </b-form-group>
-              </b-col>
-            </b-row>
-            <b-row cols="12">
-              <b-col>
-                <b-form-group
-                  label="分类"
-                  label-align-sm="middle"
-                  label-cols-xl="1"
-                >
-                   <b-form-input
-                    placeholder="填写分类"
-                    aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('classify_id')"
-                    class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.classify_id.$model"
-                  >
-                  </b-form-input>
-                  <b-form-invalid-feedback id="input-signin-region-feedback">
-                    不能为空！
-                  </b-form-invalid-feedback>
-                </b-form-group>
-              </b-col>
-            </b-row>
-            <b-row cols="12">
-              <b-col>
-                <b-form-group
-                  label="邮费"
-                  label-align-sm="middle"
-                  label-cols-xl="1"
-                >
-                  <b-form-input
-                    placeholder="填写数字"
-                    aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_postage')"
-                    class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_postage.$model"
+                    v-model="$v.UpbuyForm.buy_price.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -137,14 +72,14 @@
                 <b-form-group
                   label="手机号"
                   label-align-sm="middle"
-                  label-cols-xl="1"
+                  label-cols-xl="2"
                 >
                   <b-form-input
                     placeholder="填写有效的手机号"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_tel')"
+                    :state="validateSigninState('buy_tel')"
                     class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_tel.$model"
+                    v-model="$v.UpbuyForm.buy_tel.$model"
                   >
                   </b-form-input>
                   <b-form-invalid-feedback id="input-signin-region-feedback">
@@ -159,26 +94,25 @@
                   label="图片上传"
                   label-align-sm="middle"
                   label-cols-xl="2"
+                  description="/images/.png"
                 >
-                  <span style="vertical-align: middle">
-                    请在上传前进行裁剪，才会不变形，更美观。</span
-                  >
                   <b-form-input
                     placeholder="图片地址"
                     aria-describedby="input-signin-region-feedback"
-                    :state="validateSigninState('goods_image')"
+                    :state="validateSigninState('buy_image')"
                     class="b-form-input-1"
-                    v-model="$v.UpgoodsForm.goods_image.$model"
+                    v-model="$v.UpbuyForm.buy_image.$model"
                   >
                   </b-form-input>
                 </b-form-group>
               </b-col>
             </b-row>
             <b-row cols="12">
-              <b-col cols="6">
+              <b-col cols="2"></b-col>
+              <b-col cols="5">
                 <b-button type="submit" block variant="primary">发布</b-button>
               </b-col>
-              <b-col cols="6">
+              <b-col cols="5">
                 <b-button block type="reset">取消</b-button>
               </b-col>
             </b-row>
@@ -208,83 +142,63 @@ export default {
   mixins: [validationMixin],
   data() {
     return {
-      UpgoodsForm: {
-        goods_name: null,
-        goods_desc: null,
-        goods_price: null,
-        goods_oldprice: null,
-        classify_id: null,
-        goods_postage: null,
-        goods_tel: null,
-        goods_image: null,
-        // goods_wx,tel,QQ不用
+      UpbuyForm: {
+        buy_name: null,
+        buy_desc: null,
+        buy_price: null,
+        buy_tel: null,
+        buy_image: null,
+        // buy_wx,tel,QQ不用
       },
     };
   },
   validations: {
-    UpgoodsForm: {
-      goods_name: {
+    UpbuyForm: {
+      buy_name: {
         required,
         minLength: minLength(2),
-        maxLength: maxLength(16),
+        maxLength: maxLength(70),
       },
-      goods_desc: {
+      buy_desc: {
         required,
         minLength: minLength(2),
-        maxLength: maxLength(32),
+        maxLength: maxLength(72),
       },
       // 标价
-      goods_price: {
+      buy_price: {
+        required,
+      },
+      buy_tel: {
         required,
         minLength: minLength(2),
         maxLength: maxLength(16),
       },
-      goods_oldprice: {
-        required,
-        minLength: minLength(2),
-        maxLength: maxLength(16),
-      },
-      classify_id: {
-        required,
-        minLength: minLength(1),
-        maxLength: maxLength(16),
-      },
-      goods_postage: {
-        required,
-        minLength: minLength(2),
-        maxLength: maxLength(16),
-      },
-      goods_tel: {
-        required,
-        minLength: minLength(2),
-        maxLength: maxLength(16),
-      },
-      goods_image: {
+      buy_image: {
         required,
       },
     },
   },
   methods: {
     validateSigninState(name) {
-      const { $dirty, $error } = this.$v.UpgoodsForm[name];
+      const { $dirty, $error } = this.$v.UpbuyForm[name];
       return $dirty ? !$error : null;
     },
     async OnSubmit() {
-      this.$v.UpgoodsForm.$touch();
-      if (this.$v.UpgoodsForm.$anyError) {
+      this.$v.UpbuyForm.$touch();
+      if (this.$v.UpbuyForm.$anyError) {
         return;
       }
-      console.log("this.UpgoodsForm: %O", this.UpgoodsForm);
-      let postBody = Object.keys(this.UpgoodsForm)
+      console.log("this.UpbuyForm: %O", this.UpbuyForm);
+      let postBody = Object.keys(this.UpbuyForm)
         .map((key) => {
           return (
             encodeURIComponent(key) +
             "=" +
-            encodeURIComponent(this.UpgoodsForm[key])
+            encodeURIComponent(this.UpbuyForm[key])
           );
         })
         .join("&");
-      let result = await fetch("/api/Upgoods", {
+      let result = await fetch("/api/Upbuy", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -292,9 +206,8 @@ export default {
         },
         body: postBody,
       }).then((res) => res.json());
-      if (!this.$v.UpgoodsForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
-        window.location.href = "/goods";
+      if (!this.$v.UpbuyForm.$anyError) {
+        window.location.href = "/buy";
       }
     },
   },
@@ -311,8 +224,7 @@ body {
 }
 .box {
   width: 800px;
-  height: 1000px;
-  background-color: rgb(206, 175, 175);
+  background-color: #fff;
   padding: 50px 30px;
   margin: auto;
   // background-color: rgb(255, 255, 255);

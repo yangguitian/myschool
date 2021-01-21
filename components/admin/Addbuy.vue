@@ -66,8 +66,9 @@ export default {
         { key: "buy_name", label: "标题" },
         { key: "buy_desc", label: "描述" },
         { key: "buy_image", label: "图片" },
-        { key: "buy_price", label: "可接受价格" },
+        { key: "buy_price", label: "价格区间" },
         { key: "buy_tel", label: "电话" },
+        { key: "date", label: "发布日期" },
         { key: "actions", label: "操作" }
       ],
       buyData: null,

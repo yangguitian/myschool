@@ -33,6 +33,11 @@ export default function (sequelize, type) {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
+            //时间
+            date: {
+                type: DataTypes.DATEONLY,
+                defaultValue: Sequelize.NOW,
+            },
         },
         {
             // orm框架的实例

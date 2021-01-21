@@ -89,7 +89,7 @@
               <span class="icon"
                 ><b-icon-clock class="h2 mb-2"></b-icon-clock
               ></span>
-              <span class="red black">2020-03-17</span>
+              <span class="red black">发布时间  :   {{ goods.date }}</span>
             </div>
             <div class="icon-box">
               <span class="icon"
@@ -160,8 +160,8 @@
           ><b-button v-b-modal.modal-3 variant="primary" size="sm"
             >发表评论</b-button
           >
-          <b-modal id="modal-3" title="提示">
-            <p class="my-4">尚未开通，敬请期待！！！！！！！</p>
+          <b-modal id="modal-3" title="发布评论">
+            <Pl1 />
           </b-modal>
         </span>
       </div>

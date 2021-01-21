@@ -29,19 +29,24 @@ export default function (sequelize, type) {
                 allowNull: true,
             },
             // 商品图片
-            car_image:{
+            car_image: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品价格
-            car_price:{
+            car_price: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
-             // 商品原价
-            car_oldprice:{
+            // 商品原价
+            car_oldprice: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
+            },
+            //时间
+            date: {
+                type: DataTypes.DATEONLY,
+                defaultValue: Sequelize.NOW,
             },
         },
         {

@@ -66,6 +66,7 @@ export default {
         { key: "school_name", label: "学校名称" },
         { key: "school_xm", label: "申请学生" },
         { key: "school_tel", label: "联系电话" },
+        { key: "date", label: "申请日期" },
         { key: "actions", label: "操作" }
       ],
       schoolData: null,

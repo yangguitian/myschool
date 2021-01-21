@@ -211,6 +211,25 @@ async deleteNewpro(context, page) {
     // 获得操作数据，给页面反馈
     page.finishDelect(result);
   },
+   // 收藏删除
+   async removePer(context, page) {
+    console.log("跟服务器说删除 id为: %O 的管理员", context.state.userData.sc_id);
+    let body = postBody({ id: context.state.userData.sc_id });
+    let result = await fetch("/api/sc/Delect", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+        },
+        body,
+    }).then((res) => res.json());
+    console.log("result: %O", result);
+
+    // 删除成功需要清除管理员数据
+    context.commit("clearuserData");
+    // 获得操作数据，给页面反馈
+    console.log("page: %O", page);
+    page.finishRemove(result);
+}
   
 };
 export { state, mutations, actions };

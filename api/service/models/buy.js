@@ -29,19 +29,24 @@ export default function (sequelize, type) {
                 allowNull: true,
             },
             // 商品图片
-            buy_image:{
+            buy_image: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品价格
-            buy_price:{
+            buy_price: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 联系电话
-            buy_tel:{
+            buy_tel: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
+            },
+            //时间
+            date: {
+                type: DataTypes.DATEONLY,
+                defaultValue: Sequelize.NOW,
             },
         },
         {

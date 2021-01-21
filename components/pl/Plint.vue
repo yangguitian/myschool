@@ -2,11 +2,11 @@
   <div class="comment-item">
     <div class="left-box">
       <div class="pic">
-        <img :src="pl_image" alt="" />
+        <img :src="pl_image" />
       </div>
       <div class="name">
         <div class="usn">{{ pl_name }}</div>
-        <div class="time">{{ createdAt }}</div>
+        <div class="time">{{ pl_date }}</div>
       </div>
     </div>
     <div class="right-box">

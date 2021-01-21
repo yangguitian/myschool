@@ -3,24 +3,21 @@
       <b-table class="table" :items="carList" :fields="carFields" hover>
         <template #cell(actions)="row">
           <b-button
-            class="btn-secondary2"
+            class="btn-secondary3"
             size="sm"
             @click="deleteCar(row.item, row.index, $event.target)"
           >
             删除
           </b-button>
+            <b-button
+            class="btn-secondary2"
+            size="sm"
+            href="/car_3"
+          >
+            去付款
+          </b-button>
         </template>
       </b-table>
-      <b-modal
-        id="model-car-delete"
-        title="删除用户"
-        @hide="resetDeleteCarModal"
-        @ok="doDeleteCar"
-        cancel-title="关闭"
-        ok-title="确定"
-      >
-        <pre>请确认是否删除！</pre>
-      </b-modal>
     </div>
 </template>
 
@@ -45,7 +42,7 @@ export default {
       carFields: [
         { key: "car_id", label: "商品ID" },
         { key: "car_name", label: "商品名称" },
-        // { key: "car_image", label: "商品" }
+        { key: "car_desc", label: "商品名称" },
         { key: "car_price", label: "商品价格" },
         { key: "car_oldprice", label: "商品原价" },
         { key: "actions", label: "操作" },
@@ -91,7 +88,7 @@ export default {
 .PageNumber {
   margin-top: 8px;
 }
-.btn-secondary {
+.btn-secondary3 {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;

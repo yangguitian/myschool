@@ -66,6 +66,7 @@ export default {
         { key: "pl_name", label: "昵称" },
         { key: "pl_image", label: "头像" },
         { key: "pl_text", label: "评论内容" },
+        { key: "pl_date", label: "评论时间" },
         { key: "actions", label: "操作" }
       ],
       plData: null,

@@ -97,7 +97,7 @@
                   label-align-sm="middle"
                   label-cols-xl="1"
                 >
-                   <b-form-input
+                  <b-form-input
                     placeholder="填写分类"
                     aria-describedby="input-signin-region-feedback"
                     :state="validateSigninState('classify_id')"
@@ -159,10 +159,8 @@
                   label="图片上传"
                   label-align-sm="middle"
                   label-cols-xl="2"
+                  description="/images/.png"
                 >
-                  <span style="vertical-align: middle">
-                    请在上传前进行裁剪，才会不变形，更美观。</span
-                  >
                   <b-form-input
                     placeholder="图片地址"
                     aria-describedby="input-signin-region-feedback"
@@ -293,7 +291,6 @@ export default {
         body: postBody,
       }).then((res) => res.json());
       if (!this.$v.UpgoodsForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
         window.location.href = "/goods";
       }
     },
@@ -311,8 +308,7 @@ body {
 }
 .box {
   width: 800px;
-  height: 1000px;
-  background-color: rgb(206, 175, 175);
+  background-color:#ffffff;
   padding: 50px 30px;
   margin: auto;
   // background-color: rgb(255, 255, 255);

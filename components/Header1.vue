@@ -22,7 +22,7 @@
 }
 .left {
   position: absolute;
-  width: 320px;
+  width: 263.83px;
   height: 90px;
   background-color: #e3e4e6;
 }

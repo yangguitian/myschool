@@ -33,6 +33,11 @@ export default function (sequelize, type) {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
+            // 评论时间
+            pl_date:{
+                type: DataTypes.DATEONLY,
+                defaultValue: Sequelize.NOW,
+            },
         },
         {
             // orm框架的实例
@@ -43,7 +48,7 @@ export default function (sequelize, type) {
             // 指定模块名称为“Goods”
             modelName: "Pl",
 
-            createdAt: true,
+            createdAt: false,
             updatedAt: false,
         });
 

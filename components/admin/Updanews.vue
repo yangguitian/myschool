@@ -36,22 +36,6 @@
       </b-row>
         <b-row class="my-1">
         <b-col >
-          <b-form-group label="时间" label-align-sm="right" label-cols-xl="4">
-            <b-form-input
-              aria-describedby="input-signin-region-feedback"
-              :state="validateSigninState('news_date')"
-              class="b-form-input-1"
-              v-model="$v.UpdataForm.news_date.$model"
-            >
-            </b-form-input>
-            <b-form-invalid-feedback id="input-signin-region-feedback">
-              不能为空！
-            </b-form-invalid-feedback>
-          </b-form-group>
-        </b-col>
-      </b-row>
-        <b-row class="my-1">
-        <b-col >
           <b-form-group label="图片上传" label-align-sm="right" label-cols-xl="4">
             <b-form-input
               aria-describedby="input-signin-region-feedback"
@@ -94,7 +78,6 @@ export default {
       UpdataForm: {
         news_name: null,
         news_desc: null,
-        news_date: null,
         news_image: null,
       }
     };
@@ -110,11 +93,6 @@ export default {
         required,
         minLength: minLength(1),
         maxLength: maxLength(152)
-      },
-      news_date: {
-        required,
-        minLength: minLength(1),
-        maxLength: maxLength(11)
       },
       news_image: {
         required,

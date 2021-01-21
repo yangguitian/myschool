@@ -63,10 +63,10 @@ export default {
     return {
       newsFields: [
         { key: "news_id", label: "ID" },
-        { key: "news_name", label: "名称" },
-        { key: "news_desc", label: "描述" },
-        { key: "news_image", label: "图片" },
-        { key: "news_date", label: "电话" },
+        { key: "news_name", label: "新闻标题" },
+        { key: "news_desc", label: "新闻内容" },
+        { key: "news_image", label: "新闻插图" },
+        { key: "news_date", label: "发表日期" },
         { key: "actions", label: "操作" }
       ],
       newsData: null,

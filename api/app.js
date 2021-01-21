@@ -14,6 +14,7 @@ import buyRouter from "./router/buy.js";
 import newsRouter from "./router/news.js";
 import carRouter from "./router/car.js";
 import plRouter from "./router/pl.js";
+import scRouter from "./router/sc.js";
 
 import AduserRouter from "./router/Aduser.js";
 import AdgoodsRouter from "./router/Adgoods.js";
@@ -95,6 +96,7 @@ router.use("/news", newsRouter.routes(), newsRouter.allowedMethods());
 router.use("/buy", buyRouter.routes(), buyRouter.allowedMethods());
 router.use("/car", carRouter.routes(), carRouter.allowedMethods());
 router.use("/pl", plRouter.routes(), plRouter.allowedMethods());
+router.use("/sc", scRouter.routes(), scRouter.allowedMethods());
 // router.use("/school", schoolRouter.routes(), schoolRouter.allowedMethods());
 
 router.use("/Aduser", AduserRouter.routes(), AduserRouter.allowedMethods());

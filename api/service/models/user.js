@@ -30,6 +30,11 @@ export default function (sequelize, type) {
             type: DataTypes.STRING(32), // 数据库内类型是 VARCHAR(32)
             allowNull: false,           // NOT NUL
         },
+        //时间
+        date:{
+            type: DataTypes.DATEONLY,
+            defaultValue: Sequelize.NOW,
+        },
     },{
         sequelize,  // 将使用 orm 框架的实例sequelize 初始化这个 User 的定义
         tableName: "user",  // 指定对应的数据表为 user 表

@@ -1,17 +1,13 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 // 定义一个User class 用来隐射数据库的user表
-class Goods extends Model { }
+class Sc extends Model { }
 // 初始化内部的字段映射
 export default function (sequelize, type) {
     // 不能提前return
-    let model = Goods.init(
+    let model = Sc.init(
         {
-            classify_id: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-            },
-            // 对应Goods表的id
-            goods_id: {
+            // 对应sc表的id
+            sc_id: {
                 // 数据库里的数据类型为INT
                 type: DataTypes.INTEGER,
                 primaryKey: true,
@@ -23,37 +19,27 @@ export default function (sequelize, type) {
                 unique: true,
             },
             // 商品名称
-            goods_name: {
+            sc_name: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品描述
-            goods_desc: {
+            sc_desc: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品图片
-            goods_image: {
+            sc_image: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品价格
-            goods_price: {
-                type: DataTypes.STRING(255),
-                allowNull: true,
-            },
-            // 商品原价
-            goods_oldprice: {
+            sc_price: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
             // 商品价格
-            goods_postage: {
-                type: DataTypes.STRING(255),
-                allowNull: true,
-            },
-            // 联系电话
-            goods_tel: {
+            sc_postage: {
                 type: DataTypes.STRING(255),
                 allowNull: true,
             },
@@ -65,17 +51,17 @@ export default function (sequelize, type) {
         },
         {
             // orm框架的实例
-            // 将使用sequelize初始化Goods的定义
+            // 将使用sequelize初始化sc的定义
             sequelize,
-            // 指定对应数据表为goods
-            tableName: "goods",
-            // 指定模块名称为“Goods”
-            modelName: "Goods",
+            // 指定对应数据表为sc
+            tableName: "sc",
+            // 指定模块名称为“Sc”
+            modelName: "Sc",
 
             createdAt: false,
             updatedAt: false,
         });
 
-    Goods.sync();
+        Sc.sync();
     return model;
 }
