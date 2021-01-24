@@ -31,8 +31,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+body {
+  background-color: rgb(204, 52, 52);
+}
 .container-fluid {
-  height: 688px;
+  height: 879px;
   background-color: rgb(114, 40, 40);
 }
 .row {
@@ -63,6 +66,8 @@ export default {
   background-color: rgb(107, 134, 34);
 }
 .bg-light {
+  position: fixed;
+  height: 879px;
   background-color: #29333f !important;
   padding: 0;
 }

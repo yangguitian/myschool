@@ -439,7 +439,7 @@
           </div>
         </div>
       </div>
-      <div class="btn1">
+      <!-- <div class="btn1">
         <b-card no-body>
           <b-tabs v-model="tabIndex" card>
             <b-tab title="数码产品" :title-link-class="linkClass(0)">
@@ -521,7 +521,7 @@
             </b-tab>
           </b-tabs>
         </b-card>
-      </div>
+      </div> -->
       <div class="a">
         <div class="container">
           <div class="row">
