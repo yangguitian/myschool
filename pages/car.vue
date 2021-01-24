@@ -5,7 +5,7 @@
         <span><img src="/images/logo1.png" /></span>
       </span>
       <div class="right">
-        <div class="left1">宝贝 <b-icon icon="chevron-down"></b-icon></div>
+        <div class="left1">宝贝</div>
         <div class="right1">
           <b-icon icon="Search"></b-icon>
           <b-input></b-input>
@@ -38,6 +38,7 @@ export default {
   },
   async fetch() {
     this.carList = await fetch("/api/car").then((res) => res.json());
+    console.log("this.carList %O",this.carList);
   }
   };
 </script>
@@ -46,20 +47,16 @@ export default {
   padding: 0;
   width: 1200px;
   margin: 20px auto;
-  height: 2000px;
-  background-color: rgb(122, 148, 128);
 }
 .top-box {
   width: 100%;
   height: 95px;
-  background-color: rgb(160, 105, 105);
 }
 .top-box .left {
   display: inline-block;
   overflow: hidden;
   width: 60px;
   height: 95px;
-  background-color: rgb(84, 71, 87);
 }
 .top-box .left img {
   margin-top: 20px;
@@ -70,8 +67,6 @@ export default {
   width: 550px;
   height: 55px;
   margin-top: 20px;
-  border: 2px solid #ff4400;
-  background-color: rgb(43, 68, 121);
 }
 .top-box .right .left1 {
   float: left;
@@ -92,7 +87,6 @@ export default {
   width: 370px;
   height: 100%;
   display: inline-block;
-  background-color: rgb(153, 66, 66);
 }
 .form-control {
   height: 100%;
@@ -111,7 +105,6 @@ export default {
 .ss {
   width: 100%;
   height: 100%;
-  background-color: rgb(158, 89, 89);
 }
 .btn {
   background-color: #ff4400;
@@ -138,7 +131,6 @@ export default {
 .top2 {
   width: 100%;
   height: 40px;
-  background-color: rgb(85, 167, 98);
   border-bottom: 2px solid #e6e6e6;
 }
 .top2 ul {

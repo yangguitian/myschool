@@ -31,24 +31,26 @@
         </div>
         <div class="xq">
           <b-row class="toptitle" cols="12">
-            <b-col class="ew" cols="1">1</b-col>
+            <b-col class="ew" cols="1">{{ car.car_id }}</b-col>
             <b-col class="ew" cols="3">
-              <img class="img" src="/images/商品/保温杯.jpg" alt=""
+              <img class="img" :src="car.car_image" alt=""
             /></b-col>
-            <b-col class="ew" cols="6"> 膳魔师TCDX-470保温杯</b-col>
-            <b-col class="ew red" cols="2">￥168元</b-col>
+            <b-col class="ew" cols="6"> {{ car.car_name }}</b-col>
+            <b-col class="ew red" cols="2">￥ {{ car.car_price }}元</b-col>
           </b-row>
         </div>
         <div class="button">
           <div class="fl">返回修改</div>
-          <div class="fr">支付总额： <span class="red1">￥ 168.00</span></div>
+          <div class="fr">
+            支付总额： <span class="red1">￥ {{ car.car_price }}.00</span>
+          </div>
         </div>
         <div class="button2">
           <div class="top">请选择以下方式完成支付</div>
-          <div class="button"><img src="/images/xb.jpg" alt=""></div>
+          <div class="button"><img src="/images/xb.jpg" alt="" /></div>
         </div>
         <div class="zzff">
-            <button class="qr" @click="zf">确认支付</button>
+          <button class="qr">确认支付</button>
         </div>
       </div>
     </div>
@@ -56,8 +58,22 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      car: {},
+    };
+  },
   layout: "hf",
-  zf
+  async beforeMount() {
+    let id = this.$route.params.id;
+    console.log("id: %O", id);
+    let result = await fetch(`/api/car/${id}`).then((res) => res.json());
+    console.log("result: %O", result);
+
+    if (result.result) {
+      this.car = result.car;
+    }
+  },
 };
 </script>
 <style lang="less" scoped>
@@ -156,7 +172,7 @@ export default {
 .button2 {
   width: 100%;
   height: 180px;
-  background:#ffffff;
+  background: #ffffff;
 }
 .button2 .top {
   padding: 0 10px;
@@ -167,27 +183,26 @@ export default {
   color: #676767;
 }
 .button2 .button {
-    width: 100%;
-    height: 140px;
+  width: 100%;
+  height: 140px;
 }
 .button2 img {
-    height: 100%;
+  height: 100%;
 }
 .zzff {
-    position: relative;
-    width: 100%;
-    height: 100px;
-    background-color: #fff;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
 }
 .zzff .qr {
-    border: 1px solid #f36564;
-    color: #fff;
-    width: 200px;
-    height: 50px;
-    background-color: #f36564;
-    top: 20px;
-    right: 20px;
-    position: absolute;
-
+  border: 1px solid #f36564;
+  color: #fff;
+  width: 200px;
+  height: 50px;
+  background-color: #f36564;
+  top: 20px;
+  right: 20px;
+  position: absolute;
 }
 </style>

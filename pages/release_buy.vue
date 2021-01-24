@@ -136,8 +136,10 @@ import {
   alphaNum,
   and,
   sameAsPassword,
-} from "vuelidate/lib/validators";
+} 
+from "vuelidate/lib/validators";
 export default {
+  middleware: "auth",
   layout: "hf",
   mixins: [validationMixin],
   data() {

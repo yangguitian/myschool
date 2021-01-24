@@ -1,24 +1,35 @@
 <template>
-    <div>
-      <b-table class="table" :items="carList" :fields="carFields" hover>
-        <template #cell(actions)="row">
+  <div>
+    <b-table class="table" :items="carList" :fields="carFields" hover>
+      <template #cell(actions)="row">
+        <b-button
+          class="btn-secondary3"
+          size="sm"
+          @click="deleteCar(row.item, row.index, $event.target)"
+        >
+          删除
+        </b-button>
+        <!-- <nuxt-link :to="'/detail2/' + car_id"> -->
           <b-button
-            class="btn-secondary3"
-            size="sm"
-            @click="deleteCar(row.item, row.index, $event.target)"
-          >
-            删除
-          </b-button>
-            <b-button
-            class="btn-secondary2"
-            size="sm"
-            href="/car_3"
-          >
+          @click="GOCar(row.item, row.index, $event.target)"
+           class="btn-secondary2" size="sm">
             去付款
           </b-button>
-        </template>
-      </b-table>
-    </div>
+          <!-- </nuxt-link -->
+        
+      </template>
+    </b-table>
+      <b-modal
+      id="model-car-delete"
+      title="删除用户"
+      @hide="resetDeleteCarModal"
+      @ok="doDeleteCar"
+      cancel-title="关闭"
+      ok-title="确定"
+    >
+      <pre>请确认是否删除！</pre>
+    </b-modal>
+  </div>
 </template>
 
 <script>
@@ -53,6 +64,12 @@ export default {
   },
 
   methods: {
+    GOCar(item, index, button){
+      console.log("item %O",item);
+      console.log("index %O",index);
+      console.log("button %O",button);
+      this.$router.push(`/detail2/${item.car_id}`);
+    },
     deleteCar(item, index, button) {
       this.car_name = null;
       this.$root.$emit("bv::show::modal", "model-car-delete", button);
@@ -75,6 +92,7 @@ export default {
     },
     async getTabList() {
       this.applicationList = await fetch("/api/car").then((res) => res.json());
+      console.log("this.applicationList %O",this.applicationList);
     },
   },
 };

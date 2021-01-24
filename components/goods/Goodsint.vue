@@ -2,7 +2,7 @@
   <div class="card">
     <nuxt-link :to="`/detail/${goods.goods_id}`">
       <div class="imgbox"><img :src="goods_image" class="card-img-top" /></div>
-    </nuxt-link>
+    
     <div class="button">
       <div class="title">{{ goods_name }}</div>
       <div class="text">{{ goods_desc }}</div>
@@ -17,6 +17,7 @@
         </span>
       </div>
     </div>
+    </nuxt-link>
   </div>
 </template>
 
@@ -35,6 +36,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+a {
+  text-decoration:none;
+}
 .card-columns {
   column-count: 4 !important;
 }
