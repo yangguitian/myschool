@@ -1,15 +1,20 @@
 <template>
-  <b-container class="account-container">
-    <b-card :title="title" tag="article" class="account-box">
-      <b-card-text>
-        {{ message }}
-      </b-card-text>
+  <div class="big">
+    <div class="img">
+      <img src="/images/logo1.png" alt="" />
+      <b-container class="account-container">
+        <b-card :title="title" tag="article" class="account-box">
+          <b-card-text>
+            {{ message }}
+          </b-card-text>
 
-      <b-button v-on:click="gobackNow" to="/goods" variant="primary"
-        >立刻返回首页</b-button
-      >
-    </b-card>
-  </b-container>
+          <b-button v-on:click="gobackNow" to="/goods" variant="outline-primary"
+            >返回首页</b-button
+          >
+        </b-card>
+      </b-container>
+    </div>
+  </div>
 </template>
 <script>
 import { defaultMenu } from "~/store/global.js";
@@ -58,3 +63,26 @@ export default {
   },
 };
 </script>
+<style lang="less" scoped>
+.big {
+  width: 100%;
+  // height: 789px;
+  height: 966px;
+  background-color: #d6e9e7;
+}
+.big .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: -112px 0;
+  background-image: url(/images/登录1.jpg);
+  background-repeat: no-repeat;
+}
+.account-container {
+}
+.account-box {
+  margin: 0 auto;
+  width: 330px;
+  background-color: rgba(255, 255, 255, 0);
+}
+</style>

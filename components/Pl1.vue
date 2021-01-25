@@ -54,14 +54,13 @@
     </b-row>
     <b-row cols="12">
       <b-col cols="2"></b-col>
-      <b-col cols="5">
+      <b-col cols="10">
         <b-button type="submit" block variant="primary">发表</b-button>
       </b-col>
-      <b-col cols="5">
-        <b-button block type="reset">取消</b-button>
-      </b-col>
+     
     </b-row>
   </b-form>
+  
 </template>
 
 <script>

@@ -43,6 +43,7 @@ a {
   column-count: 4 !important;
 }
 .a .card {
+  
   display: inline-block;
   overflow: hidden;
   border-radius: 8px;

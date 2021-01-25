@@ -10,19 +10,19 @@
                 <b-nav vertical class="pt-4">
                   <b-nav-item class="one">个人中心</b-nav-item>
                   <b-nav-item to="/center/"
-                    ><b-icon icon="toggles"></b-icon> 我的资料</b-nav-item
+                    ><b-icon icon="calendar"></b-icon> 我的资料</b-nav-item
                   >
                   <b-nav-item to="/center/mygoods"
-                    ><b-icon icon="toggles"></b-icon> 我的商品</b-nav-item
+                    ><b-icon icon="house"></b-icon> 我的商品</b-nav-item
                   >
                   <b-nav-item to="/center/mybuy"
-                    ><b-icon icon="toggles"></b-icon> 我的求购</b-nav-item
+                    ><b-icon icon="shield-lock"></b-icon> 我的求购</b-nav-item
                   >
                   <b-nav-item to="/center/mycollection"
-                    ><b-icon icon="toggles"></b-icon> 我的收藏</b-nav-item
+                    ><b-icon icon="heart"></b-icon> 我的收藏</b-nav-item
                   >
                   <b-nav-item to="/center/renzheng"
-                    ><b-icon icon="toggles"></b-icon> 我要认证</b-nav-item
+                    ><b-icon icon="flag"></b-icon> 我要认证</b-nav-item
                   >
                 </b-nav>
               </div>
@@ -47,7 +47,7 @@
 }
 .heart {
   width: 1000px;
-  height: 600px;
+  height: 588px;
   margin: 30px auto;
   background-color: #fff;
 }

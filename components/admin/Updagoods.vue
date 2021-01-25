@@ -251,7 +251,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 0px auto 0 50px;
+  margin: 0px auto 0 150px;
   // background-color: blueviolet;
 }
 .my-1 {

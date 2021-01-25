@@ -26,14 +26,17 @@ export default {
 <style lang="less" scoped>
 .big {
   width: 100%;
-  height: 789px;
+  // height: 789px;
+  height: 968px;
+  background-color: #d6e9e7;
 }
 .big .img {
   position: relative;
-  width: auto;
+  width: 100%;
   height: 100%;
-  background-position: -312px 0;
+  background-position: -112px 0;
   background-image: url(/images/登录1.jpg);
+  background-repeat:no-repeat;
 }
 .login {
 }

@@ -1,445 +1,445 @@
 <template>
-  <div class="gfd">
-    <div class="heart">
-      <div class="heart-top">
-        <div class="menu">
-          <ul>
-            <li>
-              数码产品<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">数码产品</span>
-                  <span class="pic"
-                    ><img src="/images/产品/手机.jpg" alt="" /><span
-                      class="name"
-                      >手机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/平板.jpg" alt="" /><span
-                      class="name"
-                      >平板</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/笔记本.jpg" alt="" /><span
-                      class="name"
-                      >笔记本</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/台式机.jpg" alt="" /><span
-                      class="name"
-                      >台式机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/手表手环.jpg" alt="" /><span
-                      class="name"
-                      >手表手环</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/单反相机.jpg" alt="" /><span
-                      class="name"
-                      >单反相机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/充电宝.jpg" alt="" /><span
-                      class="name"
-                      >充电宝</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/耳机.jpg" alt="" /><span
-                      class="name"
-                      >耳机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/手机配件.jpg" alt="" /><span
-                      class="name"
-                      >手机配件</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/电脑配件.jpg" alt="" /><span
-                      class="name"
-                      >电脑配件</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/路由器.jpg" alt="" /><span
-                      class="name"
-                      >路由器</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+    <div class="gfd">
+      <div class="heart">
+        <div class="heart-top">
+          <div class="menu">
+            <ul>
+              <li>
+                数码产品<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">数码产品</span>
+                    <span class="pic"
+                      ><img src="/images/产品/手机.jpg" alt="" /><span
+                        class="name"
+                        >手机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/平板.jpg" alt="" /><span
+                        class="name"
+                        >平板</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/笔记本.jpg" alt="" /><span
+                        class="name"
+                        >笔记本</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/台式机.jpg" alt="" /><span
+                        class="name"
+                        >台式机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/手表手环.jpg" alt="" /><span
+                        class="name"
+                        >手表手环</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/单反相机.jpg" alt="" /><span
+                        class="name"
+                        >单反相机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/充电宝.jpg" alt="" /><span
+                        class="name"
+                        >充电宝</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/耳机.jpg" alt="" /><span
+                        class="name"
+                        >耳机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/手机配件.jpg" alt="" /><span
+                        class="name"
+                        >手机配件</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/电脑配件.jpg" alt="" /><span
+                        class="name"
+                        >电脑配件</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/路由器.jpg" alt="" /><span
+                        class="name"
+                        >路由器</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              书籍教材<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">书籍教材</span>
-                  <span class="pic"
-                    ><img src="/images/产品/教科书.jpg" alt="" /><span
-                      class="name"
-                      >教科书</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/文学.jpg" alt="" /><span
-                      class="name"
-                      >文学</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/小说.jpg" alt="" /><span
-                      class="name"
-                      >小说</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/教育考试.jpg" alt="" /><span
-                      class="name"
-                      >教育考试</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/动漫.jpg" alt="" /><span
-                      class="name"
-                      >动漫</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                书籍教材<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">书籍教材</span>
+                    <span class="pic"
+                      ><img src="/images/产品/教科书.jpg" alt="" /><span
+                        class="name"
+                        >教科书</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/文学.jpg" alt="" /><span
+                        class="name"
+                        >文学</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/小说.jpg" alt="" /><span
+                        class="name"
+                        >小说</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/教育考试.jpg" alt="" /><span
+                        class="name"
+                        >教育考试</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/动漫.jpg" alt="" /><span
+                        class="name"
+                        >动漫</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              衣鞋帽伞<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">衣鞋帽伞</span>
-                  <span class="pic"
-                    ><img src="/images/产品/裙子.jpg" alt="" /><span
-                      class="name"
-                      >裙子</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/裤子.jpg" alt="" /><span
-                      class="name"
-                      >裤子</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/衣服.jpg" alt="" /><span
-                      class="name"
-                      >衣服</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/帽子.jpg" alt="" /><span
-                      class="name"
-                      >帽子</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/鞋子.jpg" alt="" /><span
-                      class="name"
-                      >鞋子</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/箱子.jpg" alt="" /><span
-                      class="name"
-                      >箱子</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/包包.jpg" alt="" /><span
-                      class="name"
-                      >包包</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/雨伞.jpg" alt="" /><span
-                      class="name"
-                      >雨伞</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                衣鞋帽伞<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">衣鞋帽伞</span>
+                    <span class="pic"
+                      ><img src="/images/产品/裙子.jpg" alt="" /><span
+                        class="name"
+                        >裙子</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/裤子.jpg" alt="" /><span
+                        class="name"
+                        >裤子</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/衣服.jpg" alt="" /><span
+                        class="name"
+                        >衣服</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/帽子.jpg" alt="" /><span
+                        class="name"
+                        >帽子</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/鞋子.jpg" alt="" /><span
+                        class="name"
+                        >鞋子</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/箱子.jpg" alt="" /><span
+                        class="name"
+                        >箱子</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/包包.jpg" alt="" /><span
+                        class="name"
+                        >包包</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/雨伞.jpg" alt="" /><span
+                        class="name"
+                        >雨伞</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              代步工具<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">代步工具</span>
-                  <span class="pic"
-                    ><img src="/images/产品/自行车.jpg" alt="" /><span
-                      class="name"
-                      >自行车</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/旱冰鞋.jpg" alt="" /><span
-                      class="name"
-                      >旱冰鞋</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/平衡车.jpg" alt="" /><span
-                      class="name"
-                      >平衡车</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/滑板.jpg" alt="" /><span
-                      class="name"
-                      >滑板</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/摩托车.jpg" alt="" /><span
-                      class="name"
-                      >摩托车</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/电动车.jpg" alt="" /><span
-                      class="name"
-                      >电动车</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                代步工具<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">代步工具</span>
+                    <span class="pic"
+                      ><img src="/images/产品/自行车.jpg" alt="" /><span
+                        class="name"
+                        >自行车</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/旱冰鞋.jpg" alt="" /><span
+                        class="name"
+                        >旱冰鞋</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/平衡车.jpg" alt="" /><span
+                        class="name"
+                        >平衡车</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/滑板.jpg" alt="" /><span
+                        class="name"
+                        >滑板</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/摩托车.jpg" alt="" /><span
+                        class="name"
+                        >摩托车</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/电动车.jpg" alt="" /><span
+                        class="name"
+                        >电动车</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              体育健身<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">体育健身</span>
-                  <span class="pic"
-                    ><img src="/images/产品/球类.jpg" alt="" /><span
-                      class="name"
-                      >球类</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/球拍.jpg" alt="" /><span
-                      class="name"
-                      >球拍</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/运动鞋.jpg" alt="" /><span
-                      class="name"
-                      >运动鞋</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/运动装备.jpg" alt="" /><span
-                      class="name"
-                      >运动装备</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/健身器材.jpg" alt="" /><span
-                      class="name"
-                      >健身器材</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                体育健身<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">体育健身</span>
+                    <span class="pic"
+                      ><img src="/images/产品/球类.jpg" alt="" /><span
+                        class="name"
+                        >球类</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/球拍.jpg" alt="" /><span
+                        class="name"
+                        >球拍</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/运动鞋.jpg" alt="" /><span
+                        class="name"
+                        >运动鞋</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/运动装备.jpg" alt="" /><span
+                        class="name"
+                        >运动装备</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/健身器材.jpg" alt="" /><span
+                        class="name"
+                        >健身器材</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              家用电器<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">家用电器</span>
-                  <span class="pic"
-                    ><img src="/images/产品/电磁炉.jpg" alt="" /><span
-                      class="name"
-                      >电磁炉</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/洗衣机.jpg" alt="" /><span
-                      class="name"
-                      >洗衣机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/冰箱.jpg" alt="" /><span
-                      class="name"
-                      >冰箱</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/风扇.jpg" alt="" /><span
-                      class="name"
-                      >风扇</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/电饭煲.jpg" alt="" /><span
-                      class="name"
-                      >电饭煲</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/豆浆机.jpg" alt="" /><span
-                      class="name"
-                      >豆浆机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/吹风机.jpg" alt="" /><span
-                      class="name"
-                      >吹风机</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/音响.jpg" alt="" /><span
-                      class="name"
-                      >音响</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                家用电器<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">家用电器</span>
+                    <span class="pic"
+                      ><img src="/images/产品/电磁炉.jpg" alt="" /><span
+                        class="name"
+                        >电磁炉</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/洗衣机.jpg" alt="" /><span
+                        class="name"
+                        >洗衣机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/冰箱.jpg" alt="" /><span
+                        class="name"
+                        >冰箱</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/风扇.jpg" alt="" /><span
+                        class="name"
+                        >风扇</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/电饭煲.jpg" alt="" /><span
+                        class="name"
+                        >电饭煲</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/豆浆机.jpg" alt="" /><span
+                        class="name"
+                        >豆浆机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/吹风机.jpg" alt="" /><span
+                        class="name"
+                        >吹风机</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/音响.jpg" alt="" /><span
+                        class="name"
+                        >音响</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              更多商品<b-icon-chevron-right></b-icon-chevron-right>
-              <div class="db">
-                <div class="box">
-                  <span class="title">更多</span>
-                  <span class="pic"
-                    ><img src="/images/产品/化妆护肤.jpg" alt="" /><span
-                      class="name"
-                      >化妆护肤</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/小工具.jpg" alt="" /><span
-                      class="name"
-                      >小工具</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/学习用品.jpg" alt="" /><span
-                      class="name"
-                      >学习用品</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/游戏周边.jpg" alt="" /><span
-                      class="name"
-                      >游戏周边</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/充值卡.jpg" alt="" /><span
-                      class="name"
-                      >充值卡</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/游戏账号.jpg" alt="" /><span
-                      class="name"
-                      >各类账号</span
-                    ></span
-                  >
-                  <span class="pic"
-                    ><img src="/images/产品/其他.jpg" alt="" /><span
-                      class="name"
-                      >其他</span
-                    ></span
-                  >
+              </li>
+              <li>
+                更多商品<b-icon-chevron-right></b-icon-chevron-right>
+                <div class="db">
+                  <div class="box">
+                    <span class="title">更多</span>
+                    <span class="pic"
+                      ><img src="/images/产品/化妆护肤.jpg" alt="" /><span
+                        class="name"
+                        >化妆护肤</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/小工具.jpg" alt="" /><span
+                        class="name"
+                        >小工具</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/学习用品.jpg" alt="" /><span
+                        class="name"
+                        >学习用品</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/游戏周边.jpg" alt="" /><span
+                        class="name"
+                        >游戏周边</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/充值卡.jpg" alt="" /><span
+                        class="name"
+                        >充值卡</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/游戏账号.jpg" alt="" /><span
+                        class="name"
+                        >各类账号</span
+                      ></span
+                    >
+                    <span class="pic"
+                      ><img src="/images/产品/其他.jpg" alt="" /><span
+                        class="name"
+                        >其他</span
+                      ></span
+                    >
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="right-box">
-          <div class="carousel-top">
-            <div>
-              <b-carousel
-                id="carousel-1"
-                v-model="slide"
-                :interval="4000"
-                controls
-                indicators
-                background="#ababab"
-                img-width="1024"
-                img-height="480"
-                style="text-shadow: 1px 1px 2px #333"
-                @sliding-start="onSlideStart"
-                @sliding-end="onSlideEnd"
-              >
-                <b-carousel-slide
-                  img-src="/images/广告位1.jpg"
-                ></b-carousel-slide>
-
-                <b-carousel-slide img-src="/images/广告位2.jpg">
-                </b-carousel-slide>
-
-                <b-carousel-slide
-                  img-src="/images/广告位3.jpg"
-                ></b-carousel-slide>
-              </b-carousel>
-            </div>
+              </li>
+            </ul>
           </div>
-          <div class="carousel-button">
-            <!-- <div class="">
+          <div class="right-box">
+            <div class="carousel-top">
+              <div>
+                <b-carousel
+                  id="carousel-1"
+                  v-model="slide"
+                  :interval="4000"
+                  controls
+                  indicators
+                  background="#ababab"
+                  img-width="1024"
+                  img-height="480"
+                  style="text-shadow: 1px 1px 2px #333"
+                  @sliding-start="onSlideStart"
+                  @sliding-end="onSlideEnd"
+                >
+                  <b-carousel-slide
+                    img-src="/images/广告位1.jpg"
+                  ></b-carousel-slide>
+
+                  <b-carousel-slide img-src="/images/广告位2.jpg">
+                  </b-carousel-slide>
+
+                  <b-carousel-slide
+                    img-src="/images/广告位3.jpg"
+                  ></b-carousel-slide>
+                </b-carousel>
+              </div>
+            </div>
+            <div class="carousel-button">
+              <!-- <div class="">
               <b-input></b-input>
               <b-button></b-button>
             </div> -->
-            <div class="text-center">
-              <b-button variant="outline-primary">发布时间</b-button>
-              <b-button variant="outline-primary">价格</b-button>
+              <div class="text-center">
+                <b-button variant="outline-primary">发布时间</b-button>
+                <b-button variant="outline-primary">价格</b-button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- <div class="btn1">
+        <!-- <div class="btn1">
         <b-card no-body>
           <b-tabs v-model="tabIndex" card>
             <b-tab title="数码产品" :title-link-class="linkClass(0)">
@@ -522,21 +522,21 @@
           </b-tabs>
         </b-card>
       </div> -->
-      <div class="a">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="card-columns">
-                <Goodsint
-                  v-for="goods in goodsList"
-                  :key="goods.goods_id"
-                  :goods="goods"
-                />
+        <div class="a">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="card-columns">
+                  <Goodsint
+                    v-for="goods in goodsList"
+                    :key="goods.goods_id"
+                    :goods="goods"
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- <div class="box">
+          <!-- <div class="box">
           <img src="/images/商品/电动车1.png" alt="" />
           <div class="button">
             <span class="title">正点原子STM32MINI开发版 </span>
@@ -549,15 +549,14 @@
             </div>
           </div>
         </div> -->
+        </div>
       </div>
+      <Car />
     </div>
-    <Car />
-  </div>
 </template>
 
 <script>
 export default {
- 
   layout: "hf",
   data() {
     return {

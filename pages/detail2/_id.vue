@@ -50,7 +50,23 @@
           <div class="button"><img src="/images/xb.jpg" alt="" /></div>
         </div>
         <div class="zzff">
-          <button class="qr">确认支付</button>
+          <button class="qr" @click="show=true">确认支付</button>
+          <b-modal
+      v-model="show"
+      title="请扫码支付"
+      :header-bg-variant="headerBgVariant"
+      :header-text-variant="headerTextVariant"
+      :body-bg-variant="bodyBgVariant"
+      :body-text-variant="bodyTextVariant"
+      :footer-bg-variant="footerBgVariant"
+      :footer-text-variant="footerTextVariant"
+    >
+      <template v-slot:modal-footer>
+        <div class="w-100">
+            <img class="qweewqqwe" src="/images/二维码1.png" alt="">
+        </div>
+      </template>
+    </b-modal>
         </div>
       </div>
     </div>
@@ -61,6 +77,14 @@ export default {
   data() {
     return {
       car: {},
+        show: false,
+        variants: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
+        headerBgVariant: 'dark',
+        headerTextVariant: 'light',
+        bodyBgVariant: 'light',
+        bodyTextVariant: 'light',
+        footerBgVariant: 'light',
+        footerTextVariant: 'light'
     };
   },
   layout: "hf",
@@ -77,6 +101,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.w-100 {
+  width: 81% !important;
+}
 .qwe {
   background-color: #f5f6f8;
   margin: 20px auto;

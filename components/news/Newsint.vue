@@ -61,6 +61,7 @@ export default {
   transition: all 1s 0.2s;
 }
 .box .right {
+  position: relative;
   float: right;
   width: 590px;
   height: 150px;
@@ -88,8 +89,9 @@ export default {
   color: #828a92;
 }
 .time {
+  position: absolute;
+  bottom: 0;
   font-size: 12px;
-  margin-top: 55px;
   color: #666;
 }
 </style>

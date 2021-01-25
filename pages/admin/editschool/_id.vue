@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div
+      class="yyy d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+    >
+      <h1 class="h2"><Back />编辑申请</h1>
+    </div>
     <b-container fluid>
       <b-form @submit.stop.prevent="OnSubmit">
         <b-row class="my-1">
@@ -22,7 +27,11 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="学校名称" label-align-sm="right" label-cols-xl="4">
+            <b-form-group
+              label="学校名称"
+              label-align-sm="right"
+              label-cols-xl="4"
+            >
               <b-form-input
                 v-model="$v.Schoolobj.school_name.$model"
                 :state="validateSigninState('school_name')"
@@ -38,7 +47,11 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="申请人姓名" label-align-sm="right" label-cols-xl="4">
+            <b-form-group
+              label="申请人姓名"
+              label-align-sm="right"
+              label-cols-xl="4"
+            >
               <b-form-input
                 v-model="$v.Schoolobj.school_xm.$model"
                 :state="validateSigninState('school_xm')"
@@ -54,7 +67,11 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="联系电话" label-align-sm="right" label-cols-xl="4">
+            <b-form-group
+              label="联系电话"
+              label-align-sm="right"
+              label-cols-xl="4"
+            >
               <b-form-input
                 v-model="$v.Schoolobj.school_tel.$model"
                 :state="validateSigninState('school_tel')"
@@ -150,10 +167,16 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.yyy {
+  margin-left: 346px;
+}
+.yyy .h2 {
+  font-size: 23px;
+}
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 20px auto 0 100px;
+  margin: 20px auto 0 500px;
   padding-top: 30px;
   // background-color: blueviolet;
 }

@@ -20,7 +20,7 @@
       </b-row>
       <b-row class="my-1">
         <b-col >
-          <b-form-group label="头像" label-align-sm="right" label-cols-xl="4">
+          <b-form-group label="头像" label-align-sm="right" label-cols-xl="4" description="/images/头像/头像2.png">
             <b-form-input
               aria-describedby="input-signin-region-feedback"
               :state="validateSigninState('pl_image')"
@@ -142,7 +142,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 0px auto 0 50px;
+  margin: 0px auto 0 150px;
   // background-color: blueviolet;
 }
 .my-1 {

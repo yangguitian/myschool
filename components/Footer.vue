@@ -17,7 +17,7 @@
             <p>TEL:18177950827</p>
             <span>24小时在线客服</span>
             <a class="wb" href="http://weibo.com/u/276233227/" title="新浪微博"></a>
-            <a class="qq" href="#" title="客服QQ"></a>
+            <a class="qq" href="/admin"  target="_blank" title="进入后台管理"></a>
             <a class="wx" href="#" title="微信"></a>
           </div>
         </div>

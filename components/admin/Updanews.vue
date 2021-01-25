@@ -36,7 +36,7 @@
       </b-row>
         <b-row class="my-1">
         <b-col >
-          <b-form-group label="图片上传" label-align-sm="right" label-cols-xl="4">
+          <b-form-group label="图片上传" label-align-sm="right" label-cols-xl="4" description="/images/图3.jpg">
             <b-form-input
               aria-describedby="input-signin-region-feedback"
               :state="validateSigninState('news_image')"
@@ -92,7 +92,7 @@ export default {
       news_desc: {
         required,
         minLength: minLength(1),
-        maxLength: maxLength(152)
+        maxLength: maxLength(552)
       },
       news_image: {
         required,
@@ -128,7 +128,7 @@ export default {
         body: postBody
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
+        alert("发布新闻成功");
         window.location.href = "/admin/news";
       }
     }
@@ -141,7 +141,7 @@ export default {
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: -50px auto 0 50px;
+  margin: -50px auto 0 150px;
   padding-top: 30px;
   // background-color: blueviolet;
 }

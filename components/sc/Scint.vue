@@ -7,11 +7,11 @@
         <div class="tetx">{{ item.sc_desc }}</div>
         <div class="button">
           <b-row cols="12">
-            <b-col cols="9">
+            <b-col cols="10">
               <span class="jiage">￥{{ item.sc_price }}</span>
               <span class="time">{{ item.date }}</span>
             </b-col>
-            <b-col cols="3">
+            <b-col cols="2">
               <b-button
                 class="btn-secondary2"
                 variant="danger"

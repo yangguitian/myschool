@@ -1,6 +1,6 @@
 <template>
 <div>
-    认证
+    <img src="/images/rz.png" alt="">
 </div>
 </template>
 

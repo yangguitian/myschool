@@ -161,8 +161,15 @@
             >发表评论</b-button
           >
           <b-modal id="modal-3" title="发布评论">
-            <Pl1 />
+            <Pl1 />  
+             <template v-slot:modal-footer>
+        <div class="w-100">
+          <p class="float-left"></p>
+        
+        </div>
+      </template>
           </b-modal>
+        
         </span>
       </div>
       <Plint v-for="pl in plList" :key="pl.pl" :pl="pl" />

@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div
+      class="yyy d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+    >
+      <h1 class="h2"><Back />编辑求购</h1>
+    </div>
     <b-container fluid>
       <b-form @submit.stop.prevent="OnSubmit">
         <b-row class="my-1">
@@ -54,7 +59,11 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="可接受价格" label-align-sm="right" label-cols-xl="4">
+            <b-form-group
+              label="可接受价格"
+              label-align-sm="right"
+              label-cols-xl="4"
+            >
               <b-form-input
                 v-model="$v.Buyobj.buy_price.$model"
                 :state="validateSigninState('buy_price')"
@@ -68,7 +77,7 @@
             </b-form-group>
           </b-col>
         </b-row>
-          <b-row class="my-1">
+        <b-row class="my-1">
           <b-col>
             <b-form-group label="电话" label-align-sm="right" label-cols-xl="4">
               <b-form-input
@@ -86,7 +95,11 @@
         </b-row>
         <b-row class="my-1">
           <b-col>
-            <b-form-group label="上传图片" label-align-sm="right" label-cols-xl="4">
+            <b-form-group
+              label="上传图片"
+              label-align-sm="right"
+              label-cols-xl="4"
+            >
               <b-form-input
                 v-model="$v.Buyobj.buy_image.$model"
                 :state="validateSigninState('buy_image')"
@@ -121,7 +134,7 @@ export default {
   mixins: [validationMixin],
   validations: {
     Buyobj: {
-       buy_name: {
+      buy_name: {
         required,
       },
       buy_desc: {
@@ -165,9 +178,7 @@ export default {
       let postBody = Object.keys(this.Buyobj)
         .map((key) => {
           return (
-            encodeURIComponent(key) +
-            "=" +
-            encodeURIComponent(this.Buyobj[key])
+            encodeURIComponent(key) + "=" + encodeURIComponent(this.Buyobj[key])
           );
         })
         .join("&");
@@ -189,10 +200,16 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.yyy {
+  margin-left: 346px;
+}
+.yyy .h2 {
+  font-size: 23px;
+}
 .container-fluid {
   width: 700px;
   height: 500px;
-  margin: 0px auto 0 80px;
+  margin: 0px auto 0 500px;
   padding-top: 30px;
   // background-color: blueviolet;
 }

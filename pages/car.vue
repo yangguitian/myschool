@@ -46,6 +46,7 @@ export default {
 .h {
   padding: 0;
   width: 1200px;
+  height: 608px;
   margin: 20px auto;
 }
 .top-box {

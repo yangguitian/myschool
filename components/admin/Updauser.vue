@@ -114,7 +114,7 @@ export default {
         body: postBody
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
+        alert("用户添加成功！");
         window.location.href = "/admin/user";
       }
     }
@@ -126,7 +126,7 @@ export default {
 <style lang="less" scoped>
 .container-fluid {
   width: 700px;
-  margin: 0px auto 0 50px;
+  margin: 0px auto 0 150px;
   padding-top: 30px;
   // background-color: blueviolet;
 }

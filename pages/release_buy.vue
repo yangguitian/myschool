@@ -172,8 +172,8 @@ export default {
       },
       buy_tel: {
         required,
-        minLength: minLength(2),
-        maxLength: maxLength(16),
+        minLength: minLength(11),
+        maxLength: maxLength(11),
       },
       buy_image: {
         required,

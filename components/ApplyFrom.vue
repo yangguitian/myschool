@@ -112,6 +112,8 @@ export default {
       },
       school_tel: {
         required,
+        minLength: minLength(11),
+        maxLength: maxLength(11),
       },
     },
   },
@@ -144,7 +146,7 @@ export default {
         body: postBody,
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("学校申请成功！请耐心等待处理");
+        alert("学校申请成功！");
         window.location.href = "/school";
       }
     },

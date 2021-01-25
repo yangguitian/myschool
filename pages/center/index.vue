@@ -13,7 +13,7 @@
       <b-col>
         <b-form-group label="用户名" label-align-sm="middle" label-cols-xl="2">
           <b-form-input
-            placeholder=""
+            placeholder="asdasd"
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_name')"
             v-model="$v.UpdataForm.schools_name.$model"
@@ -34,7 +34,7 @@
           label-cols-xl="2"
         >
           <b-form-input
-            placeholder=""
+            placeholder="未填写"
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_xingming')"
             v-model="$v.UpdataForm.schools_xingming.$model"
@@ -51,7 +51,7 @@
       <b-col>
         <b-form-group label="学校" label-align-sm="middle" label-cols-xl="2">
           <b-form-input
-            placeholder=""
+            placeholder="广西民族大学相思湖学院"
             aria-describedby="input-signin-region-feedback"
             :state="validateSigninState('schools_xianxi')"
             v-model="$v.UpdataForm.schools_xianxi.$model"
@@ -81,7 +81,7 @@
     <b-row cols="12">
       <b-col>
         <b-form-group label="毕业年份" label-align-sm="middle" label-cols-xl="2">
-         <b-form-datepicker id="example-datepicker" v-model="value" class="mb-2"></b-form-datepicker>
+         <b-form-datepicker placeholder="2021年1月28日星期四" id="example-datepicker" v-model="value" class="mb-2"></b-form-datepicker>
           <b-form-invalid-feedback id="input-signin-region-feedback">
             不能为空！
           </b-form-invalid-feedback>
@@ -98,7 +98,7 @@
           <b-form-textarea
             id="textarea-small"
             size="sm"
-            placeholder=""
+            placeholder="欢迎登录本网站"
           ></b-form-textarea>
           <b-form-invalid-feedback id="input-signin-region-feedback">
             不能为空！
@@ -106,15 +106,7 @@
         </b-form-group>
       </b-col>
     </b-row>
-    <b-row cols="12">
-        <b-col cols="2"></b-col>
-      <b-col cols="6">
-        <b-button type="submit" block variant="primary">提交</b-button>
-      </b-col>
-      <b-col cols="6">
-        <b-button block type="reset">取消</b-button>
-      </b-col>
-    </b-row>
+  
   </b-form>
 </template>
 
@@ -199,7 +191,7 @@ export default {
         body: postBody,
       }).then((res) => res.json());
       if (!this.$v.UpdataForm.$anyError) {
-        alert("用户添加成功！请耐心等待处理");
+        alert("用户添加成功！");
         window.location.href = "/admin/dashboard";
       }
     },
