@@ -3,7 +3,7 @@
     <div
       class="yyy d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
     >
-      <h1 class="h2"><Back />编辑求用户</h1>
+      <h1 class="h2"><Back />编辑用户</h1>
     </div>
     <b-container fluid>
       <b-form @submit.stop.prevent="OnSubmit">
