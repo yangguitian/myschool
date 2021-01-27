@@ -11,7 +11,9 @@
 
 <style lang="less" scoped>
 .box {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 999;
   width: 100%;
   height: 90px;
   background-color: #2f3541;
